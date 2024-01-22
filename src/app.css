@@ -1,0 +1,15 @@
+*{
+    max-height: 900px;
+    max-width: 1800px;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,6 @@
+.teams-container{
+    background-color: #f6d5da;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
