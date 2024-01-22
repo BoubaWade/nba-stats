@@ -9,6 +9,7 @@ import { IoSettingsSharp } from "react-icons/io5";
 export default function SideBar() {
   return (
     <div className="sidebar">
+        <FaBasketballBall className="logo"/>
         <img src=""/>
         <ul className="sideBar-list">
             <li><TbPlayBasketball className="icon"/>Joueurs</li>
