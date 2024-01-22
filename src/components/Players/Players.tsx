@@ -1,6 +1,10 @@
-
+import SideBar from "../reusable-ui/Sidebar/SideBar"
+import "./players.css"
 export default function Players() {
   return (
-    <div>Players</div>
+    <div className="players-container">
+    <SideBar />
+      Players
+      </div>
   )
 }

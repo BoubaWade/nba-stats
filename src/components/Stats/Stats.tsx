@@ -1,6 +1,10 @@
+import "./stats.css"
+import SideBar from "../reusable-ui/Sidebar/SideBar";
 
 export default function Stats() {
   return (
-    <div>Stats</div>
+    <div className="stats-container">
+      <SideBar />
+      Stats</div>
   )
 }
