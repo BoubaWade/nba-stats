@@ -37,7 +37,6 @@
 }
 
 .sideBar-list li:hover {
-    /* background-color: #f6d5da; */
     background-color: #d3e2f2;
     color: rgb(21, 20, 20);
     transform: scale(1.1);
