@@ -1,11 +1,15 @@
-export const getAllPlayers = () => {
-    try {
-        fetch('https://www.balldontlie.io/api/v1/players')
-            .then((res) => res.json())
-            .then(result)=>
+import React from "react";
+import { PlayerType } from "../components/Players/playersTypes";
 
-    } catch (error) {
-        console.error(error)
-    }
-}
-
+export const getAllPlayers = (
+  query: string,
+  setPlayers: (value: React.SetStateAction<PlayerType[]>) => void
+) => {
+  try {
+    fetch(`https://www.balldontlie.io/api/v1/players?search=${query}`)
+      .then((res) => res.json())
+      .then((result) => setPlayers(result.data));
+  } catch (error) {
+    console.error(error);
+  }
+};

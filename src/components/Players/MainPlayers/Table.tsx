@@ -1,37 +1,8 @@
-import { useEffect, useState } from "react";
-import Loader from "../../reusable-ui/Loader/Loader";
-type PlayerType = {
-  first_name: string;
-  height_feet?: number;
-  height_inches?: number;
-  id: number;
-  last_name: string;
-  position: string;
-  team: TeamType;
-  weight_pounds: number;
-};
-type TeamType = {
-  id: number;
-  full_name: string;
-  name: string;
-  abbreviation: string;
-  city: string;
-  conference: string;
-  division: string;
-};
-export default function Table() {
-  const [dataPlayers, setDataPlayers] = useState<PlayerType[]>([]);
+// import Loader from "../../reusable-ui/Loader/Loader";
+import { usePlayersContext } from "../../../contexts/playersContext";
 
-  useEffect(() => {
-    try {
-      fetch("https://www.balldontlie.io/api/v1/players")
-        .then((res) => res.json())
-        .then((result) => setDataPlayers(result.data));
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
-  if (dataPlayers.length === 0) return <Loader className="table-loader" />;
+export default function Table() {
+  const dataPlayers = usePlayersContext();
 
   return (
     <div className="table-container">
