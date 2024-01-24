@@ -1,6 +1,4 @@
-.players-container{
-    background-color: #f6d5da;
+.players-container {
     width: 100vw;
     height: 100vh;
-    display: flex;
 }
