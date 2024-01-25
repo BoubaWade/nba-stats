@@ -59,3 +59,8 @@
 .table-container table tbody tr:nth-child(odd) {
     background-color: #d3e2f2;
 }
+
+.table-container table tbody tr td:nth-child(1),
+td:nth-child(2) {
+    cursor: pointer;
+}

@@ -10,6 +10,7 @@ import { getAllPlayers } from "../../service/apiCall";
 export default function Players() {
   const [dataPlayers, setDataPlayers] = useState<PlayerType[]>([]);
   const [inputSearch, setSearchValue] = useState("");
+  const [rangeValue, setRangeValue] = useState("100");
 
   useEffect(() => {
     getAllPlayers(inputSearch, setDataPlayers);
@@ -19,8 +20,14 @@ export default function Players() {
     setSearchValue(value);
   };
 
+  const playersContextValue = {
+    dataPlayers,
+    setDataPlayers,
+    rangeValue,
+    setRangeValue,
+  };
   return (
-    <PlayersContext.Provider value={dataPlayers}>
+    <PlayersContext.Provider value={playersContextValue}>
       <div className="players-container">
         <SideBar />
         <NavBar

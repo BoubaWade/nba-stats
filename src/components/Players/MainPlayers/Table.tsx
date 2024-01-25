@@ -1,8 +1,13 @@
 // import Loader from "../../reusable-ui/Loader/Loader";
-import { usePlayersContext } from "../../../contexts/playersContext";
+
+import { useContext } from "react";
+import { PlayersContext } from "../../../contexts/playersContext";
 
 export default function Table() {
-  const dataPlayers = usePlayersContext();
+  const { dataPlayers, rangeValue } = useContext(PlayersContext);
+  const playersLength = dataPlayers.length;
+  const proportion = (playersLength * parseInt(rangeValue)) / 100;
+  const sliceDataPlayers = dataPlayers.slice(0, proportion);
 
   return (
     <div className="table-container">
@@ -18,7 +23,7 @@ export default function Table() {
           </tr>
         </thead>
         <tbody>
-          {dataPlayers.map((player) => (
+          {sliceDataPlayers.map((player) => (
             <tr key={player.id}>
               <td>{player.last_name}</td>
               <td>{player.first_name}</td>
