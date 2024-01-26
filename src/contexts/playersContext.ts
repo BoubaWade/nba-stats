@@ -1,11 +1,15 @@
 import { createContext } from "react";
-import { PlayerType } from "../components/Players/playersTypes";
+import { PlayerStats, Player } from "../components/Players/playersTypes";
 
 type PlayersContextType = {
-  dataPlayers: PlayerType[];
-  setDataPlayers: React.Dispatch<React.SetStateAction<PlayerType[]>>;
+  dataPlayers: Player[];
+  setDataPlayers: React.Dispatch<React.SetStateAction<Player[]>>;
   rangeValue: string;
   setRangeValue: React.Dispatch<React.SetStateAction<string>>;
+  showSpecificPlayer: boolean;
+  setShowSpecificPlayer: React.Dispatch<React.SetStateAction<boolean>>;
+  playerStats: PlayerStats[];
+  setPlayerStats: React.Dispatch<React.SetStateAction<PlayerStats[]>>;
 };
 
 export const PlayersContext = createContext<PlayersContextType>({
@@ -13,6 +17,10 @@ export const PlayersContext = createContext<PlayersContextType>({
   setDataPlayers: () => {},
   rangeValue: "",
   setRangeValue: () => {},
+  showSpecificPlayer: false,
+  setShowSpecificPlayer: () => {},
+  playerStats: [],
+  setPlayerStats: () => {},
 });
 
 // export function usePlayersContext() {

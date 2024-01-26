@@ -1,12 +1,22 @@
+import "./mainPlayers.css";
+import { useContext } from "react";
 import InputRange from "./InputRange";
 import Table from "./Table";
-import "./mainPlayers.css";
+import PlayerStats from "./PlayerStats/PlayerStats";
+import { PlayersContext } from "../../../contexts/playersContext";
 
 export default function MainPlayers() {
+  const { showSpecificPlayer } = useContext(PlayersContext);
   return (
     <div className="main-players">
-      <InputRange />
-      <Table />
+      {showSpecificPlayer ? (
+        <PlayerStats />
+      ) : (
+        <>
+          <InputRange />
+          <Table />
+        </>
+      )}
     </div>
   );
 }
