@@ -1,8 +1,21 @@
 // import Loader from "../../reusable-ui/Loader/Loader";
-import { usePlayersContext } from "../../../contexts/playersContext";
+
+import React, { useContext } from "react";
+import { PlayersContext } from "../../../contexts/playersContext";
+import { getPlayerStats } from "../../../service/apiCall";
 
 export default function Table() {
-  const dataPlayers = usePlayersContext();
+  const { dataPlayers, rangeValue, setShowSpecificPlayer, setPlayerStats } =
+    useContext(PlayersContext);
+  const playersLength = dataPlayers.length;
+  const proportion = (playersLength * parseInt(rangeValue)) / 100;
+  const sliceDataPlayers = dataPlayers.slice(0, proportion);
+
+  const handleClick = (e: React.MouseEvent<HTMLTableCellElement>) => {
+    const playerId = parseInt(e.currentTarget.id);
+    getPlayerStats(playerId, setPlayerStats);
+    setShowSpecificPlayer(true);
+  };
 
   return (
     <div className="table-container">
@@ -18,10 +31,14 @@ export default function Table() {
           </tr>
         </thead>
         <tbody>
-          {dataPlayers.map((player) => (
+          {sliceDataPlayers.map((player) => (
             <tr key={player.id}>
-              <td>{player.last_name}</td>
-              <td>{player.first_name}</td>
+              <td id={player.id.toString()} onClick={handleClick}>
+                {player.last_name}
+              </td>
+              <td id={player.id.toString()} onClick={handleClick}>
+                {player.first_name}
+              </td>
               <td>{player.position}</td>
               <td>{player.team.full_name}</td>
               <td>{player.team.conference}</td>

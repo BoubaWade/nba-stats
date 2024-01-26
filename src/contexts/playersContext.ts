@@ -1,15 +1,33 @@
-import { createContext, useContext } from "react";
-import { PlayerType } from "../components/Players/playersTypes";
+import { createContext } from "react";
+import { PlayerStats, Player } from "../components/Players/playersTypes";
 
-export const PlayersContext = createContext<PlayerType[] | undefined>(
-  undefined
-);
+type PlayersContextType = {
+  dataPlayers: Player[];
+  setDataPlayers: React.Dispatch<React.SetStateAction<Player[]>>;
+  rangeValue: string;
+  setRangeValue: React.Dispatch<React.SetStateAction<string>>;
+  showSpecificPlayer: boolean;
+  setShowSpecificPlayer: React.Dispatch<React.SetStateAction<boolean>>;
+  playerStats: PlayerStats[];
+  setPlayerStats: React.Dispatch<React.SetStateAction<PlayerStats[]>>;
+};
 
-export function usePlayersContext() {
-  const players = useContext(PlayersContext);
+export const PlayersContext = createContext<PlayersContextType>({
+  dataPlayers: [],
+  setDataPlayers: () => {},
+  rangeValue: "",
+  setRangeValue: () => {},
+  showSpecificPlayer: false,
+  setShowSpecificPlayer: () => {},
+  playerStats: [],
+  setPlayerStats: () => {},
+});
 
-  if (players === undefined) {
-    throw new Error("usePalyersContext must be used with a PlayersContext");
-  }
-  return players;
-}
+// export function usePlayersContext() {
+//   const players = useContext(PlayersContext);
+
+//   if (players === undefined) {
+//     throw new Error("usePalyersContext must be used with a PlayersContext");
+//   }
+//   return players;
+// }

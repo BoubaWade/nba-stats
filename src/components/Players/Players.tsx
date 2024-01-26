@@ -4,12 +4,15 @@ import SideBar from "../reusable-ui/Sidebar/SideBar";
 import MainPlayers from "./MainPlayers/MainPlayers";
 import { PlayersContext } from "../../contexts/playersContext";
 import { useEffect, useState } from "react";
-import { PlayerType } from "./playersTypes";
+import { PlayerStats, Player } from "./playersTypes";
 import { getAllPlayers } from "../../service/apiCall";
 
 export default function Players() {
-  const [dataPlayers, setDataPlayers] = useState<PlayerType[]>([]);
+  const [dataPlayers, setDataPlayers] = useState<Player[]>([]);
   const [inputSearch, setSearchValue] = useState("");
+  const [rangeValue, setRangeValue] = useState("100");
+  const [showSpecificPlayer, setShowSpecificPlayer] = useState(false);
+  const [playerStats, setPlayerStats] = useState<PlayerStats[]>([]);
 
   useEffect(() => {
     getAllPlayers(inputSearch, setDataPlayers);
@@ -19,8 +22,19 @@ export default function Players() {
     setSearchValue(value);
   };
 
+  const playersContextValue = {
+    dataPlayers,
+    setDataPlayers,
+    rangeValue,
+    setRangeValue,
+    showSpecificPlayer,
+    setShowSpecificPlayer,
+    playerStats,
+    setPlayerStats,
+  };
+
   return (
-    <PlayersContext.Provider value={dataPlayers}>
+    <PlayersContext.Provider value={playersContextValue}>
       <div className="players-container">
         <SideBar />
         <NavBar
