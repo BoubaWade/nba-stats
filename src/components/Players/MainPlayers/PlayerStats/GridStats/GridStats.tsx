@@ -1,5 +1,5 @@
 import GridStatsField from "./GridStatsField";
-import useGridStats from "../../../../hooks/useGridStats";
+import useGridStats from "../../../../../hooks/useGridStats";
 
 export default function GridStats() {
   const { gridFields } = useGridStats();

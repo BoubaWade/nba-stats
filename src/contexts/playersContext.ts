@@ -10,6 +10,8 @@ type PlayersContextType = {
   setShowSpecificPlayer: React.Dispatch<React.SetStateAction<boolean>>;
   playerStats: PlayerStats[];
   setPlayerStats: React.Dispatch<React.SetStateAction<PlayerStats[]>>;
+  playerStatsBySeason: PlayerStats[];
+  setPlayerStatsBySeason: React.Dispatch<React.SetStateAction<PlayerStats[]>>;
 };
 
 export const PlayersContext = createContext<PlayersContextType>({
@@ -21,6 +23,8 @@ export const PlayersContext = createContext<PlayersContextType>({
   setShowSpecificPlayer: () => {},
   playerStats: [],
   setPlayerStats: () => {},
+  playerStatsBySeason: [],
+  setPlayerStatsBySeason: () => {},
 });
 
 // export function usePlayersContext() {

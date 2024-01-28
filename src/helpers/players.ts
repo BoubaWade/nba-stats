@@ -19,3 +19,22 @@ export const getSpecificStatAverage = (array: number[]) => {
   const average = sumOfArrayValues / array.length;
   return average;
 };
+
+export const getSpecificStat = (
+  array: PlayerStats[],
+  specificStat: string
+): number[] => {
+  let result: number[] = [];
+  switch (specificStat) {
+    case "Points":
+      result = array.map((stat) => stat.pts);
+      break;
+    case "Passes":
+      result = array.map((stat) => stat.ast);
+      break;
+    case "Rebonds":
+      result = array.map((stat) => stat.reb);
+      break;
+  }
+  return result;
+};

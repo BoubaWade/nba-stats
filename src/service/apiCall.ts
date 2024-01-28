@@ -16,21 +16,22 @@ export const getAllPlayers = (
     console.error(error);
   }
 };
-// export const getPlayerStats = (
-//   playerId: number,
-//   season: number,
-//   setPlayerStats: (value: React.SetStateAction<PlayerStats[]>) => void
-// ) => {
-//   try {
-//     fetch(
-//       `https://www.balldontlie.io/api/v1/stats?seasons[]=${season}&player_ids[]=${playerId}&postseason=false`
-//     )
-//       .then((res) => res.json())
-//       .then((result) => setPlayerStats(result.data));
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
+export const getPlayerStatsBySeason = (
+  playerId: number,
+  season: number,
+  setPlayerStats: (value: React.SetStateAction<PlayerStats[]>) => void
+) => {
+  try {
+    fetch(
+      `https://www.balldontlie.io/api/v1/stats?seasons[]=${season}&player_ids[]=${playerId}&postseason=false`
+    )
+      .then((res) => res.json())
+      .then((result) => setPlayerStats(result.data));
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const getPlayerStats = (
   playerId: number,
   setPlayerStats: (value: React.SetStateAction<PlayerStats[]>) => void
