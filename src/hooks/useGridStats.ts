@@ -17,8 +17,8 @@ export default function useGridStats() {
   const averageRebounds = getSpecificStatAverage(rebounds);
   const gridFields = [
     { label: "Points", stat: averagePoints },
-    { label: "Passes", stat: averagePasses },
     { label: "Rebonds", stat: averageRebounds },
+    { label: "Passes", stat: averagePasses },
   ];
   return { gridFields };
 }

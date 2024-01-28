@@ -13,6 +13,9 @@ export default function Players() {
   const [rangeValue, setRangeValue] = useState("100");
   const [showSpecificPlayer, setShowSpecificPlayer] = useState(false);
   const [playerStats, setPlayerStats] = useState<PlayerStats[]>([]);
+  const [playerStatsBySeason, setPlayerStatsBySeason] = useState<PlayerStats[]>(
+    []
+  );
 
   useEffect(() => {
     getAllPlayers(inputSearch, setDataPlayers);
@@ -31,6 +34,8 @@ export default function Players() {
     setShowSpecificPlayer,
     playerStats,
     setPlayerStats,
+    playerStatsBySeason,
+    setPlayerStatsBySeason,
   };
 
   return (

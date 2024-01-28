@@ -7,16 +7,15 @@ import { PlayersContext } from "../../../contexts/playersContext";
 
 export default function MainPlayers() {
   const { showSpecificPlayer } = useContext(PlayersContext);
+  const tableContainer = (
+    <>
+      <InputRange />
+      <Table />
+    </>
+  );
   return (
     <div className="main-players">
-      {showSpecificPlayer ? (
-        <PlayerStats />
-      ) : (
-        <>
-          <InputRange />
-          <Table />
-        </>
-      )}
+      {showSpecificPlayer ? <PlayerStats /> : tableContainer}
     </div>
   );
 }
