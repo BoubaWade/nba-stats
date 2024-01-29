@@ -4,18 +4,42 @@
 }
 
 .menu-select-container {
-    /* background: pink; */
     display: flex;
     justify-content: space-evenly;
     margin-top: 30px;
 }
 
+.menu-select-container .season,
+.menu-select-container .stats {
+    position: relative;
+}
+
+.menu-select-container .label-container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .menu-select-container label {
-    display: inline-block;
     font-size: 14px;
-    margin-bottom: 5px;
     font-weight: 400;
-    /* margin: 0 5px; */
+}
+
+.menu-select-container .arrow {
+    font-size: 18px;
+}
+
+.menu-select-container .menu-select {
+    background: transparent;
+}
+
+.menu-select-container .menu-select-items {
+    font-size: 14px;
 }
 
 .line-graph-container {

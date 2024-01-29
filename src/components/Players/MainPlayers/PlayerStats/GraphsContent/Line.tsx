@@ -2,9 +2,7 @@ import * as d3 from "d3";
 import { useRef, useEffect } from "react";
 type LineProps = {
   data: number[];
-  statName: string;
   className: string;
-  classNameStat: string;
   width: number;
   height: number;
   marginTop: number;
@@ -15,9 +13,7 @@ type LineProps = {
 
 export default function Line({
   data,
-  statName,
   className,
-  classNameStat,
   width,
   height,
   marginTop,
@@ -65,7 +61,6 @@ export default function Line({
           ))}
         </g>
       </svg>
-      <span className={classNameStat}>{statName}</span>
     </div>
   );
 }
