@@ -1,10 +1,10 @@
 import * as d3 from "d3";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+
 type LineProps = {
   data: number[];
   statName: string;
   className: string;
-  classNameStat: string;
   width: number;
   height: number;
   marginTop: number;
@@ -13,11 +13,10 @@ type LineProps = {
   marginLeft: number;
 };
 
-export default function Line({
+export default function LineChart({
   data,
   statName,
   className,
-  classNameStat,
   width,
   height,
   marginTop,
@@ -27,21 +26,26 @@ export default function Line({
 }: LineProps) {
   const gx = useRef<SVGGElement | null>(null);
   const gy = useRef<SVGGElement | null>(null);
+  const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
+
   const x = d3
     .scaleLinear()
-    .domain([0, data.length - 1])
+    .domain([1, data.length])
     .range([marginLeft, width - marginRight]);
 
   const y = d3
     .scaleLinear()
     .domain(d3.extent(data) as [number, number])
     .range([height - marginBottom, marginTop]);
-  const line = d3.line((_, i) => x(i), y);
+
+  const line = d3.line((_, i) => x(i + 1), y);
+
   useEffect(() => {
     if (gx.current) {
       d3.select(gx.current).call(d3.axisBottom(x));
     }
   }, [gx, x]);
+
   useEffect(() => {
     if (gy.current) {
       d3.select(gy.current).call(d3.axisLeft(y));
@@ -61,11 +65,39 @@ export default function Line({
         />
         <g fill="white" stroke="currentColor" strokeWidth="1.5">
           {data.map((d, i) => (
-            <circle key={i} cx={x(i)} cy={y(d)} r="2.5" />
+            <circle
+              key={i}
+              cx={x(i + 1)}
+              cy={y(d)}
+              r="2.5"
+              onMouseOver={() => setHoveredPoint(i)}
+              onMouseOut={() => setHoveredPoint(null)}
+              cursor={"pointer"}
+            />
           ))}
         </g>
+        {hoveredPoint !== null && (
+          <g>
+            <rect
+              x={x(hoveredPoint) - 100}
+              y={y(data[hoveredPoint]) - 37.5}
+              width={200}
+              height={35}
+              fill="white"
+              stroke="black"
+              strokeWidth="1"
+            />
+            <text
+              x={x(hoveredPoint)}
+              y={y(data[hoveredPoint]) - 15}
+              textAnchor="middle"
+              fill="black"
+            >
+              {`Match: ${hoveredPoint + 1} ; ${data[hoveredPoint]} ${statName}`}
+            </text>
+          </g>
+        )}
       </svg>
-      <span className={classNameStat}>{statName}</span>
     </div>
   );
 }

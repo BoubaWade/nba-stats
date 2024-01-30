@@ -6,8 +6,8 @@ export default function GridStats() {
 
   return (
     <div className="grid-stats">
-      {gridFields.map(({ label, stat }) => (
-        <GridStatsField label={label} stat={stat} />
+      {gridFields.map(({ label, stat }, index) => (
+        <GridStatsField key={index} label={label} stat={stat} />
       ))}
     </div>
   );

@@ -27,7 +27,7 @@ export type NavBarProps = {
 
 export type PlayerStats = {
   ast: number;
-  blk?: number;
+  blk: number;
   dreb?: number;
   fg3_pct?: number;
   fg3a?: number;

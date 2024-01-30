@@ -10,6 +10,9 @@ export const getPasses = (array: PlayerStats[]): number[] => {
 export const getRebounds = (array: PlayerStats[]): number[] => {
   return array.map((stats) => stats.reb);
 };
+export const getBlocks = (array: PlayerStats[]): number[] => {
+  return array.map((stats) => stats.blk);
+};
 
 export const getSpecificStatAverage = (array: number[]) => {
   const sumOfArrayValues = array?.reduce(
@@ -34,6 +37,9 @@ export const getSpecificStat = (
       break;
     case "Rebonds":
       result = array.map((stat) => stat.reb);
+      break;
+    case "Contres":
+      result = array.map((stat) => stat.blk);
       break;
   }
   return result;
