@@ -16,6 +16,7 @@ export default function Table() {
     getPlayerStats(playerId, setPlayerStats);
     setShowSpecificPlayer(true);
   };
+  // console.log(sliceDataPlayers);
 
   return (
     <div className="table-container">

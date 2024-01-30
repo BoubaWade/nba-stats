@@ -11,4 +11,5 @@ export const seasons = [
   2015 + "-" + 2016,
   2014 + "-" + 2015,
 ];
-export const statOptions = ["", "Points", "Passes", "Rebonds"];
+export const statOptions = ["", "Points", "Passes", "Rebonds", "Contres"];
+export const graphs = ["", "Barre", "Ligne"];

@@ -1,6 +1,6 @@
 .graphs-content {
     background: linear-gradient(180deg, #d3e2f2 0%, #4173a8 100%);
-
+    padding-top: 30px;
 }
 
 .menu-select-container {
@@ -10,8 +10,14 @@
 }
 
 .menu-select-container .season,
-.menu-select-container .stats {
+.menu-select-container .stats,
+.menu-select-container .graphs {
     position: relative;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 .menu-select-container .label-container {
@@ -42,20 +48,26 @@
     font-size: 14px;
 }
 
-.line-graph-container {
+.graph-container {
     height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.line-graph-container .line-graph {
+.graph-container .line-graph {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.line-graph-container .line-graph .stat-name {
+.graph-container .line-tooltiph {
+    display: inline-block;
+    border: 1px solid red;
+    color: red;
+}
+
+/* .graph-container .line-graph .stat-name {
     font-size: 20px;
     margin-top: 20px;
-}
+} */
