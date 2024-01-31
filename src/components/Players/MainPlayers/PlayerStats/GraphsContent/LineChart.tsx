@@ -93,7 +93,7 @@ export default function LineChart({
               textAnchor="middle"
               fill="black"
             >
-              {`Match: ${hoveredPoint + 1} ; ${data[hoveredPoint]} ${statName}`}
+              {`Match ${hoveredPoint + 1} ; ${data[hoveredPoint]} ${statName}`}
             </text>
           </g>
         )}

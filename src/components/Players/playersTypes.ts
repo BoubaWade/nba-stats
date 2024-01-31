@@ -8,7 +8,7 @@ export type Player = {
   team: Team;
   weight_pounds: number;
 };
-type Team = {
+export type Team = {
   id: number;
   full_name: string;
   name: string;

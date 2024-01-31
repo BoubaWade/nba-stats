@@ -13,3 +13,11 @@ export const seasons = [
 ];
 export const statOptions = ["", "Points", "Passes", "Rebonds", "Contres"];
 export const graphs = ["", "Barre", "Ligne"];
+export const divisionsName = [
+  "Atlantic",
+  "Southeast",
+  "Central",
+  "Southwest",
+  "Northwest",
+  "Pacific",
+];

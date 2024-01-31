@@ -1,9 +1,6 @@
 import React from "react";
-import { PlayerStats, Player } from "../components/Players/playersTypes";
+import { PlayerStats, Player, Team } from "../components/Players/playersTypes";
 
-// const filterArray = (array: React.SetStateAction<Player[]>) => {
-//   array.filter((data)=> )
-// };
 export const getAllPlayers = (
   query: string,
   setPlayers: (value: React.SetStateAction<Player[]>) => void
@@ -42,6 +39,18 @@ export const getPlayerStats = (
     )
       .then((res) => res.json())
       .then((result) => setPlayerStats(result.data));
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getAllTeams = (
+  setTeams: (value: React.SetStateAction<Team[]>) => void
+) => {
+  try {
+    fetch("https://www.balldontlie.io/api/v1/teams")
+      .then((res) => res.json())
+      .then((result) => setTeams(result.data));
   } catch (error) {
     console.error(error);
   }

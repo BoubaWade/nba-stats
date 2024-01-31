@@ -12,8 +12,8 @@ type PlayersContextType = {
   setPlayerStats: React.Dispatch<React.SetStateAction<PlayerStats[]>>;
   playerStatsBySeason: PlayerStats[];
   setPlayerStatsBySeason: React.Dispatch<React.SetStateAction<PlayerStats[]>>;
-  allPlayersID: number[];
-  setAllPlayersID: React.Dispatch<React.SetStateAction<number[]>>;
+  // allPlayersID: number[];
+  // setAllPlayersID: React.Dispatch<React.SetStateAction<number[]>>;
 };
 
 export const PlayersContext = createContext<PlayersContextType>({
@@ -27,8 +27,8 @@ export const PlayersContext = createContext<PlayersContextType>({
   setPlayerStats: () => {},
   playerStatsBySeason: [],
   setPlayerStatsBySeason: () => {},
-  allPlayersID: [],
-  setAllPlayersID: () => {},
+  // allPlayersID: [],
+  // setAllPlayersID: () => {},
 });
 
 // export function usePlayersContext() {
