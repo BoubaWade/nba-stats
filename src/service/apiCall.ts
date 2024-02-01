@@ -1,5 +1,6 @@
 import React from "react";
 import { PlayerStats, Player, Team } from "../components/Players/playersTypes";
+import { Game } from "../components/Teams/teamsTypes";
 
 export const getAllPlayers = (
   query: string,
@@ -51,6 +52,21 @@ export const getAllTeams = (
     fetch("https://www.balldontlie.io/api/v1/teams")
       .then((res) => res.json())
       .then((result) => setTeams(result.data));
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const getGames = (
+  teamId: number,
+  season: number,
+  setGames: (value: React.SetStateAction<Game[]>) => void
+) => {
+  try {
+    fetch(
+      `https://www.balldontlie.io/api/v1/games/?seasons[]=${season}&team_ids[]=${teamId}`
+    )
+      .then((res) => res.json())
+      .then((result) => setGames(result.data));
   } catch (error) {
     console.error(error);
   }

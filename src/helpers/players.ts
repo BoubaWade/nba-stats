@@ -58,3 +58,14 @@ export const getAllDivisionsWithTeams = (teams: Team[]) => {
   }
   return arrayTeams;
 };
+
+export const getDateFormated = (date: string): string => {
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const dateToFormat = new Date(date);
+  const dateFormated = dateToFormat.toLocaleDateString("fr-FR", options);
+  return dateFormated;
+};

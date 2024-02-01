@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { TeamsContext } from "../../../contexts/teamsContext";
+import MainSpecificTeam from "./MainSpecificTeam/MainSpecificTeam";
+import LogoBackground from "./LogoBackground";
 
 export default function SpecificTeam() {
-  const { teams, specificTeamID } = useContext(TeamsContext);
-  const specificTeamData = teams.find((team) => team.id === specificTeamID);
   return (
     <div className="specificTeam-container">
-      <img src={`../../../../public/images/${specificTeamData?.name}.svg`} />
+      <LogoBackground />
+      <MainSpecificTeam />
     </div>
   );
 }
