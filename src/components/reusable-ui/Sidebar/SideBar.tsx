@@ -8,25 +8,32 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { PlayersContext } from "../../../contexts/playersContext";
+import { TeamsContext } from "../../../contexts/teamsContext";
 
 export default function SideBar() {
   const { setShowSpecificPlayer } = useContext(PlayersContext);
+  const { setShowSpecificTeam } = useContext(TeamsContext);
+
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClickPlayersButton = () => {
     setShowSpecificPlayer(false);
     navigate("/players");
+  };
+  const handleClickTeamsButton = () => {
+    setShowSpecificTeam(false);
+    navigate("/teams");
   };
   return (
     <div className="sidebar">
       <FaBasketballBall className="logo" />
       <img src="" />
       <ul className="sideBar-list">
-        <li onClick={handleClick}>
+        <li onClick={handleClickPlayersButton}>
           <TbPlayBasketball className="icon" />
           Joueurs
         </li>
-        <li onClick={() => navigate("/teams")}>
+        <li onClick={handleClickTeamsButton}>
           <BsMicrosoftTeams className="icon" />
           Équipes
         </li>
