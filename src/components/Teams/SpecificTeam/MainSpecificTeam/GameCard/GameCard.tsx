@@ -1,22 +1,24 @@
 import { getDateFormated } from "../../../../../helpers/players";
 import { Game } from "../../../teamsTypes";
-import InfosTeamLeft from "./InfosTeamLeft";
-import InfosTeamRight from "./InfosTeamRight";
+import InfosHomeTeam from "./InfosHomeTeam";
+import InfosVisitorTeam from "./InfosVisitorTeam";
 import Scores from "./Scores";
+import useGameCard from "../../../../../hooks/useGameCard";
 type GameCardProps = {
   game: Game;
 };
 
 export default function GameCard({ game }: GameCardProps) {
   const dateFormatted = getDateFormated(game.date);
+  const { winned } = useGameCard(game);
 
   return (
-    <div key={game.id} className="game-card">
+    <div key={game.id} className={winned ? "game-card winned" : "game-card"}>
       <p className="date">{dateFormatted}</p>
       <div className="teams-infos-container">
-        <InfosTeamLeft game={game} />
+        <InfosHomeTeam game={game} />
         <span>VS</span>
-        <InfosTeamRight game={game} />
+        <InfosVisitorTeam game={game} />
       </div>
       <Scores game={game} />
     </div>

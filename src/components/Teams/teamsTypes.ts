@@ -1,7 +1,7 @@
 import { Team } from "../Players/playersTypes";
 
 export type Game = {
-  date: string;
+  date: Date;
   home_team: Team;
   home_team_score: number;
   id: number;

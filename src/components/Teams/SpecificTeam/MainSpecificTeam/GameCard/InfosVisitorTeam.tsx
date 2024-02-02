@@ -5,7 +5,7 @@ const getLogoSourcePATH = (name: string) => {
 type InfosTeamCardProps = {
   game: Game;
 };
-export default function InfosTeamRight({ game }: InfosTeamCardProps) {
+export default function InfosVisitorTeam({ game }: InfosTeamCardProps) {
   return (
     <div className="team-infos">
       <h3 className="abbreviation-name">{game.visitor_team.abbreviation}</h3>
