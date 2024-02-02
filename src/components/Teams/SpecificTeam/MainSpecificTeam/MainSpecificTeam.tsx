@@ -3,17 +3,17 @@ import { TeamsContext } from "../../../../contexts/teamsContext";
 import { Game } from "../../teamsTypes";
 import { getGames } from "../../../../service/apiCall";
 import GameCard from "./GameCard/GameCard";
-import { gatGamesSortedByDate } from "../../../../helpers/players";
+import { getGamesSortedByDate } from "../../../../helpers/games";
 import Header from "./Header/Header";
 
 export default function MainSpecificTeam() {
-  const { specificTeamID } = useContext(TeamsContext);
+  const { specificTeamID, yearOfTheGames } = useContext(TeamsContext);
   const [games, setGames] = useState<Game[]>([]);
-  const gamesSortedByDate = gatGamesSortedByDate(games);
+  const gamesSortedByDate = getGamesSortedByDate(games);
 
   useEffect(() => {
-    getGames(specificTeamID, 2023, setGames);
-  }, []);
+    getGames(specificTeamID, parseInt(yearOfTheGames), setGames);
+  }, [yearOfTheGames]);
 
   return (
     <div className="main-specificTeam">

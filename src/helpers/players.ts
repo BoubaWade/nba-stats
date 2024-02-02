@@ -1,5 +1,4 @@
 import { PlayerStats, Team } from "../components/Players/playersTypes";
-import { Game } from "../components/Teams/teamsTypes";
 import { divisionsName } from "../config/constants";
 
 export const getPoints = (array: PlayerStats[]): number[] => {
@@ -58,35 +57,4 @@ export const getAllDivisionsWithTeams = (teams: Team[]) => {
     arrayTeams.push(array);
   }
   return arrayTeams;
-};
-// type Options= {
-//   localeMatcher?: "best fit" | "lookup" | undefined;
-//   weekday?: "long" | "short" | "narrow" | undefined;
-//   era?: "long" | "short" | "narrow" | undefined;
-//   year?: "numeric" | "2-digit" | undefined;
-//   month?: "numeric" | "2-digit" | "long" | "short" | "narrow" | undefined;
-//   day?: "numeric" | "2-digit" | undefined;
-//   hour?: "numeric" | "2-digit" | undefined;
-//   minute?: "numeric" | "2-digit" | undefined;
-//   second?: "numeric" | "2-digit" | undefined;
-//   timeZoneName?: "short" | "long" | "shortOffset" | "longOffset" | "shortGeneric" | "longGeneric" | undefined;
-//   formatMatcher?: "best fit" | "basic" | undefined;
-//   hour12?: boolean | undefined;
-//   timeZone?: string | undefined;
-// }
-export const getDateFormated = (date: Date): string => {
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  const dateToFormat = new Date(date);
-  const dateFormated = dateToFormat.toLocaleDateString("fr-FR", options);
-  return dateFormated;
-};
-
-export const gatGamesSortedByDate = (array: Game[]): Game[] => {
-  return array.sort(
-    (a, b) => (new Date(b.date) as any) - (new Date(a.date) as any)
-  );
 };

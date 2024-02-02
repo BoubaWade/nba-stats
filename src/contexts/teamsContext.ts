@@ -9,7 +9,9 @@ type TeamsContextType = {
   specificTeamID: number;
   setSpecificTeamID: React.Dispatch<React.SetStateAction<number>>;
   teamFullName: string;
-  setTeamFullName: React.Dispatch<React.SetStateAction<string | null>>;
+  setTeamFullName: React.Dispatch<React.SetStateAction<string>>;
+  yearOfTheGames: string;
+  setYearOfTheGames: React.Dispatch<React.SetStateAction<string>>;
 };
 export const TeamsContext = createContext<TeamsContextType>({
   teams: [],
@@ -20,4 +22,6 @@ export const TeamsContext = createContext<TeamsContextType>({
   setSpecificTeamID: () => {},
   teamFullName: "",
   setTeamFullName: () => {},
+  yearOfTheGames: "",
+  setYearOfTheGames: () => {},
 });

@@ -35,15 +35,17 @@
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 2px 2px 9px 1px #33373b;
-
 }
 
 .main-teams .divisions-container .division .division-name {
+    height: 35px;
     text-align: center;
     font-size: 18px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     margin-top: 5px;
-    text-decoration: overline;
+    background: #c5d5e6;
+    color: black;
+    border-radius: 3px;
 }
 
 .divisions-container .division .team {
@@ -84,6 +86,18 @@
     overflow: scroll;
 }
 
+.specificTeam-container .main-specificTeam .header {
+    width: 95%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.main-specificTeam .header .list-menu-select {}
+
 .main-specificTeam .list-games-cards {
     width: 95%;
     margin: 20px auto;
@@ -92,7 +106,6 @@
     gap: 10px;
     justify-content: center;
     z-index: 1;
-
 }
 
 .main-specificTeam .game-card {

@@ -1,4 +1,4 @@
-import { getDateFormated } from "../../../../../helpers/players";
+import { getDateFormated } from "../../../../../helpers/games";
 import { Game } from "../../../teamsTypes";
 import InfosHomeTeam from "./InfosHomeTeam";
 import InfosVisitorTeam from "./InfosVisitorTeam";
