@@ -6,7 +6,7 @@ const getLogoSourcePATH = (name: string) => {
 type InfosTeamCardProps = {
   game: Game;
 };
-export default function InfosTeamLeft({ game }: InfosTeamCardProps) {
+export default function InfosHomeTeam({ game }: InfosTeamCardProps) {
   return (
     <div className="team-infos">
       <img className="logo" src={getLogoSourcePATH(game.home_team.name)} />

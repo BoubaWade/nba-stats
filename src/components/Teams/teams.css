@@ -6,7 +6,7 @@
 
 .main-teams,
 .specificTeam-container {
-    background: linear-gradient(-90deg, #b4cee9 0%, #4173a8 100%);
+    background: #c5d5e6;
     position: absolute;
     top: 65px;
     left: 200px;
@@ -15,6 +15,7 @@
     align-items: center;
     width: calc(100vw - 200px);
     height: calc(100vh - 65px);
+    box-shadow: 0px 0px 6px 1px #687179 inset;
     overflow: scroll;
 }
 
@@ -22,38 +23,54 @@
     width: 90%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 5%;
-    row-gap: 20px;
-    padding-top: 20px;
+    column-gap: 3%;
+    row-gap: 40px;
+    padding-top: 40px;
 }
 
 .main-teams .divisions-container .division {
-    margin-bottom: 30px;
+    height: 450px;
+    color: white;
+    background: rgb(25, 30, 45);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 9px 1px #33373b;
 }
 
 .main-teams .divisions-container .division .division-name {
+    height: 35px;
+    text-align: center;
     font-size: 18px;
-    margin-bottom: 10px;
-    text-decoration: overline;
+    margin-bottom: 35px;
+    margin-top: 5px;
+    background: #c5d5e6;
+    color: black;
+    border-radius: 3px;
 }
 
 .divisions-container .division .team {
     width: 100%;
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
 
 .divisions-container .division .team img {
-    width: 90px;
+    width: 70px;
 }
 
 .divisions-container .division .team .text-name {
     display: block;
     width: 70%;
-    font-size: 16px;
-    font-weight: 400;
-    margin-left: 15px;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.divisions-container .division .team .text-name:hover {
+    transform: scale(1.07);
+    text-decoration: overline;
 }
 
 .specificTeam-container .logo-background {
@@ -69,6 +86,18 @@
     overflow: scroll;
 }
 
+.specificTeam-container .main-specificTeam .header {
+    width: 95%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.main-specificTeam .header .list-menu-select {}
+
 .main-specificTeam .list-games-cards {
     width: 95%;
     margin: 20px auto;
@@ -77,21 +106,25 @@
     gap: 10px;
     justify-content: center;
     z-index: 1;
-
 }
 
 .main-specificTeam .game-card {
+    background: linear-gradient(180deg, #e6a4a4 0%, #dd3737 100%);
     min-width: 295px;
     max-width: 400px;
-    height: 135px;
-    background: linear-gradient(180deg, #d3e2f2 0%, #4173a8 100%);
+    height: 170px;
     border-radius: 7px;
     border: 1px solid #2667ac;
+}
+
+.main-specificTeam .game-card.winned {
+    background: linear-gradient(180deg, #bef4c7 0%, #1c9d34 100%);
 }
 
 .main-specificTeam .game-card .date {
     font-size: 14px;
     text-align: center;
+    margin: 5px 0;
     margin-top: 5px;
 }
 
@@ -118,5 +151,6 @@
 .main-specificTeam .game-card .scores {
     display: flex;
     justify-content: space-around;
+    font-size: 22px;
     font-weight: 700;
 }

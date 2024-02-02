@@ -12,6 +12,8 @@ export default function Teams() {
   const [teams, setTeams] = useState<Team[]>([]);
   const [showSpecificTeam, setShowSpecificTeam] = useState(false);
   const [specificTeamID, setSpecificTeamID] = useState(0);
+  const [teamFullName, setTeamFullName] = useState("");
+  const [yearOfTheGames, setYearOfTheGames] = useState("2023");
   useEffect(() => {
     getAllTeams(setTeams);
   }, []);
@@ -23,6 +25,10 @@ export default function Teams() {
     setShowSpecificTeam,
     specificTeamID,
     setSpecificTeamID,
+    teamFullName,
+    setTeamFullName,
+    yearOfTheGames,
+    setYearOfTheGames,
   };
   return (
     <TeamsContext.Provider value={teamsContextValue}>
