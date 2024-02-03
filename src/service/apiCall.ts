@@ -1,13 +1,14 @@
 import React from "react";
 import { PlayerStats, Player, Team } from "../components/Players/playersTypes";
 import { Game } from "../components/Teams/teamsTypes";
+const baseURL = "https://www.balldontlie.io/api/v1";
 
 export const getAllPlayers = (
   query: string,
   setPlayers: (value: React.SetStateAction<Player[]>) => void
 ) => {
   try {
-    fetch(`https://www.balldontlie.io/api/v1/players?search=${query}`)
+    fetch(`${baseURL}/players?search=${query}`)
       .then((res) => res.json())
       .then((result) => setPlayers(result.data));
   } catch (error) {
@@ -21,7 +22,7 @@ export const getPlayerStatsBySeason = (
 ) => {
   try {
     fetch(
-      `https://www.balldontlie.io/api/v1/stats?seasons[]=${season}&player_ids[]=${playerId}&postseason=false`
+      `${baseURL}/stats?seasons[]=${season}&player_ids[]=${playerId}&postseason=false`
     )
       .then((res) => res.json())
       .then((result) => setPlayerStats(result.data));
@@ -35,9 +36,7 @@ export const getPlayerStats = (
   setPlayerStats: (value: React.SetStateAction<PlayerStats[]>) => void
 ) => {
   try {
-    fetch(
-      `https://www.balldontlie.io/api/v1/stats?player_ids[]=${playerId}&postseason=false`
-    )
+    fetch(`${baseURL}/stats?player_ids[]=${playerId}&postseason=false`)
       .then((res) => res.json())
       .then((result) => setPlayerStats(result.data));
   } catch (error) {
@@ -49,7 +48,7 @@ export const getAllTeams = (
   setTeams: (value: React.SetStateAction<Team[]>) => void
 ) => {
   try {
-    fetch("https://www.balldontlie.io/api/v1/teams")
+    fetch(`${baseURL}/teams`)
       .then((res) => res.json())
       .then((result) => setTeams(result.data));
   } catch (error) {
@@ -62,11 +61,21 @@ export const getGames = (
   setGames: (value: React.SetStateAction<Game[]>) => void
 ) => {
   try {
-    fetch(
-      `https://www.balldontlie.io/api/v1/games/?seasons[]=${season}&team_ids[]=${teamId}`
-    )
+    fetch(`${baseURL}/games/?seasons[]=${season}&team_ids[]=${teamId}`)
       .then((res) => res.json())
       .then((result) => setGames(result.data));
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const getStatsGame = (
+  gameId: number
+  // setGames: (value: React.SetStateAction<Game[]>) => void
+) => {
+  try {
+    fetch(`${baseURL}/stats?game_ids[]=${gameId}`)
+      .then((res) => res.json())
+      .then((result) => console.log(result.data));
   } catch (error) {
     console.error(error);
   }

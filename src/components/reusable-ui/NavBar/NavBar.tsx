@@ -1,13 +1,7 @@
 import "./navBar.css";
-import { FaUser } from "react-icons/fa";
 import { NavBarProps } from "../../Players/playersTypes";
 
-export default function NavBar({
-  userName,
-  placeholder,
-  value,
-  onChange,
-}: NavBarProps) {
+export default function NavBar({ placeholder, value, onChange }: NavBarProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value as string);
   };
@@ -21,10 +15,6 @@ export default function NavBar({
         value={value}
         onChange={handleChange}
       />
-      <div className="navBar-right-side">
-        <p className="user-name">{userName}</p>
-        <FaUser className="user-icon" />
-      </div>
     </div>
   );
 }

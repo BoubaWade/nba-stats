@@ -1,4 +1,4 @@
-import { Game } from "../../../teamsTypes";
+import { Game } from "../../../../teamsTypes";
 const getLogoSourcePATH = (name: string) => {
   return `../../../../../../public/images/${name}.svg`;
 };
