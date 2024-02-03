@@ -14,6 +14,7 @@ export default function Teams() {
   const [specificTeamID, setSpecificTeamID] = useState(0);
   const [teamFullName, setTeamFullName] = useState("");
   const [yearOfTheGames, setYearOfTheGames] = useState("2023");
+
   useEffect(() => {
     getAllTeams(setTeams);
   }, []);

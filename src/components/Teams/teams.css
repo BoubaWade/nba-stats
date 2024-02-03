@@ -41,8 +41,8 @@
     height: 35px;
     text-align: center;
     font-size: 18px;
-    margin-bottom: 35px;
-    margin-top: 5px;
+    margin: 5px 0 35px;
+    padding-top: 5px;
     background: #c5d5e6;
     color: black;
     border-radius: 3px;
@@ -98,6 +98,14 @@
 
 .main-specificTeam .header .list-menu-select {}
 
+.specificTeam-container .main-specificTeam .header .team-name {
+    font-size: 22px;
+}
+
+.specificTeam-container .main-specificTeam .header .label-menu-select {
+    font-size: 14px;
+}
+
 .main-specificTeam .list-games-cards {
     width: 95%;
     margin: 20px auto;
@@ -115,6 +123,12 @@
     height: 170px;
     border-radius: 7px;
     border: 1px solid #2667ac;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.main-specificTeam .game-card:hover {
+    transform: scale(1.02);
 }
 
 .main-specificTeam .game-card.winned {

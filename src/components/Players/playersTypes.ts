@@ -19,7 +19,6 @@ export type Team = {
 };
 
 export type NavBarProps = {
-  userName?: string;
   placeholder: string;
   value: string;
   onChange: (value: string) => void;
