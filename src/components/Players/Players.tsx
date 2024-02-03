@@ -46,7 +46,6 @@ export default function Players() {
         <SideBar />
         <NavBar
           placeholder="Rechercher un joueur"
-          userName="exemple"
           value={inputSearch}
           onChange={handleChange}
         />
