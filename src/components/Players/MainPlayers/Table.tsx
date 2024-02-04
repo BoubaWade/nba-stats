@@ -1,12 +1,11 @@
-// import Loader from "../../reusable-ui/Loader/Loader";
-
 import React, { useContext } from "react";
 import { PlayersContext } from "../../../contexts/playersContext";
 import { getPlayerStats } from "../../../service/apiCall";
+import { GlobalContext } from "../../../contexts/globalContext";
 
 export default function Table() {
-  const { dataPlayers, rangeValue, setShowSpecificPlayer, setPlayerStats } =
-    useContext(PlayersContext);
+  const { dataPlayers, rangeValue } = useContext(PlayersContext);
+  const { setShowSpecificPlayer, setPlayerStats } = useContext(GlobalContext);
   const playersLength = dataPlayers.length;
   const proportion = (playersLength * parseInt(rangeValue)) / 100;
   const sliceDataPlayers = dataPlayers.slice(0, proportion);
@@ -16,7 +15,6 @@ export default function Table() {
     getPlayerStats(playerId, setPlayerStats);
     setShowSpecificPlayer(true);
   };
-  // console.log(sliceDataPlayers);
 
   return (
     <div className="table-container">

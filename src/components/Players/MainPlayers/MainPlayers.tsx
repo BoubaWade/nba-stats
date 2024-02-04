@@ -3,10 +3,10 @@ import { useContext } from "react";
 import InputRange from "./InputRange";
 import Table from "./Table";
 import PlayerStats from "./PlayerStats/PlayerStats";
-import { PlayersContext } from "../../../contexts/playersContext";
+import { GlobalContext } from "../../../contexts/globalContext";
 
 export default function MainPlayers() {
-  const { showSpecificPlayer } = useContext(PlayersContext);
+  const { showSpecificPlayer } = useContext(GlobalContext);
   const tableContainer = (
     <>
       <InputRange />

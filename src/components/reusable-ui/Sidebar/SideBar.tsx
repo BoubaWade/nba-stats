@@ -7,13 +7,11 @@ import { FaBasketballBall } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { PlayersContext } from "../../../contexts/playersContext";
-import { TeamsContext } from "../../../contexts/teamsContext";
+import { GlobalContext } from "../../../contexts/globalContext";
 
 export default function SideBar() {
-  const { setShowSpecificPlayer } = useContext(PlayersContext);
-  const { setShowSpecificTeam } = useContext(TeamsContext);
-
+  const { setShowSpecificPlayer, setShowSpecificTeam } =
+    useContext(GlobalContext);
   const navigate = useNavigate();
 
   const handleClickPlayersButton = () => {
@@ -24,6 +22,7 @@ export default function SideBar() {
     setShowSpecificTeam(false);
     navigate("/teams");
   };
+
   return (
     <div className="sidebar">
       <FaBasketballBall className="logo" />

@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { PlayersContext } from "../../../../../contexts/playersContext";
+import { GlobalContext } from "../../../../../contexts/globalContext";
 
 export default function PlayerInfos() {
-  const { playerStats } = useContext(PlayersContext);
+  const { playerStats } = useContext(GlobalContext);
+
   return (
     <div className="infos">
       <p>

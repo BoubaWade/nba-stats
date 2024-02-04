@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { Game } from "../components/Teams/teamsTypes";
-import { TeamsContext } from "../contexts/teamsContext";
+import { GlobalContext } from "../contexts/globalContext";
 
 export default function useGameCard(game: Game) {
   const [winned, setWinned] = useState(false);
-  const { teamFullName } = useContext(TeamsContext);
+  const { teamFullName } = useContext(GlobalContext);
   const { home_team, visitor_team, home_team_score, visitor_team_score } = game;
 
   useEffect(() => {

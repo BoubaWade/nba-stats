@@ -11,12 +11,10 @@ export default function Players() {
   const [dataPlayers, setDataPlayers] = useState<Player[]>([]);
   const [inputSearch, setSearchValue] = useState("");
   const [rangeValue, setRangeValue] = useState("100");
-  const [showSpecificPlayer, setShowSpecificPlayer] = useState(false);
-  const [playerStats, setPlayerStats] = useState<PlayerStats[]>([]);
-  // const [allPlayersID, setAllPlayersID] = useState<number[]>([]);
   const [playerStatsBySeason, setPlayerStatsBySeason] = useState<PlayerStats[]>(
     []
   );
+
   useEffect(() => {
     getAllPlayers(inputSearch, setDataPlayers);
   }, [inputSearch]);
@@ -30,14 +28,8 @@ export default function Players() {
     setDataPlayers,
     rangeValue,
     setRangeValue,
-    showSpecificPlayer,
-    setShowSpecificPlayer,
-    playerStats,
-    setPlayerStats,
     playerStatsBySeason,
     setPlayerStatsBySeason,
-    // allPlayersID,
-    // setAllPlayersID,
   };
 
   return (
