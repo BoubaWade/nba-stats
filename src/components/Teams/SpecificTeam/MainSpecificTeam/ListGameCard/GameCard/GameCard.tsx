@@ -4,20 +4,22 @@ import InfosHomeTeam from "./InfosHomeTeam";
 import InfosVisitorTeam from "./InfosVisitorTeam";
 import Scores from "./Scores";
 import useGameCard from "../../../../../../hooks/useGameCard";
-import React from "react";
-import { getStatsGame } from "../../../../../../service/apiCall";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { GlobalContext } from "../../../../../../contexts/globalContext";
+import { getStatsGame } from "../../../../../../service/apiCall";
 type GameCardProps = {
   game: Game;
 };
 
 export default function GameCard({ game }: GameCardProps) {
-  const dateFormatted = getDateFormated(game.date);
   const { winned } = useGameCard(game);
+  const { setStatsGame } = useContext(GlobalContext);
+  const dateFormatted = getDateFormated(game.date);
   const navigate = useNavigate();
 
   const handleClickCard = (e: React.MouseEvent<HTMLDivElement>) => {
-    getStatsGame(parseInt(e.currentTarget.id));
+    getStatsGame(parseInt(e.currentTarget.id), setStatsGame);
     navigate("/games");
   };
 

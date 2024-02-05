@@ -7,52 +7,69 @@ import { FaBasketballBall } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { PlayersContext } from "../../../contexts/playersContext";
-import { TeamsContext } from "../../../contexts/teamsContext";
+import { GlobalContext } from "../../../contexts/globalContext";
+
+const sidebarItems = [
+  {
+    icon: <TbPlayBasketball className="icon" />,
+    text: "Joueurs",
+    link: "/players",
+  },
+  {
+    icon: <BsMicrosoftTeams className="icon" />,
+    text: "Équipes",
+    link: "/teams",
+  },
+  {
+    icon: <GiBasketballJersey className="icon" />,
+    text: "Matchs",
+    link: "/games",
+  },
+  {
+    icon: <IoStatsChart className="icon" />,
+    text: "Statistiques",
+    link: "/stats",
+  },
+  {
+    icon: <FaBasketballBall className="icon" />,
+    text: "Saison",
+    link: "/season",
+  },
+  {
+    icon: <IoSettingsSharp className="icon" />,
+    text: "Réglages",
+    link: "/settings",
+  },
+];
 
 export default function SideBar() {
-  const { setShowSpecificPlayer } = useContext(PlayersContext);
-  const { setShowSpecificTeam } = useContext(TeamsContext);
-
+  const { setShowSpecificPlayer, setShowSpecificTeam } =
+    useContext(GlobalContext);
   const navigate = useNavigate();
 
-  const handleClickPlayersButton = () => {
+  // const handleClickPlayersButton = () => {
+  //   setShowSpecificPlayer(false);
+  //   navigate("/players");
+  // };
+  // const handleClickTeamsButton = () => {
+  //   setShowSpecificTeam(false);
+  //   navigate("/teams");
+  // };
+  const handleClickButton = (link: string) => {
     setShowSpecificPlayer(false);
-    navigate("/players");
-  };
-  const handleClickTeamsButton = () => {
     setShowSpecificTeam(false);
-    navigate("/teams");
+    navigate(link);
   };
   return (
     <div className="sidebar">
       <FaBasketballBall className="logo" />
       <img src="" />
       <ul className="sideBar-list">
-        <li onClick={handleClickPlayersButton}>
-          <TbPlayBasketball className="icon" />
-          Joueurs
-        </li>
-        <li onClick={handleClickTeamsButton}>
-          <BsMicrosoftTeams className="icon" />
-          Équipes
-        </li>
-        <li onClick={() => navigate("/games")}>
-          <GiBasketballJersey className="icon" />
-          Matchs
-        </li>
-        <li onClick={() => navigate("/stats")}>
-          <IoStatsChart className="icon" />
-          Statistiques
-        </li>
-        <li onClick={() => navigate("/season")}>
-          <FaBasketballBall className="icon" />
-          Saison
-        </li>
-        <li onClick={() => navigate("/settings")}>
-          <IoSettingsSharp className="icon" />
-          Réglages
-        </li>
+        {sidebarItems.map((item, index) => (
+          <li key={index} onClick={() => handleClickButton(item.link)}>
+            {item.icon} {item.text}
+          </li>
+        ))}
       </ul>
     </div>
   );

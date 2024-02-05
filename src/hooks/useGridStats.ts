@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { PlayersContext } from "../contexts/playersContext";
 import {
   getBlocks,
   getPasses,
@@ -7,9 +6,10 @@ import {
   getRebounds,
   getSpecificStatAverage,
 } from "../helpers/players";
+import { GlobalContext } from "../contexts/globalContext";
 
 export default function useGridStats() {
-  const { playerStats } = useContext(PlayersContext);
+  const { playerStats } = useContext(GlobalContext);
   const points = getPoints(playerStats);
   const passes = getPasses(playerStats);
   const rebounds = getRebounds(playerStats);

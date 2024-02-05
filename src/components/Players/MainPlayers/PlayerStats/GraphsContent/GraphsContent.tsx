@@ -8,10 +8,12 @@ import { getSpecificStat } from "../../../../../helpers/players";
 import { IoIosArrowDown } from "react-icons/io";
 import LineChart from "./LineChart";
 import BarChart from "./BarChart";
+import { GlobalContext } from "../../../../../contexts/globalContext";
 
 export default function GraphsContent() {
-  const { playerStats, playerStatsBySeason, setPlayerStatsBySeason } =
+  const { playerStatsBySeason, setPlayerStatsBySeason } =
     useContext(PlayersContext);
+  const { playerStats } = useContext(GlobalContext);
   const [specificStat, setSpecificStat] = useState<number[]>([]);
   const [statName, setStatName] = useState("");
   const [showLabelSeason, setShowLabelSeason] = useState(true);

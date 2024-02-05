@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { TeamsContext } from "../../../contexts/teamsContext";
 import { Team } from "../../Players/playersTypes";
+import { GlobalContext } from "../../../contexts/globalContext";
 const getLogoSourcePATH = (name: string) => {
   return `../../../../public/images/${name}.svg`;
 };
@@ -9,8 +9,8 @@ type TeamComponentProps = {
 };
 export default function TeamComponent({ team }: TeamComponentProps) {
   const { id, name, full_name } = team;
-  const { setShowSpecificTeam, setSpecificTeamID, setTeamFullName } =
-    useContext(TeamsContext);
+  const { setSpecificTeamID, setShowSpecificTeam, setTeamFullName } =
+    useContext(GlobalContext);
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     setSpecificTeamID(parseInt(e.currentTarget.id));

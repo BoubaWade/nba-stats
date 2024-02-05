@@ -2,26 +2,28 @@ import { PlayerStats, Team } from "../components/Players/playersTypes";
 import { divisionsName } from "../config/constants";
 
 export const getPoints = (array: PlayerStats[]): number[] => {
-  return array.map((stats) => stats.pts);
+  return array?.map((stats) => stats.pts);
 };
 
 export const getPasses = (array: PlayerStats[]): number[] => {
-  return array.map((stats) => stats.ast);
+  return array?.map((stats) => stats.ast);
 };
 export const getRebounds = (array: PlayerStats[]): number[] => {
-  return array.map((stats) => stats.reb);
+  return array?.map((stats) => stats.reb);
 };
 export const getBlocks = (array: PlayerStats[]): number[] => {
-  return array.map((stats) => stats.blk);
+  return array?.map((stats) => stats.blk);
 };
 
 export const getSpecificStatAverage = (array: number[]) => {
-  const sumOfArrayValues = array?.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    0
-  );
-  const average = sumOfArrayValues / array.length;
-  return average;
+  if (array) {
+    const sumOfArrayValues = array.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      0
+    );
+    const average = sumOfArrayValues / array.length;
+    return average;
+  }
 };
 
 export const getSpecificStat = (

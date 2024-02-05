@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import { TeamsContext } from "../../../contexts/teamsContext";
+import { GlobalContext } from "../../../contexts/globalContext";
 
 const getLogoSourcePATH = (name: string) => {
   return `../../../../public/images/${name}.svg`;
 };
 export default function LogoBackground() {
-  const { teams, specificTeamID } = useContext(TeamsContext);
+  const { teams, specificTeamID } = useContext(GlobalContext);
   const specificTeamData = teams.find((team) => team.id === specificTeamID);
+
   if (!specificTeamData) return;
   return (
     <img

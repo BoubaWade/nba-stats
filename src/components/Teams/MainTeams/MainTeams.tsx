@@ -1,11 +1,16 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import DivisionTeam from "./DivisionTeam";
 import { getAllDivisionsWithTeams } from "../../../helpers/players";
-import { TeamsContext } from "../../../contexts/teamsContext";
+import { GlobalContext } from "../../../contexts/globalContext";
+import { getAllTeams } from "../../../service/apiCall";
 
 export default function MainTeams() {
-  const { teams } = useContext(TeamsContext);
+  const { teams, setTeams } = useContext(GlobalContext);
   const divisionsWithTeams = getAllDivisionsWithTeams(teams);
+
+  useEffect(() => {
+    getAllTeams(setTeams);
+  }, []);
 
   return (
     <div className="main-teams">

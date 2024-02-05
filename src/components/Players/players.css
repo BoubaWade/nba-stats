@@ -3,3 +3,7 @@
     height: 100vh;
     overflow: hidden;
 }
+
+.players-container .players-button-cursor {
+    top: 176px;
+}
