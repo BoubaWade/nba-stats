@@ -6,6 +6,7 @@ import { PlayersContext } from "../../contexts/playersContext";
 import { useEffect, useState } from "react";
 import { PlayerStats, Player } from "./playersTypes";
 import { getAllPlayers } from "../../service/apiCall";
+import Cursor from "../reusable-ui/Cursor/Cursor";
 
 export default function Players() {
   const [dataPlayers, setDataPlayers] = useState<Player[]>([]);
@@ -41,6 +42,7 @@ export default function Players() {
           value={inputSearch}
           onChange={handleChange}
         />
+        <Cursor className="players-button-cursor" />
         <MainPlayers />
       </div>
     </PlayersContext.Provider>

@@ -1,0 +1,9 @@
+#cursor {
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 30px solid rgb(25, 30, 45);
+    transform: rotate(-90deg);
+    position: absolute;
+    left: 190px;
+    z-index: 1;
+}

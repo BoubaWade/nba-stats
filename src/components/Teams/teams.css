@@ -4,6 +4,10 @@
     overflow: hidden;
 }
 
+.teams-container .teams-button-cursor {
+    top: 240px;
+}
+
 .main-teams,
 .specificTeam-container {
     background: #c5d5e6;
@@ -106,7 +110,7 @@
 }
 
 .main-specificTeam .list-games-cards {
-    width: 95%;
+    width: 90%;
     margin: 20px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);

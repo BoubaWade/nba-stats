@@ -48,7 +48,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" Component={Home} />
-          <Route path="players" Component={Players} />
+          <Route path="/players" Component={Players} />
           <Route path="/teams" Component={Teams} />
           <Route path="/games" Component={Games} />
           <Route path="/stats" Component={Stats} />
