@@ -1,0 +1,39 @@
+.date-picker-container {
+    margin-top: 20px;
+}
+
+.date-picker-container p {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.date-range-picker {
+    width: 350px;
+    height: 40px;
+}
+
+.react-daterange-picker__wrapper {
+    border: 2px solid rgb(25, 30, 45);
+    border-radius: 5px;
+}
+
+.react-daterange-picker__wrapper .react-daterange-picker__inputGroup__input:invalid {
+    background: transparent;
+}
+
+.react-daterange-picker__inputGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.games-container .main-games .calendar-date-picker {
+    margin-top: 3px;
+    border: 2px solid rgb(25, 30, 45);
+    border-radius: 5px;
+}
+
+.games-container .main-games .calendar-date-picker .react-calendar__tile--active {
+    background-color: rgb(25, 30, 45);
+
+}

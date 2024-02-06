@@ -2,6 +2,7 @@ import React from "react";
 import { PlayerStats, Player, Team } from "../components/Players/playersTypes";
 import { Game } from "../components/Teams/teamsTypes";
 const baseURL = "https://www.balldontlie.io/api/v1";
+
 export const getAllPlayers = (
   query: string,
   setPlayers: (value: React.SetStateAction<Player[]>) => void
@@ -14,6 +15,7 @@ export const getAllPlayers = (
     console.error(error);
   }
 };
+
 export const getPlayerStatsBySeason = (
   playerId: number,
   season: number,
@@ -54,7 +56,24 @@ export const getAllTeams = (
     console.error(error);
   }
 };
-export const getGames = (
+type Range<T> = [T, T];
+type ValuePiece = Date | null;
+type Value = ValuePiece | Range<ValuePiece>;
+export const getAllGames = (
+  startDate: string,
+  endDate: string,
+  setGames: (value: React.SetStateAction<Game[]>) => void
+) => {
+  try {
+    fetch(`${baseURL}/games?start_date=${startDate}&end_date=${endDate}`)
+      .then((res) => res.json())
+      .then((result) => setGames(result.data));
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getSpecificTeamGames = (
   teamId: number,
   season: number,
   setGames: (value: React.SetStateAction<Game[]>) => void
@@ -67,14 +86,15 @@ export const getGames = (
     console.error(error);
   }
 };
-export const getStatsGame = (
+
+export const getGameStats = (
   gameId: number | undefined,
-  setStatsGame: (value: React.SetStateAction<PlayerStats[]>) => void
+  setGameStats: (value: React.SetStateAction<PlayerStats[]>) => void
 ) => {
   try {
     fetch(`${baseURL}/stats?game_ids[]=${gameId}`)
       .then((res) => res.json())
-      .then((result) => setStatsGame(result.data));
+      .then((result) => setGameStats(result.data));
   } catch (error) {
     console.error(error);
   }

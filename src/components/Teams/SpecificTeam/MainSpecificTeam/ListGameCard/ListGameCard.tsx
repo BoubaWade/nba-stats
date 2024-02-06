@@ -1,16 +1,25 @@
 import { useContext, useEffect } from "react";
 import { getGamesSortedByDate } from "../../../../../helpers/games";
-import { getGames } from "../../../../../service/apiCall";
+import { getSpecificTeamGames } from "../../../../../service/apiCall";
 import GameCard from "./GameCard/GameCard";
 import { GlobalContext } from "../../../../../contexts/globalContext";
 
 export default function ListGameCard() {
-  const { games, setGames, specificTeamID, yearOfTheGames } =
-    useContext(GlobalContext);
-  const gamesSortedByDate = getGamesSortedByDate(games);
+  const {
+    specificTeamGames,
+    setSpecificTeamGames,
+    specificTeamID,
+    yearOfTheGames,
+  } = useContext(GlobalContext);
+
+  const gamesSortedByDate = getGamesSortedByDate(specificTeamGames);
 
   useEffect(() => {
-    getGames(specificTeamID, parseInt(yearOfTheGames), setGames);
+    getSpecificTeamGames(
+      specificTeamID,
+      parseInt(yearOfTheGames),
+      setSpecificTeamGames
+    );
   }, [yearOfTheGames]);
 
   return (

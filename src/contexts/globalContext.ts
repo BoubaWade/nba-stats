@@ -9,8 +9,8 @@ type GlobalContextType = {
   setShowSpecificPlayer: React.Dispatch<React.SetStateAction<boolean>>;
   teams: Team[];
   setTeams: React.Dispatch<React.SetStateAction<Team[]>>;
-  games: Game[];
-  setGames: React.Dispatch<React.SetStateAction<Game[]>>;
+  specificTeamGames: Game[];
+  setSpecificTeamGames: React.Dispatch<React.SetStateAction<Game[]>>;
   specificTeamID: number;
   setSpecificTeamID: React.Dispatch<React.SetStateAction<number>>;
   yearOfTheGames: string;
@@ -19,8 +19,12 @@ type GlobalContextType = {
   setShowSpecificTeam: React.Dispatch<React.SetStateAction<boolean>>;
   teamFullName: string | null;
   setTeamFullName: React.Dispatch<React.SetStateAction<string | null>>;
-  statsGame: PlayerStats[];
-  setStatsGame: React.Dispatch<React.SetStateAction<PlayerStats[]>>;
+  gameStats: PlayerStats[];
+  setGameStats: React.Dispatch<React.SetStateAction<PlayerStats[]>>;
+  showAllGames: boolean;
+  setShowAllGames: React.Dispatch<React.SetStateAction<boolean>>;
+  games: Game[];
+  setGames: React.Dispatch<React.SetStateAction<Game[]>>;
 };
 
 export const GlobalContext = createContext<GlobalContextType>({
@@ -30,8 +34,8 @@ export const GlobalContext = createContext<GlobalContextType>({
   setShowSpecificPlayer: () => {},
   teams: [],
   setTeams: () => {},
-  games: [],
-  setGames: () => {},
+  specificTeamGames: [],
+  setSpecificTeamGames: () => {},
   specificTeamID: 0,
   setSpecificTeamID: () => {},
   yearOfTheGames: "",
@@ -40,6 +44,10 @@ export const GlobalContext = createContext<GlobalContextType>({
   setShowSpecificTeam: () => {},
   teamFullName: "",
   setTeamFullName: () => {},
-  statsGame: [],
-  setStatsGame: () => {},
+  gameStats: [],
+  setGameStats: () => {},
+  showAllGames: true,
+  setShowAllGames: () => {},
+  games: [],
+  setGames: () => {},
 });
