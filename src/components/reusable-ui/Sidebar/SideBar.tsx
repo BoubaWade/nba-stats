@@ -43,7 +43,7 @@ const sidebarItems = [
 ];
 
 export default function SideBar() {
-  const { setShowSpecificPlayer, setShowSpecificTeam } =
+  const { setShowAllGames, setShowSpecificPlayer, setShowSpecificTeam } =
     useContext(GlobalContext);
   const navigate = useNavigate();
 
@@ -59,6 +59,7 @@ export default function SideBar() {
     setShowSpecificPlayer(false);
     setShowSpecificTeam(false);
     navigate(link);
+    setShowAllGames(true);
   };
   return (
     <div className="sidebar">

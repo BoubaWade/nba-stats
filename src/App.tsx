@@ -19,8 +19,10 @@ function App() {
   const [yearOfTheGames, setYearOfTheGames] = useState("2023");
   const [showSpecificTeam, setShowSpecificTeam] = useState(false);
   const [teamFullName, setTeamFullName] = useState<string | null>(null);
+  const [specificTeamGames, setSpecificTeamGames] = useState<Game[]>([]);
+  const [gameStats, setGameStats] = useState<PlayerStats[]>([]);
+  const [showAllGames, setShowAllGames] = useState(true);
   const [games, setGames] = useState<Game[]>([]);
-  const [statsGame, setStatsGame] = useState<PlayerStats[]>([]);
 
   const globalContextValue = {
     playerStats,
@@ -37,10 +39,14 @@ function App() {
     setShowSpecificTeam,
     teamFullName,
     setTeamFullName,
+    specificTeamGames,
+    setSpecificTeamGames,
+    gameStats,
+    setGameStats,
+    showAllGames,
+    setShowAllGames,
     games,
     setGames,
-    statsGame,
-    setStatsGame,
   };
 
   return (
