@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { PlayersContext } from "../../../contexts/playersContext";
+import { PlayersContext } from "../../../../contexts/playersContext";
 
 export default function InputRange() {
   const { rangeValue, setRangeValue } = useContext(PlayersContext);

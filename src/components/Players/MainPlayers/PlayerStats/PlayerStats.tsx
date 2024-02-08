@@ -1,6 +1,4 @@
 import "./playerStats.css";
-// import { useContext } from "react";
-// import { PlayersContext } from "../../../../contexts/playersContext";
 import Banner from "./Banner/Banner";
 import GridStats from "./GridStats/GridStats";
 import GraphsContent from "./GraphsContent/GraphsContent";
