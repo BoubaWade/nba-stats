@@ -15,15 +15,15 @@ export const getBlocks = (array: PlayerStats[]): number[] => {
   return array?.map((stats) => stats.blk);
 };
 
-export const getSpecificStatAverage = (array: number[]) => {
-  if (array) {
-    const sumOfArrayValues = array.reduce(
-      (accumulator, currentValue) => accumulator + currentValue,
-      0
-    );
-    const average = sumOfArrayValues / array.length;
-    return average;
-  }
+export const getSpecificStatAverage = (array: number[]): number => {
+  // if (array) {
+  const sumOfArrayValues = array.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+  const average = sumOfArrayValues / array.length;
+  return average;
+  // }
 };
 
 export const getSpecificStat = (
