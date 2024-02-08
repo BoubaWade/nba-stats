@@ -56,9 +56,7 @@ export const getAllTeams = (
     console.error(error);
   }
 };
-type Range<T> = [T, T];
-type ValuePiece = Date | null;
-type Value = ValuePiece | Range<ValuePiece>;
+
 export const getAllGames = (
   startDate: string,
   endDate: string,
