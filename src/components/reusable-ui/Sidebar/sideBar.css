@@ -10,8 +10,7 @@
 }
 
 .sidebar .logo {
-    color: white;
-    font-size: 60px;
+    width: 100px;
 }
 
 .sideBar-list {
@@ -29,7 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 300;
     color: white;
     padding: 10px 0;

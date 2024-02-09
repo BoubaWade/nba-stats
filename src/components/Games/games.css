@@ -1,4 +1,5 @@
 .games-container {
+    /* background: url("../../images/nba_logo.svg") no-repeat center/cover; */
     background-color: #c5d5e6;
     width: 100vw;
     height: 100vh;
@@ -29,15 +30,30 @@
     width: 90%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 3%;
+    gap: 15px;
+    margin: 40px 0;
 }
 
-.all-games-container .list-games-container .game-card {
+.all-games-container .list-games-container .preview-game-card {
+    background: rgb(25, 30, 45);
+    height: 170px;
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 5px;
+    color: white;
+}
 
+.list-games-container .preview-game-card .logo-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-games-container .preview-game-card .logo-name .image {
+    width: 80px;
 }
 
 .games-container .main-games .return-button {

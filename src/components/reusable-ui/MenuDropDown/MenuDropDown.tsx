@@ -1,4 +1,3 @@
-import { IoIosArrowDown } from "react-icons/io";
 import "./menuDropDown.css";
 import { MenuSelect } from "react-menu-dropdown-list";
 
@@ -22,7 +21,7 @@ export default function MenuDropDown({
       {showLabel && (
         <div className="label-container">
           <label>{label}</label>
-          <IoIosArrowDown className="arrow" />
+          {/* <IoIosArrowDown className="arrow" /> */}
         </div>
       )}
       <MenuSelect

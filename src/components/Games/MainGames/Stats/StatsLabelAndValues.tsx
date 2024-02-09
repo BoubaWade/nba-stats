@@ -1,4 +1,4 @@
-import { statslabelsAndValues } from "../../../../helpers/config";
+import { getStatslabelsAndValues } from "../../../../config/config";
 import { PlayerStats } from "../../../Players/playersTypes";
 
 type LabelAndValuesProps = {
@@ -6,11 +6,11 @@ type LabelAndValuesProps = {
 };
 
 export default function StatsLabelAndValues({ stats }: LabelAndValuesProps) {
-  const StatslabelsAndValues = statslabelsAndValues(stats);
+  const statslabelsAndValues = getStatslabelsAndValues(stats);
 
   return (
     <>
-      {StatslabelsAndValues.map(({ label, value }) => (
+      {statslabelsAndValues.map(({ label, value }) => (
         <p key={label}>
           {label} : <span>{value}</span>
         </p>

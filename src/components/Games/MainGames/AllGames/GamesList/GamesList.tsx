@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../../../../contexts/globalContext";
-import GameListItem from "./GameListItem";
+import PreviewGameCard from "./PreviewGameCard";
 
 export default function GamesList() {
   const { games } = useContext(GlobalContext);
@@ -8,7 +8,7 @@ export default function GamesList() {
   return (
     <ul className="list-games-container">
       {games.map((game) => (
-        <GameListItem key={game.id} game={game} />
+        <PreviewGameCard key={game.id} game={game} />
       ))}
     </ul>
   );
