@@ -75,6 +75,7 @@
 
 .divisions-container .division .team .text-name:hover {
     transform: scale(1.07);
+    transform-origin: right;
     text-decoration: overline;
 }
 

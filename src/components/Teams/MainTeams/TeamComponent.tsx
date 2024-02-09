@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Team } from "../../Players/playersTypes";
 import { GlobalContext } from "../../../contexts/globalContext";
-const getLogoSourcePATH = (name: string) => {
+const getLogoPATH = (name: string) => {
   return `../../../../public/images/${name}.svg`;
 };
 type TeamComponentProps = {
@@ -17,9 +17,10 @@ export default function TeamComponent({ team }: TeamComponentProps) {
     setTeamFullName(e.currentTarget.textContent);
     setShowSpecificTeam(true);
   };
+
   return (
     <div className="team">
-      <img src={getLogoSourcePATH(name)} />
+      <img src={getLogoPATH(name)} />
       <span className="text-name" id={id.toString()} onClick={handleClick}>
         {full_name}
       </span>
