@@ -16,3 +16,10 @@ export const getGamesSortedByDate = (array: Game[]): Game[] => {
     (a, b) => (new Date(b.date) as any) - (new Date(a.date) as any)
   );
 };
+
+export const formatDateString = (value: string): string => {
+  const splitValue = value.split("-");
+  const [year, month, day] = splitValue;
+  const result = [day, month, year].join("/");
+  return result;
+};

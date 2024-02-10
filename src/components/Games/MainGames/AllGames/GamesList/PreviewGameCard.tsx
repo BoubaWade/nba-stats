@@ -1,3 +1,4 @@
+import GameCard from "../../../../Teams/SpecificTeam/MainSpecificTeam/ListGameCard/GameCard/GameCard";
 import { Game } from "../../../../Teams/teamsTypes";
 import LogoAndName from "../../../../reusable-ui/LogoAndName/LogoAndName";
 import DateAndTime from "./DateAndTime";
@@ -8,20 +9,23 @@ type GameListItemProps = {
   game: Game;
 };
 
-export default function GameListItem({ game }: GameListItemProps) {
+export default function PreviewGameCard({ game }: GameListItemProps) {
   const { visitor_team, home_team } = game;
+
   return (
-    <li className="game-card">
+    <li className="preview-game-card">
       <LogoAndName
-        className="visitor-team"
+        className="logo-name"
         src={getLogoPATH(visitor_team.name)}
         name={visitor_team.name}
+        classNameImage="image"
       />
-      <DateAndTime />
+      <DateAndTime game={game} />
       <LogoAndName
-        className="home-team"
+        className="logo-name"
         src={getLogoPATH(home_team.name)}
         name={home_team.name}
+        classNameImage="image"
       />
     </li>
   );

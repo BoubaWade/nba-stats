@@ -10,10 +10,11 @@ type TitleImageProps = {
 
 export default function TitleAndBgImage({ stats, onClick }: TitleImageProps) {
   const { first_name, last_name } = stats.player;
+  const { name } = stats.team;
 
   return (
     <>
-      <img src={getPATH(stats.team.name)} onClick={onClick} />
+      <img src={getPATH(name)} onClick={onClick} />
       <h3>
         {first_name} {last_name}
       </h3>

@@ -11,7 +11,6 @@ export default function ListGameCard() {
     specificTeamID,
     yearOfTheGames,
   } = useContext(GlobalContext);
-
   const gamesSortedByDate = getGamesSortedByDate(specificTeamGames);
 
   useEffect(() => {

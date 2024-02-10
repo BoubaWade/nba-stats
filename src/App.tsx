@@ -7,47 +7,10 @@ import Stats from "./components/Stats/Stats";
 import Season from "./components/Season/Season";
 import Home from "./components/Home/Home";
 import { GlobalContext } from "./contexts/globalContext";
-import { useState } from "react";
-import { PlayerStats, Team } from "./components/Players/playersTypes";
-import { Game } from "./components/Teams/teamsTypes";
+import useApp from "./hooks/useApp";
 
 function App() {
-  const [playerStats, setPlayerStats] = useState<PlayerStats[]>([]);
-  const [showSpecificPlayer, setShowSpecificPlayer] = useState(false);
-  const [teams, setTeams] = useState<Team[]>([]);
-  const [specificTeamID, setSpecificTeamID] = useState(0);
-  const [yearOfTheGames, setYearOfTheGames] = useState("2023");
-  const [showSpecificTeam, setShowSpecificTeam] = useState(false);
-  const [teamFullName, setTeamFullName] = useState<string | null>(null);
-  const [specificTeamGames, setSpecificTeamGames] = useState<Game[]>([]);
-  const [gameStats, setGameStats] = useState<PlayerStats[]>([]);
-  const [showAllGames, setShowAllGames] = useState(true);
-  const [games, setGames] = useState<Game[]>([]);
-
-  const globalContextValue = {
-    playerStats,
-    setPlayerStats,
-    showSpecificPlayer,
-    setShowSpecificPlayer,
-    teams,
-    setTeams,
-    specificTeamID,
-    setSpecificTeamID,
-    yearOfTheGames,
-    setYearOfTheGames,
-    showSpecificTeam,
-    setShowSpecificTeam,
-    teamFullName,
-    setTeamFullName,
-    specificTeamGames,
-    setSpecificTeamGames,
-    gameStats,
-    setGameStats,
-    showAllGames,
-    setShowAllGames,
-    games,
-    setGames,
-  };
+  const { globalContextValue } = useApp();
 
   return (
     <GlobalContext.Provider value={globalContextValue}>
