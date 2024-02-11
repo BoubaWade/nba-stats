@@ -18,12 +18,6 @@ export type Team = {
   division: string;
 };
 
-export type NavBarProps = {
-  placeholder: string;
-  value: string;
-  onChange: (value: string) => void;
-};
-
 export type PlayerStats = {
   ast: number;
   blk: number;

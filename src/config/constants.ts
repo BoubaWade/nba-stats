@@ -12,7 +12,9 @@ export const seasons = [
   2014 + "-" + 2015,
 ];
 export const statOptions = ["", "Points", "Passes", "Rebonds", "Contres"];
+
 export const graphs = ["", "Barre", "Ligne"];
+
 export const divisionsName = [
   "Atlantic",
   "Southeast",
@@ -21,3 +23,7 @@ export const divisionsName = [
   "Northwest",
   "Pacific",
 ];
+
+export const STATUS_AFTER_GAME = "Final";
+export const PERIOD_CURRENT_GAME = [1, 2, 3, 4];
+export const PERIOD_BEFORE_GAME = 0;

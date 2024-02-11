@@ -1,15 +1,17 @@
-import { Game } from "../../../../teamsTypes";
+import { Team } from "../../../../../Players/playersTypes";
 const getLogoPATH = (name: string) => {
   return `../../../../../../public/images/${name}.svg`;
 };
 type InfosTeamCardProps = {
-  game: Game;
+  team: Team;
 };
-export default function InfosVisitorTeam({ game }: InfosTeamCardProps) {
+export default function InfosVisitorTeam({ team }: InfosTeamCardProps) {
+  const { abbreviation, name } = team;
+
   return (
     <div className="team-infos">
-      <h3 className="abbreviation-name">{game.visitor_team.abbreviation}</h3>
-      <img className="logo" src={getLogoPATH(game.visitor_team.name)} />
+      <h3 className="abbreviation-name">{abbreviation}</h3>
+      <img className="logo" src={getLogoPATH(name)} />
     </div>
   );
 }
