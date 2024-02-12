@@ -2,7 +2,7 @@ import { PlayerStats } from "../components/Players/playersTypes";
 
 export const getStatslabelsAndValues = (stats: PlayerStats) => {
   return [
-    { label: "Temps de jeu", value: stats.min },
+    { label: "Temps de jeu", value: ` ${stats.min} min` },
     { label: "Points", value: stats.pts },
     { label: "Rebonds", value: stats.reb },
     { label: "Passes", value: stats.ast },

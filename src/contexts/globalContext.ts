@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { PlayerStats, Team } from "../components/Players/playersTypes";
-import { Game } from "../components/Teams/teamsTypes";
+import { Game, Value } from "../components/Teams/teamsTypes";
 
 type GlobalContextType = {
   playerStats: PlayerStats[];
@@ -17,6 +17,8 @@ type GlobalContextType = {
   setYearOfTheGames: React.Dispatch<React.SetStateAction<string>>;
   showSpecificTeam: boolean;
   setShowSpecificTeam: React.Dispatch<React.SetStateAction<boolean>>;
+  dateRangeForSpecificTeamGames: Value;
+  setDateRangeForSpecificTeamGames: React.Dispatch<React.SetStateAction<Value>>;
   teamFullName: string | null;
   setTeamFullName: React.Dispatch<React.SetStateAction<string | null>>;
   gameStats: PlayerStats[];
@@ -42,6 +44,8 @@ export const GlobalContext = createContext<GlobalContextType>({
   setYearOfTheGames: () => {},
   showSpecificTeam: false,
   setShowSpecificTeam: () => {},
+  dateRangeForSpecificTeamGames: null,
+  setDateRangeForSpecificTeamGames: () => {},
   teamFullName: "",
   setTeamFullName: () => {},
   gameStats: [],

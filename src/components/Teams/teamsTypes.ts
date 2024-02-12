@@ -13,3 +13,12 @@ export type Game = {
   visitor_team: Team;
   visitor_team_score: number;
 };
+
+type ValuePiece = Date | null;
+export type Value = ValuePiece | [ValuePiece, ValuePiece];
+
+export type GameSearchParams = {
+  teamId: number;
+  startDate: string;
+  endDate: string;
+};

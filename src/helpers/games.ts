@@ -26,7 +26,12 @@ export const getDateWithHour = (date: Date | string) => {
   return getDateFormatedWithOptions(date, options);
 };
 
-export const getGamesSortedByDate = (array: Game[]): Game[] => {
+export const sortAscendingByDate = (array: Game[]): Game[] => {
+  return array.sort(
+    (a, b) => (new Date(a.date) as any) - (new Date(b.date) as any)
+  );
+};
+export const sortDescendingByDate = (array: Game[]): Game[] => {
   return array.sort(
     (a, b) => (new Date(b.date) as any) - (new Date(a.date) as any)
   );
@@ -47,4 +52,18 @@ export const getGameStatus = (status: string) => {
     default:
       return null;
   }
+};
+
+export const sortGamesByStatus = (games: Game[]) => {
+  const notFinishedGames = games.filter((game) => game.status !== "Final");
+  const finishedGames = games.filter((game) => game.status === "Final");
+
+  return [...notFinishedGames, ...finishedGames];
+};
+
+export const formatDate = (date: Date): string => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 };

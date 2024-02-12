@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PlayerStats, Team } from "../components/Players/playersTypes";
-import { Game } from "../components/Teams/teamsTypes";
+import { Game, Value } from "../components/Teams/teamsTypes";
+import { oneWeekAfter, oneWeekBefore } from "../config/constants";
 
 export default function useApp() {
   const [playerStats, setPlayerStats] = useState<PlayerStats[]>([]);
@@ -11,6 +12,8 @@ export default function useApp() {
   const [showSpecificTeam, setShowSpecificTeam] = useState(false);
   const [teamFullName, setTeamFullName] = useState<string | null>(null);
   const [specificTeamGames, setSpecificTeamGames] = useState<Game[]>([]);
+  const [dateRangeForSpecificTeamGames, setDateRangeForSpecificTeamGames] =
+    useState<Value>([oneWeekBefore, oneWeekAfter]);
   const [gameStats, setGameStats] = useState<PlayerStats[]>([]);
   const [showAllGames, setShowAllGames] = useState(true);
   const [games, setGames] = useState<Game[]>([]);
@@ -32,6 +35,8 @@ export default function useApp() {
     setTeamFullName,
     specificTeamGames,
     setSpecificTeamGames,
+    dateRangeForSpecificTeamGames,
+    setDateRangeForSpecificTeamGames,
     gameStats,
     setGameStats,
     showAllGames,
