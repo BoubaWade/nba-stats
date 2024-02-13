@@ -1,19 +1,14 @@
-import { useContext } from "react";
-import { GlobalContext } from "../../../../../contexts/globalContext";
 import PreviewGameCard from "./PreviewGameCard";
-import {
-  sortAscendingByDate,
-  sortGamesByStatus,
-} from "../../../../../helpers/games";
+import { Game } from "../../../../Teams/teamsTypes";
+// import { sortGamesByStatus } from "../../../../../helpers/games";
+type GamesListProps = {
+  gamesToDisplay: Game[];
+};
 
-export default function GamesList() {
-  const { games } = useContext(GlobalContext);
-  const gamesSortedByDate = sortAscendingByDate(games);
-  const gameSortedByStatus = sortGamesByStatus(gamesSortedByDate);
-
+export default function GamesList({ gamesToDisplay }: GamesListProps) {
   return (
     <ul className="list-games-container">
-      {gameSortedByStatus.map((game) => (
+      {gamesToDisplay.map((game) => (
         <PreviewGameCard key={game.id} game={game} />
       ))}
     </ul>
