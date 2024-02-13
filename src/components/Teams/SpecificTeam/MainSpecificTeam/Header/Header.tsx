@@ -1,19 +1,18 @@
 import { useContext, useEffect, useState } from "react";
-import { oneWeekAfter, oneWeekBefore } from "../../../../../config/constants";
 import { GlobalContext } from "../../../../../contexts/globalContext";
 import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import { Value } from "../../../teamsTypes";
 
 export default function Header() {
-  const { setDateRangeForSpecificTeamGames, teamFullName } =
-    useContext(GlobalContext);
-  const [value, onChange] = useState<Value>([oneWeekBefore, oneWeekAfter]);
+  const {
+    dateRangeForSpecificTeamGames,
+    setDateRangeForSpecificTeamGames,
+    teamFullName,
+  } = useContext(GlobalContext);
+  const [value, onChange] = useState<Value>(dateRangeForSpecificTeamGames);
 
   useEffect(() => {
-    if (value !== null) {
-      setDateRangeForSpecificTeamGames(value);
-      localStorage.setItem("rangeDateVAlue", JSON.stringify(value));
-    }
+    if (value !== null) setDateRangeForSpecificTeamGames(value);
   }, [value]);
 
   return (

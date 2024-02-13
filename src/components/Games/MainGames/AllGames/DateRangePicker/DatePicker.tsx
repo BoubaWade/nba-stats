@@ -5,26 +5,26 @@ import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import { useContext, useEffect, useState } from "react";
 import { getAllGames } from "../../../../../service/apiCall";
 import { GlobalContext } from "../../../../../contexts/globalContext";
-
-type ValuePiece = Date | null;
-type Value = ValuePiece | [ValuePiece, ValuePiece];
-
-export const formatDate = (date: Date) => {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-};
+import { Value } from "../../../../Teams/teamsTypes";
+import { formatDate } from "../../../../../helpers/games";
 
 export default function DatePicker() {
-  const { setGames } = useContext(GlobalContext);
-  const [value, onChange] = useState<Value>([new Date(), new Date()]);
-
-  const startDate = formatDate(value[0]);
-  const endDate = formatDate(value[1]);
+  const { dateRangeForAllGames, setDateRangeForAllGames, setGames } =
+    useContext(GlobalContext);
+  const [value, onChange] = useState<Value>(dateRangeForAllGames);
 
   useEffect(() => {
-    getAllGames(startDate, endDate, setGames);
+    if (value) {
+      setDateRangeForAllGames(value);
+      const startDate = formatDate(
+        Array.isArray(value) ? value[0] ?? new Date() : value
+      );
+      const endDate = formatDate(
+        Array.isArray(value) ? value[1] ?? new Date() : value
+      );
+
+      getAllGames(startDate, endDate, setGames);
+    }
   }, [value]);
 
   return (

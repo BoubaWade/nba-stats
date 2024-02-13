@@ -13,16 +13,24 @@ export default function ListGameCard() {
   } = useContext(GlobalContext);
   const gamesSortedByDate = sortDescendingByDate(specificTeamGames);
 
-  const startDate = formatDate(dateRangeForSpecificTeamGames[0]);
-  const endDate = formatDate(dateRangeForSpecificTeamGames[1]);
-
-  const searchParams = {
-    teamId: specificTeamID,
-    startDate: startDate,
-    endDate: endDate,
-  };
   useEffect(() => {
-    getSpecificTeamGames(searchParams, setSpecificTeamGames);
+    if (dateRangeForSpecificTeamGames) {
+      let value = dateRangeForSpecificTeamGames;
+      const startDate = formatDate(
+        Array.isArray(value) ? value[0] ?? new Date() : value
+      );
+      const endDate = formatDate(
+        Array.isArray(value) ? value[1] ?? new Date() : value
+      );
+
+      const searchParams = {
+        teamId: specificTeamID,
+        startDate: startDate,
+        endDate: endDate,
+      };
+
+      getSpecificTeamGames(searchParams, setSpecificTeamGames);
+    }
   }, [dateRangeForSpecificTeamGames]);
 
   return (
