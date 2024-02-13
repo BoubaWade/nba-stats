@@ -1,6 +1,6 @@
 import React from "react";
 import { PlayerStats, Player, Team } from "../components/Players/playersTypes";
-import { Game } from "../components/Teams/teamsTypes";
+import { Game, GameSearchParams } from "../components/Teams/teamsTypes";
 const baseURL = "https://www.balldontlie.io/api/v1";
 
 export const getAllPlayers = (
@@ -72,18 +72,37 @@ export const getAllGames = (
 };
 
 export const getSpecificTeamGames = (
-  teamId: number,
-  season: number,
+  searchParams: GameSearchParams,
   setGames: (value: React.SetStateAction<Game[]>) => void
 ) => {
   try {
-    fetch(`${baseURL}/games/?seasons[]=${season}&team_ids[]=${teamId}`)
+    const { teamId, startDate, endDate } = searchParams;
+    fetch(
+      `${baseURL}/games/?start_date=${startDate}&end_date=${endDate}&team_ids[]=${teamId}`
+    )
       .then((res) => res.json())
       .then((result) => setGames(result.data));
   } catch (error) {
     console.error(error);
   }
 };
+
+// export const getSpecificGames = (
+//   teamId: number,
+//   startDate: string,
+//   endDate: string,
+//   setGames: (value: React.SetStateAction<Game[]>) => void
+// ) => {
+//   try {
+//     fetch(
+//       `${baseURL}/games?team_ids[]=${teamId}&start_date=${startDate}&end_date=${endDate}`
+//     )
+//       .then((res) => res.json())
+//       .then((result) => setGames(result.data));
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
 
 export const getGameStats = (
   gameId: number | undefined,

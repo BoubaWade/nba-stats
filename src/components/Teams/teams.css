@@ -94,21 +94,35 @@
 }
 
 .specificTeam-container .main-specificTeam .header {
-    width: 95%;
+    width: 90%;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin: 40px auto 0;
+}
+
+.specificTeam-container .main-specificTeam .header .react-daterange-picker__wrapper {
+    border: 2px solid rgb(25, 30, 45);
+    border-radius: 5px;
+    background: white;
+    color: black;
+}
+
+.specificTeam-container .main-specificTeam .calendar-date-picker {
+    margin-top: 3px;
+    border: 2px solid rgb(25, 30, 45);
+    border-radius: 5px;
 }
 
 .specificTeam-container .main-specificTeam .header .team-name {
     font-size: 22px;
 }
 
-.specificTeam-container .main-specificTeam .header .label-menu-select {
-    font-size: 14px;
+.specificTeam-container .main-specificTeam .header .label-date-range {
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 .main-specificTeam .list-games-cards {
@@ -121,8 +135,32 @@
     z-index: 1;
 }
 
+.main-specificTeam .list-games-cards .preview-game-card {
+    background: rgb(25, 30, 45);
+    height: 170px;
+    border: 1px solid #2667ac;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 7px;
+    color: white;
+    padding: 0 15px;
+}
+
+.main-specificTeam .list-games-cards .preview-game-card .logo-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-specificTeam .list-games-cards .preview-game-card .logo-name .image {
+    width: 70px;
+}
+
+
 .main-specificTeam .game-card {
-    background: linear-gradient(180deg, #e6a4a4 0%, #dd3737 100%);
+    background: linear-gradient(180deg, #eae8e8 0%, #b6b5b5 100%);
     min-width: 295px;
     max-width: 400px;
     height: 170px;
@@ -138,6 +176,11 @@
 
 .main-specificTeam .game-card.winned {
     background: linear-gradient(180deg, #bef4c7 0%, #1c9d34 100%);
+}
+
+.main-specificTeam .game-card.losed {
+    background: linear-gradient(180deg, #e6a4a4 0%, #dd3737 100%);
+
 }
 
 .main-specificTeam .game-card .date {

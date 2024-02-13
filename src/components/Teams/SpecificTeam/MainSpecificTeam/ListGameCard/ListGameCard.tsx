@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { getGamesSortedByDate } from "../../../../../helpers/games";
+import { formatDate, sortDescendingByDate } from "../../../../../helpers/games";
 import { getSpecificTeamGames } from "../../../../../service/apiCall";
 import GameCard from "./GameCard/GameCard";
 import { GlobalContext } from "../../../../../contexts/globalContext";
@@ -9,17 +9,29 @@ export default function ListGameCard() {
     specificTeamGames,
     setSpecificTeamGames,
     specificTeamID,
-    yearOfTheGames,
+    dateRangeForSpecificTeamGames,
   } = useContext(GlobalContext);
-  const gamesSortedByDate = getGamesSortedByDate(specificTeamGames);
+  const gamesSortedByDate = sortDescendingByDate(specificTeamGames);
 
   useEffect(() => {
-    getSpecificTeamGames(
-      specificTeamID,
-      parseInt(yearOfTheGames),
-      setSpecificTeamGames
-    );
-  }, [yearOfTheGames]);
+    if (dateRangeForSpecificTeamGames) {
+      let value = dateRangeForSpecificTeamGames;
+      const startDate = formatDate(
+        Array.isArray(value) ? value[0] ?? new Date() : value
+      );
+      const endDate = formatDate(
+        Array.isArray(value) ? value[1] ?? new Date() : value
+      );
+
+      const searchParams = {
+        teamId: specificTeamID,
+        startDate: startDate,
+        endDate: endDate,
+      };
+
+      getSpecificTeamGames(searchParams, setSpecificTeamGames);
+    }
+  }, [dateRangeForSpecificTeamGames]);
 
   return (
     <ul className="list-games-cards">

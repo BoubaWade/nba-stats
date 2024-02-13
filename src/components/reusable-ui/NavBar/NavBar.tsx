@@ -1,6 +1,10 @@
 import "./navBar.css";
-import { NavBarProps } from "../../Players/playersTypes";
 
+type NavBarProps = {
+  placeholder: string;
+  value: string;
+  onChange: (value: string) => void;
+};
 export default function NavBar({ placeholder, value, onChange }: NavBarProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value as string);
