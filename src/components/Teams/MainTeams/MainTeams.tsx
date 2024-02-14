@@ -14,6 +14,7 @@ export default function MainTeams() {
 
   return (
     <div className="main-teams">
+      <h2>Liste des équipes par division</h2>
       <div className="divisions-container">
         {divisionsWithTeams.map((division, index) => (
           <DivisionTeam key={index} division={division} />
