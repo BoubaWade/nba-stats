@@ -1,8 +1,10 @@
+import "../../../../../animations/gamesAnimations.css";
 import { useContext, useEffect } from "react";
 import { formatDate, sortDescendingByDate } from "../../../../../helpers/games";
 import { getSpecificTeamGames } from "../../../../../service/apiCall";
 import GameCard from "./GameCard/GameCard";
 import { GlobalContext } from "../../../../../contexts/globalContext";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 export default function ListGameCard() {
   const {
@@ -34,10 +36,19 @@ export default function ListGameCard() {
   }, [dateRangeForSpecificTeamGames]);
 
   return (
-    <ul className="list-games-cards">
+    // <ul>
+    <TransitionGroup className="list-games-cards">
       {gamesSortedByDate.map((game) => (
-        <GameCard key={game.id} game={game} />
+        <CSSTransition
+          key={game.id}
+          timeout={1000}
+          classNames="game-card"
+          appear={true}
+        >
+          <GameCard key={game.id} game={game} />
+        </CSSTransition>
       ))}
-    </ul>
+    </TransitionGroup>
+    // </ul>
   );
 }

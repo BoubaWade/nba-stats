@@ -34,7 +34,7 @@
     margin: 40px 0;
 }
 
-.all-games-container .list-games-container .preview-game-card {
+/* .all-games-container .list-games-container .preview-game-card {
     background: rgb(25, 30, 45);
     height: 170px;
     border: 1px solid #2667ac;
@@ -61,10 +61,10 @@
     font-size: 14px;
     text-align: center;
 
-}
+} */
 
 /* /------------------------------------------------------ */
-.list-games-container .game-card {
+/* .list-games-container .game-card {
     background: linear-gradient(180deg, #e6a4a4 0%, #dd3737 100%);
     min-width: 295px;
     max-width: 400px;
@@ -115,7 +115,7 @@
     justify-content: space-around;
     font-size: 22px;
     font-weight: 700;
-}
+} */
 
 /* /------------------------------------------------------ */
 

@@ -1,0 +1,105 @@
+.preview-game-card-appear {
+    /* opacity: 0.5; */
+    transform: translateX(1500px);
+}
+
+
+.preview-game-card-appear-active {
+    /* opacity: 0.8; */
+    /* transition: opacity 5000ms; */
+    transform: translateX(0);
+    transition: transform 500ms;
+}
+
+.preview-game-card-appear-done {
+    /* opacity: 1; */
+
+}
+
+.preview-game-card-enter {
+    /* opacity: 0; */
+    transform: translateX(1500px);
+}
+
+
+.preview-game-card-enter-active {
+    /* opacity: 0.5; */
+    /* transition: opacity 5000ms; */
+    transform: translateX(0);
+    transition: transform 500ms;
+}
+
+.preview-game-card-enter-done {
+    /* opacity: 1; */
+    transform: translateX(0);
+}
+
+.preview-game-card-exit {
+    transform: translateX(0);
+}
+
+.preview-game-card-exit-active {
+    transform: translateX(1500px);
+    transition: transform 500ms;
+}
+
+.preview-game-card-exit-done {
+    transform: translateX(1500px);
+}
+
+/*--------------------------------------------*/
+.game-card-appear {
+    /* opacity: 0; */
+    transform: translateY(500px);
+}
+
+.game-card-appear-active {
+    /* opacity: 1; */
+    /* transition: opacity 5000ms; */
+    transform: translateY(0);
+    transition: transform 500ms;
+}
+
+.game-card-appear-done {}
+
+.game-card-enter {
+    /* opacity: 0; */
+    transform: translateY(1500px);
+}
+
+.game-card-enter-active {
+    /* opacity: 1; */
+    /* transition: opacity 5000ms; */
+    transform: translateY(0);
+    transition: transform 1000ms;
+
+}
+
+.game-card-enter-done {
+    /* opacity: 1; */
+    transform: translateY(0);
+
+}
+
+.game-card-exit {
+    /* opacity: 0;
+    transform: translateY(500px); */
+    transform: translateY(0);
+}
+
+.game-card-exit-active {
+    /* opacity: 1; */
+    /* transition: opacity 5000ms; */
+    /* transform: translateY(0);
+    transition: transform 500ms; */
+    transition: transform 1000ms;
+    transform: translateY(1500px);
+
+
+}
+
+.game-card-exit-done {
+    /* opacity: 1;
+    transform: translateY(0); */
+    transform: translateY(1500px);
+}

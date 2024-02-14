@@ -1,4 +1,4 @@
-import { getGameStatus } from "../../../../../helpers/games";
+import { getGameStatus } from "../../helpers/games";
 
 type GameStatusProps = {
   status: string;
