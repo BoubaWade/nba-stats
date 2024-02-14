@@ -1,0 +1,28 @@
+ .preview-game-card {
+     background: rgb(25, 30, 45);
+     height: 170px;
+     border: 1px solid #2667ac;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border-radius: 7px;
+     color: white;
+     padding: 0 15px;
+ }
+
+ .preview-game-card .logo-name {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .preview-game-card .logo-name .image {
+     width: 70px;
+ }
+
+ .preview-game-card .game-status {
+     font-size: 14px;
+     text-align: center;
+
+ }

@@ -1,6 +1,7 @@
 import React from "react";
 import { PlayerStats, Player, Team } from "../components/Players/playersTypes";
 import { Game, GameSearchParams } from "../components/Teams/teamsTypes";
+import { sortGamesByStatus } from "../helpers/games";
 const baseURL = "https://www.balldontlie.io/api/v1";
 
 export const getAllPlayers = (
@@ -65,7 +66,7 @@ export const getAllGames = (
   try {
     fetch(`${baseURL}/games?start_date=${startDate}&end_date=${endDate}`)
       .then((res) => res.json())
-      .then((result) => setGames(result.data));
+      .then((result) => setGames(sortGamesByStatus(result.data)));
   } catch (error) {
     console.error(error);
   }

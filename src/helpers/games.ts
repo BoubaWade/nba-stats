@@ -1,4 +1,9 @@
 import { Game } from "../components/Teams/teamsTypes";
+import {
+  PERIOD_BEFORE_GAME,
+  PERIOD_CURRENT_GAME,
+  STATUS_AFTER_GAME,
+} from "../config/constants";
 
 const getDateFormatedWithOptions = (
   date: Date | string,
@@ -54,11 +59,32 @@ export const getGameStatus = (status: string) => {
   }
 };
 
-export const sortGamesByStatus = (games: Game[]) => {
-  const notFinishedGames = games.filter((game) => game.status !== "Final");
-  const finishedGames = games.filter((game) => game.status === "Final");
+export const sortAscendingByStatusDate = (array: Game[]): Game[] => {
+  return array.sort(
+    (a, b) => (new Date(a.status) as any) - (new Date(b.status) as any)
+  );
+};
 
-  return [...notFinishedGames, ...finishedGames];
+export const sortGamesByStatus = (games: Game[]) => {
+  const notStartedGames = games.filter(
+    (game) => game.period === PERIOD_BEFORE_GAME
+  );
+
+  const startedGames = games.filter(
+    (game) =>
+      PERIOD_CURRENT_GAME.includes(game.period) &&
+      game.status !== STATUS_AFTER_GAME
+  );
+
+  const finishedGames = games.filter(
+    (game) => game.status === STATUS_AFTER_GAME
+  );
+
+  return [
+    ...startedGames,
+    ...sortAscendingByStatusDate(notStartedGames),
+    ...sortDescendingByDate(finishedGames),
+  ];
 };
 
 export const formatDate = (date: Date): string => {
@@ -66,4 +92,27 @@ export const formatDate = (date: Date): string => {
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const day = String(date.getDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
+};
+
+export const filterGamesByStatus = (games: Game[], value: string | null) => {
+  const deepCloneGames: Game[] = JSON.parse(JSON.stringify(games));
+
+  switch (value) {
+    case "À venir":
+      return deepCloneGames.filter(
+        (game) => game.period === PERIOD_BEFORE_GAME
+      );
+    case "Afficher tout":
+      return deepCloneGames;
+    case "En cours...":
+      return deepCloneGames.filter(
+        (game) =>
+          PERIOD_CURRENT_GAME.includes(game.period) &&
+          game.status !== STATUS_AFTER_GAME
+      );
+    case "Terminés":
+      return deepCloneGames.filter((game) => game.status === STATUS_AFTER_GAME);
+    // default:
+    //   return games;
+  }
 };

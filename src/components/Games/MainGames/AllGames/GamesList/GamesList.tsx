@@ -1,21 +1,24 @@
-import { useContext } from "react";
-import { GlobalContext } from "../../../../../contexts/globalContext";
+import "../../../../../animations/gamesAnimations.css";
 import PreviewGameCard from "./PreviewGameCard";
-import {
-  sortAscendingByDate,
-  sortGamesByStatus,
-} from "../../../../../helpers/games";
+import { Game } from "../../../../Teams/teamsTypes";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+type GamesListProps = {
+  gamesToDisplay: Game[];
+};
 
-export default function GamesList() {
-  const { games } = useContext(GlobalContext);
-  const gamesSortedByDate = sortAscendingByDate(games);
-  const gameSortedByStatus = sortGamesByStatus(gamesSortedByDate);
-
+export default function GamesList({ gamesToDisplay }: GamesListProps) {
   return (
-    <ul className="list-games-container">
-      {gameSortedByStatus.map((game) => (
-        <PreviewGameCard key={game.id} game={game} />
+    <TransitionGroup className="list-games-container">
+      {gamesToDisplay.map((game, index) => (
+        <CSSTransition
+          key={index}
+          timeout={index * 200}
+          classNames="preview-game-card"
+          appear={true}
+        >
+          <PreviewGameCard key={game.id} game={game} />
+        </CSSTransition>
       ))}
-    </ul>
+    </TransitionGroup>
   );
 }
