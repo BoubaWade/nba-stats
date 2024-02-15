@@ -4,6 +4,9 @@ import { GlobalContext } from "../../../contexts/globalContext";
 const getLogoPATH = (name: string) => {
   return `../../../../public/images/${name}.svg`;
 };
+const getFaceImagePATH = (name: string) => {
+  return `../../../../public/bannersImages/${name}.png`;
+};
 type TeamComponentProps = {
   team: Team;
 };
@@ -20,10 +23,13 @@ export default function TeamComponent({ team }: TeamComponentProps) {
 
   return (
     <div className="team">
-      <img src={getLogoPATH(name)} />
-      <span className="text-name" id={id.toString()} onClick={handleClick}>
-        {full_name}
-      </span>
+      <img src={getFaceImagePATH(full_name)} className="face" />
+      <div>
+        <img src={getLogoPATH(name)} />
+        <span className="text-name" id={id.toString()} onClick={handleClick}>
+          {full_name}
+        </span>
+      </div>
     </div>
   );
 }

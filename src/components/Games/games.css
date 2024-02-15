@@ -1,5 +1,4 @@
 .games-container {
-    /* background: url("../../images/nba_logo.svg") no-repeat center/cover; */
     background-color: #c5d5e6;
     width: 100vw;
     height: 100vh;
@@ -31,93 +30,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-    margin: 40px 0;
+    margin: 20px 0;
 }
-
-/* .all-games-container .list-games-container .preview-game-card {
-    background: rgb(25, 30, 45);
-    height: 170px;
-    border: 1px solid #2667ac;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 7px;
-    color: white;
-    padding: 0 15px;
-}
-
-.list-games-container .preview-game-card .logo-name {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.list-games-container .preview-game-card .logo-name .image {
-    width: 70px;
-}
-
-.list-games-container .preview-game-card .game-status {
-    font-size: 14px;
-    text-align: center;
-
-} */
-
-/* /------------------------------------------------------ */
-/* .list-games-container .game-card {
-    background: linear-gradient(180deg, #e6a4a4 0%, #dd3737 100%);
-    min-width: 295px;
-    max-width: 400px;
-    height: 170px;
-    border-radius: 7px;
-    border: 1px solid #2667ac;
-    transition: 0.1s;
-    cursor: pointer;
-}
-
-.list-games-container .game-card:hover {
-    transform: scale(1.02);
-}
-
-.list-games-container .game-card {
-    background: linear-gradient(180deg, #a7a9a7 0%, #606d62 100%);
-}
-
-.list-games-container .game-card .date {
-    font-size: 14px;
-    text-align: center;
-    margin: 5px 0;
-    margin-top: 5px;
-}
-
-.list-games-container .game-card .teams-infos-container {
-    display: flex;
-    align-items: center;
-}
-
-.list-games-container .game-card .teams-infos-container .team-infos {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.list-games-container .game-card .teams-infos-container .team-infos .logo {
-    width: 80px;
-}
-
-.list-games-container .game-card .teams-infos-container .team-infos .abbreviation-name {
-    margin: 0 10px;
-}
-
-.list-games-container .game-card .scores {
-    display: flex;
-    justify-content: space-around;
-    font-size: 22px;
-    font-weight: 700;
-} */
-
-/* /------------------------------------------------------ */
 
 .games-container .main-games .return-button {
     width: 90px;
