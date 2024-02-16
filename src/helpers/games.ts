@@ -98,7 +98,7 @@ export const filterGamesByStatus = (games: Game[], value: string | null) => {
   switch (value) {
     case "À venir":
       return getNotStartedGames(deepCloneGames);
-    case "Afficher tout":
+    case "Tous les matchs":
       return deepCloneGames;
     case "En cours...":
       return getStartedGames(deepCloneGames);

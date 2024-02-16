@@ -7,7 +7,7 @@ type CurrentGameCardProps = {
 };
 
 export default function CurrentGameCard({ game }: CurrentGameCardProps) {
-  const { id, visitor_team, home_team, status } = game;
+  const { id, visitor_team, home_team, status, time } = game;
 
   return (
     <li key={id} className="preview-game-card">
@@ -16,7 +16,7 @@ export default function CurrentGameCard({ game }: CurrentGameCardProps) {
         name={visitor_team.name}
         classNameImage="image"
       />
-      <GameStatus status={status} />
+      <GameStatus status={status} time={time} />
       <LogoAndName
         className="logo-name"
         name={home_team.name}

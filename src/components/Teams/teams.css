@@ -57,17 +57,38 @@
     /* position: relative; */
     /* max-width: 600px;
     min-width: 500px; */
-    width: 60%;
+    width: 65%;
     height: 450px;
     margin: 0 auto;
     box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     background: rgb(25, 30, 45);
     color: white;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     box-shadow: 2px 2px 9px 1px #33373b;
-    border-radius: 10px 30px;
+    /* border-radius: 10px 30px; */
+    border-radius: 5px;
 
+}
+
+.division:nth-child(4) .team:first-child {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.division:nth-child(4) .team:nth-child(2) {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.division:nth-child(4) .team:nth-child(3) {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.division:nth-child(4) .team:nth-child(4) {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.division:nth-child(4) .team:nth-child(5) {
+    grid-area: 1 / 5 / 2 / 6;
 }
 
 .divisions-container .division .team {
@@ -85,24 +106,34 @@
 }
 
 .divisions-container .division .team .face {
+    /* display: block; */
     width: 100%;
     height: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
-    cursor: pointer;
-    z-index: 1;
+    transition: 0.5s;
 }
 
-.divisions-container .division .team .face:hover {
-    transform: translateY(-100%);
+.divisions-container .division .team:hover .face {
+    transform: translateY(-400px);
 }
 
-.divisions-container .division .team img {
+.divisions-container .division .team .description-container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.divisions-container .division .team .description-container img {
     width: 65px;
 }
 
-.divisions-container .division .team .text-name {
+.divisions-container .division .team .description-container .name {
     /* display: block;
     width: 70%;
     font-size: 15px;
@@ -111,18 +142,29 @@
     cursor: pointer;
     transition: 0.2s ease; */
     /* -------------- */
-    display: block;
-    height: 70%;
+    /* display: block; */
+    /* height: 70%; */
     /* transform: rotate(90deg); */
     font-size: 15px;
     font-weight: 300;
-    margin-left: 25px;
-    cursor: pointer;
-    transition: 0.2s ease;
+    text-align: center;
+    margin-bottom: 15px;
+    /* margin-left: 25px; */
+    /* cursor: pointer; */
+    /* transition: 0.2s ease; */
 }
 
-.divisions-container .division .team .text-name:hover {
+/* .divisions-container .division .team .text-name:hover {
     transform: scale(1.07);
+} */
+.division .team .description-container .display-games-button:hover {
+    background: #c5d5e6;
+    color: rgb(25, 30, 45);
+}
+
+.division .team .description-container .display-games-button:active {
+    background: #1a5b2f;
+    color: rgb(250, 250, 250);
 }
 
 .specificTeam-container .logo-background {
