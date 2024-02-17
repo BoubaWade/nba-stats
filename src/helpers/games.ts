@@ -69,7 +69,7 @@ const getNotStartedGames = (games: Game[]) => {
   return games.filter((game) => game.period === PERIOD_BEFORE_GAME);
 };
 
-const getStartedGames = (games: Game[]) => {
+const getCurrentGames = (games: Game[]) => {
   return games.filter(
     (game) =>
       PERIOD_CURRENT_GAME.includes(game.period) &&
@@ -82,7 +82,7 @@ const getFinishedGames = (games: Game[]) => {
 
 export const sortGamesByStatus = (games: Game[]) => {
   const notStartedGames = getNotStartedGames(games);
-  const startedGames = getStartedGames(games);
+  const startedGames = getCurrentGames(games);
   const finishedGames = getFinishedGames(games);
 
   return [
@@ -101,7 +101,7 @@ export const filterGamesByStatus = (games: Game[], value: string | null) => {
     case "Tous les matchs":
       return deepCloneGames;
     case "En cours...":
-      return getStartedGames(deepCloneGames);
+      return getCurrentGames(deepCloneGames);
     case "Terminés":
       return getFinishedGames(deepCloneGames);
   }
@@ -124,4 +124,8 @@ export const getStartAndEndDateRange = (value: Value) => {
     );
     return { startDate, endDate };
   }
+};
+
+export const uncapitalize = (str: string) => {
+  return str.charAt(0).toLocaleLowerCase() + str.slice(1);
 };

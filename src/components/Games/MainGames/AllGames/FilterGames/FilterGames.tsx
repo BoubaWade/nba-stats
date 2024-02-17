@@ -7,14 +7,20 @@ import PrimaryButton from "../../../../reusable-ui/PrimaryButton/PrimaryButton";
 
 type FilterGamesProps = {
   onFilterGames: (games: Game[]) => void;
+  getButtonLabel: (str: string | null) => void;
 };
+
 const initialStateActive = {
   isAllGames: true,
   isBeforeGames: false,
   isCurrentGames: false,
   isAfterGames: false,
 };
-export default function FilterGames({ onFilterGames }: FilterGamesProps) {
+
+export default function FilterGames({
+  onFilterGames,
+  getButtonLabel,
+}: FilterGamesProps) {
   const { games, dateRangeForAllGames } = useContext(GlobalContext);
   const [isActive, setIsActive] = useState(initialStateActive);
 
@@ -22,6 +28,8 @@ export default function FilterGames({ onFilterGames }: FilterGamesProps) {
     const textContent = e.currentTarget.textContent;
     const gamesFiltered = filterGamesByStatus(games, textContent);
     if (gamesFiltered) onFilterGames(gamesFiltered);
+    // Pour récuperer le label du bouton cliqué
+    getButtonLabel(textContent);
 
     const handleActiveButtonClicked = (name: string) => {
       setIsActive((prevState) => {

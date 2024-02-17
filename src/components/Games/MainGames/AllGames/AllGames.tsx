@@ -10,9 +10,17 @@ import { getAllGames } from "../../../../service/apiCall";
 export default function AllGames() {
   const { games, dateRangeForAllGames } = useContext(GlobalContext);
   const [gamesToDisplay, setGamesToDisplay] = useState(games);
+  const [buttonLabel, setButtonLabel] = useState("");
 
   const onFilterGames = (array: Game[]) => {
     setGamesToDisplay(array);
+  };
+  const getButtonLabel = (str: string | null) => {
+    if (str === "Tous les matchs") {
+      setButtonLabel("");
+    } else {
+      if (str) setButtonLabel(str);
+    }
   };
 
   useEffect(() => {
@@ -26,8 +34,11 @@ export default function AllGames() {
   return (
     <div className="all-games-container">
       <DatePicker />
-      <FilterGames onFilterGames={onFilterGames} />
-      <GamesList gamesToDisplay={gamesToDisplay} />
+      <FilterGames
+        onFilterGames={onFilterGames}
+        getButtonLabel={getButtonLabel}
+      />
+      <GamesList gamesToDisplay={gamesToDisplay} buttonLabel={buttonLabel} />
     </div>
   );
 }
