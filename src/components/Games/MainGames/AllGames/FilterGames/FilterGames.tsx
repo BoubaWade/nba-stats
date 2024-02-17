@@ -33,15 +33,15 @@ export default function FilterGames({
 
     const handleActiveButtonClicked = (name: string) => {
       setIsActive((prevState) => {
-        const updatedState = { ...prevState };
-
-        Object.keys(updatedState).map((key) => {
+        const updatedState: typeof initialStateActive = { ...prevState };
+        console.log(Object.keys(updatedState));
+        Object.keys(updatedState).forEach((key) => {
           if (key !== name) {
-            updatedState[key] = false;
+            updatedState[key as keyof typeof initialStateActive] = false;
           }
         });
 
-        updatedState[name] = true;
+        updatedState[name as keyof typeof initialStateActive] = true;
 
         return updatedState;
       });
@@ -64,52 +64,24 @@ export default function FilterGames({
           onClick={handleClick}
           label="Tous les matchs"
         />
-        {/* <button
-          className={isActive.isAllGames ? "active-button" : ""}
-          name="isAllGames"
-          onClick={handleClick}
-        >
-          Afficher tout
-        </button> */}
         <PrimaryButton
           className={isActive.isBeforeGames ? "active-button" : ""}
           name="isBeforeGames"
           onClick={handleClick}
           label="À venir"
         />
-        {/* <button
-          className={isActive.isBeforeGames ? "active-button" : ""}
-          name="isBeforeGames"
-          onClick={handleClick}
-        >
-          À venir
-        </button> */}
         <PrimaryButton
           className={isActive.isCurrentGames ? "active-button" : ""}
           name="isCurrentGames"
           onClick={handleClick}
           label="En cours..."
         />
-        {/* <button
-          className={isActive.isCurrentGames ? "active-button" : ""}
-          name="isCurrentGames"
-          onClick={handleClick}
-        >
-          En cours...
-        </button> */}
         <PrimaryButton
           className={isActive.isAfterGames ? "active-button" : ""}
           name="isAfterGames"
           onClick={handleClick}
           label="Terminés"
         />
-        {/* <button
-          className={isActive.isAfterGames ? "active-button" : ""}
-          name="isAfterGames"
-          onClick={handleClick}
-        >
-          Terminés
-        </button> */}
       </ul>
     </div>
   );

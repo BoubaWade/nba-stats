@@ -15,7 +15,12 @@ export default function GamesList({
   buttonLabel,
 }: GamesListProps) {
   if (gamesToDisplay.length === 0)
-    return <EmptyGamesList label={uncapitalize(buttonLabel)} />;
+    return (
+      <EmptyGamesList
+        className="empty-message"
+        label={uncapitalize(buttonLabel)}
+      />
+    );
 
   return (
     <TransitionGroup className="list-games-container">

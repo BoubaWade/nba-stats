@@ -1,10 +1,14 @@
 import "../../../../../animations/gamesAnimations.css";
 import { useContext, useEffect } from "react";
-import { formatDate, sortDescendingByDate } from "../../../../../helpers/games";
+import {
+  getStartAndEndDateRange,
+  sortDescendingByDate,
+} from "../../../../../helpers/games";
 import { getSpecificTeamGames } from "../../../../../service/apiCall";
 import GameCard from "./GameCard/GameCard";
 import { GlobalContext } from "../../../../../contexts/globalContext";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import EmptyGamesList from "../../../../reusable-ui/EmptyGamesList/EmptyGamesList";
 
 export default function ListGameCard() {
   const {
@@ -16,27 +20,23 @@ export default function ListGameCard() {
   const gamesSortedByDate = sortDescendingByDate(specificTeamGames);
 
   useEffect(() => {
-    if (dateRangeForSpecificTeamGames) {
-      let value = dateRangeForSpecificTeamGames;
-      const startDate = formatDate(
-        Array.isArray(value) ? value[0] ?? new Date() : value
-      );
-      const endDate = formatDate(
-        Array.isArray(value) ? value[1] ?? new Date() : value
-      );
+    const dateRange = getStartAndEndDateRange(dateRangeForSpecificTeamGames);
 
+    if (dateRange) {
+      const { startDate, endDate } = dateRange;
       const searchParams = {
         teamId: specificTeamID,
         startDate: startDate,
         endDate: endDate,
       };
-
       getSpecificTeamGames(searchParams, setSpecificTeamGames);
     }
   }, [dateRangeForSpecificTeamGames]);
 
+  if (gamesSortedByDate.length === 0)
+    return <EmptyGamesList className="empty-specificTeamsGames" />;
+
   return (
-    // <ul>
     <TransitionGroup className="list-games-cards">
       {gamesSortedByDate.map((game) => (
         <CSSTransition
@@ -49,6 +49,5 @@ export default function ListGameCard() {
         </CSSTransition>
       ))}
     </TransitionGroup>
-    // </ul>
   );
 }

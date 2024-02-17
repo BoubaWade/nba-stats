@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Team } from "../../Players/playersTypes";
 import { GlobalContext } from "../../../contexts/globalContext";
 import PrimaryButton from "../../reusable-ui/PrimaryButton/PrimaryButton";
