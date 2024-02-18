@@ -6,7 +6,6 @@ import { GlobalContext } from "../../../../../contexts/globalContext";
 import { getGameStats } from "../../../../../service/apiCall";
 import { useContext } from "react";
 import {
-  PERIOD_BEFORE_GAME,
   PERIOD_CURRENT_GAME,
   STATUS_AFTER_GAME,
 } from "../../../../../config/constants";
@@ -28,7 +27,7 @@ export default function PreviewGameCard({ game }: GameListItemProps) {
 
   if (
     PERIOD_CURRENT_GAME.includes(game.period) &&
-    game.period === PERIOD_BEFORE_GAME
+    game.time !== STATUS_AFTER_GAME
   )
     return <CurrentGameCard game={game} />;
 

@@ -5,9 +5,16 @@
      display: flex;
      justify-content: space-between;
      align-items: center;
-     border-radius: 7px;
+     border-radius: 7px 20px;
      color: white;
      padding: 0 15px;
+     transition: 0.2s;
+ }
+
+ .preview-game-card:hover {
+     color: black;
+     background: linear-gradient(45deg, #4fc4e7 0%, #175da8 45%, #00c3ff 100%);
+     box-shadow: 0px 0px 10px 2px rgb(25, 30, 45);
  }
 
  .preview-game-card .logo-name {

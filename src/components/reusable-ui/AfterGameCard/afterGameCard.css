@@ -3,10 +3,10 @@
     min-width: 295px;
     max-width: 400px;
     height: 170px;
-    border-radius: 7px;
     border: 1px solid #2667ac;
     transition: 0.1s;
     cursor: pointer;
+    border-radius: 7px 20px;
 }
 
 .after-game-card:hover {

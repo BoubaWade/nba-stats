@@ -1,4 +1,4 @@
-import { Game } from "../components/Teams/teamsTypes";
+import { Game, Value } from "../components/Teams/teamsTypes";
 import {
   PERIOD_BEFORE_GAME,
   PERIOD_CURRENT_GAME,
@@ -65,26 +65,46 @@ export const sortAscendingByStatusDate = (array: Game[]): Game[] => {
   );
 };
 
-export const sortGamesByStatus = (games: Game[]) => {
-  const notStartedGames = games.filter(
-    (game) => game.period === PERIOD_BEFORE_GAME
-  );
+const getNotStartedGames = (games: Game[]) => {
+  return games.filter((game) => game.period === PERIOD_BEFORE_GAME);
+};
 
-  const startedGames = games.filter(
+const getCurrentGames = (games: Game[]) => {
+  return games.filter(
     (game) =>
       PERIOD_CURRENT_GAME.includes(game.period) &&
       game.status !== STATUS_AFTER_GAME
   );
+};
+const getFinishedGames = (games: Game[]) => {
+  return games.filter((game) => game.status === STATUS_AFTER_GAME);
+};
 
-  const finishedGames = games.filter(
-    (game) => game.status === STATUS_AFTER_GAME
-  );
+export const sortGamesByStatus = (games: Game[]) => {
+  const notStartedGames = getNotStartedGames(games);
+  const startedGames = getCurrentGames(games);
+  const finishedGames = getFinishedGames(games);
 
   return [
     ...startedGames,
     ...sortAscendingByStatusDate(notStartedGames),
     ...sortDescendingByDate(finishedGames),
   ];
+};
+
+export const filterGamesByStatus = (games: Game[], value: string | null) => {
+  const deepCloneGames: Game[] = JSON.parse(JSON.stringify(games));
+
+  switch (value) {
+    case "À venir":
+      return getNotStartedGames(deepCloneGames);
+    case "Tous les matchs":
+      return deepCloneGames;
+    case "En cours...":
+      return getCurrentGames(deepCloneGames);
+    case "Terminés":
+      return getFinishedGames(deepCloneGames);
+  }
 };
 
 export const formatDate = (date: Date): string => {
@@ -94,25 +114,18 @@ export const formatDate = (date: Date): string => {
   return `${year}-${month}-${day}`;
 };
 
-export const filterGamesByStatus = (games: Game[], value: string | null) => {
-  const deepCloneGames: Game[] = JSON.parse(JSON.stringify(games));
-
-  switch (value) {
-    case "À venir":
-      return deepCloneGames.filter(
-        (game) => game.period === PERIOD_BEFORE_GAME
-      );
-    case "Afficher tout":
-      return deepCloneGames;
-    case "En cours...":
-      return deepCloneGames.filter(
-        (game) =>
-          PERIOD_CURRENT_GAME.includes(game.period) &&
-          game.status !== STATUS_AFTER_GAME
-      );
-    case "Terminés":
-      return deepCloneGames.filter((game) => game.status === STATUS_AFTER_GAME);
-    // default:
-    //   return games;
+export const getStartAndEndDateRange = (value: Value) => {
+  if (value) {
+    const startDate = formatDate(
+      Array.isArray(value) ? value[0] ?? new Date() : value
+    );
+    const endDate = formatDate(
+      Array.isArray(value) ? value[1] ?? new Date() : value
+    );
+    return { startDate, endDate };
   }
+};
+
+export const uncapitalize = (str: string) => {
+  return str.charAt(0).toLocaleLowerCase() + str.slice(1);
 };

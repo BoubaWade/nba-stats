@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { getAllGames } from "../../../../../service/apiCall";
 import { GlobalContext } from "../../../../../contexts/globalContext";
 import { Value } from "../../../../Teams/teamsTypes";
-import { formatDate } from "../../../../../helpers/games";
+import { getStartAndEndDateRange } from "../../../../../helpers/games";
 
 export default function DatePicker() {
   const { dateRangeForAllGames, setDateRangeForAllGames, setGames } =
@@ -14,15 +14,10 @@ export default function DatePicker() {
   const [value, onChange] = useState<Value>(dateRangeForAllGames);
 
   useEffect(() => {
-    if (value) {
-      setDateRangeForAllGames(value);
-      const startDate = formatDate(
-        Array.isArray(value) ? value[0] ?? new Date() : value
-      );
-      const endDate = formatDate(
-        Array.isArray(value) ? value[1] ?? new Date() : value
-      );
-
+    setDateRangeForAllGames(value);
+    const dateRange = getStartAndEndDateRange(value);
+    if (dateRange) {
+      const { startDate, endDate } = dateRange;
       getAllGames(startDate, endDate, setGames);
     }
   }, [value]);
