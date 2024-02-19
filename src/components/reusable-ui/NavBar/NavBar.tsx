@@ -9,7 +9,6 @@ export default function NavBar({ placeholder, value, onChange }: NavBarProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value as string);
   };
-
   return (
     <div className="navBar-container">
       <input
