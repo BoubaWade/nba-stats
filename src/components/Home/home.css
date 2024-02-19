@@ -1,0 +1,64 @@
+.home-container {
+    /* position: relative; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+
+.home-container h1 {
+    font-family: "Libre Baskerville";
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #ff2200 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 45px;
+    z-index: 1;
+}
+
+.background-home {
+    /* background-color: #c5d5e6; */
+    /* background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #ff2200 100%); */
+    background: linear-gradient(45deg, #175da8 0%, #a85117 45%, #175da8 100%);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    /* top: 50%; */
+    /* left: 50%; */
+
+}
+
+.background-home .left-side {
+    position: absolute;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: rgb(25, 30, 45);
+    transition: 1s ease-in-out;
+}
+
+.background-home .left-side.left-translate {
+    transform: translateX(-100%);
+}
+
+.background-home .right-side {
+    position: absolute;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: rgb(25, 30, 45);
+    transition: 1s ease-in-out;
+}
+
+.background-home .right-side.right-translate {
+    transform: translateX(100%);
+}
