@@ -37,6 +37,12 @@
     margin: 20px 0;
 }
 
+.games-container .main-games .all-games-container .loader-games-cards {
+    position: absolute;
+    top: 300px;
+    right: 40vw;
+}
+
 .games-container .main-games .return-button {
     width: 90px;
     height: 30px;

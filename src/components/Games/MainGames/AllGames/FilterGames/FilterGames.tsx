@@ -1,7 +1,10 @@
 import "./filterGames.css";
 import React, { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../../../../../contexts/globalContext";
-import { filterGamesByStatus } from "../../../../../helpers/games";
+import {
+  filterGamesByStatus,
+  handleActiveButtonClicked,
+} from "../../../../../helpers/games";
 import { Game } from "../../../../Teams/teamsTypes";
 import PrimaryButton from "../../../../reusable-ui/PrimaryButton/PrimaryButton";
 import { getButtonsConfig } from "../../../../../config/config";
@@ -10,12 +13,7 @@ type FilterGamesProps = {
   onFilterGames: (games: Game[]) => void;
   getButtonLabel: (str: string | null) => void;
 };
-type Active = {
-  isAllGames: boolean;
-  isBeforeGames: boolean;
-  isCurrentGames: boolean;
-  isAfterGames: boolean;
-};
+
 const initialStateActive = {
   isAllGames: true,
   isBeforeGames: false,
@@ -36,23 +34,8 @@ export default function FilterGames({
     if (gamesFiltered) onFilterGames(gamesFiltered);
     // Pour récuperer le label du bouton cliqué
     getButtonLabel(textContent);
-
-    const handleActiveButtonClicked = (name: string) => {
-      setIsActive((prevState) => {
-        const updatedState: typeof initialStateActive = { ...prevState };
-
-        Object.keys(updatedState).forEach((key) => {
-          if (key !== name) {
-            updatedState[key as keyof Active] = false;
-          }
-        });
-
-        updatedState[name as keyof Active] = true;
-
-        return updatedState;
-      });
-    };
-    handleActiveButtonClicked(e.currentTarget.name);
+    // Activation de la couleur de fond du bouton cliqué
+    handleActiveButtonClicked(setIsActive, e.currentTarget.name);
   };
 
   // Réactivation du bouton "AllGames" avec la classe "active-button" quand on séléction à nouveau une date

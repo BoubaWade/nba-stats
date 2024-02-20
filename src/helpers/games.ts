@@ -76,6 +76,7 @@ const getCurrentGames = (games: Game[]) => {
       game.status !== STATUS_AFTER_GAME
   );
 };
+
 const getFinishedGames = (games: Game[]) => {
   return games.filter((game) => game.status === STATUS_AFTER_GAME);
 };
@@ -128,4 +129,30 @@ export const getStartAndEndDateRange = (value: Value) => {
 
 export const uncapitalize = (str: string) => {
   return str.charAt(0).toLocaleLowerCase() + str.slice(1);
+};
+
+type Active = {
+  isAllGames: boolean;
+  isBeforeGames: boolean;
+  isCurrentGames: boolean;
+  isAfterGames: boolean;
+};
+
+export const handleActiveButtonClicked = (
+  setIsActive: (value: React.SetStateAction<Active>) => void,
+  name: string
+) => {
+  setIsActive((prevState) => {
+    const updatedState = { ...prevState };
+
+    Object.keys(updatedState).forEach((key) => {
+      if (key !== name) {
+        updatedState[key as keyof Active] = false;
+      }
+    });
+
+    updatedState[name as keyof Active] = true;
+
+    return updatedState;
+  });
 };

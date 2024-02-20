@@ -1,9 +1,9 @@
-import "../../../../../animations/gamesAnimations.css";
+import "../../../../../../animations/gamesAnimations.css";
 import PreviewGameCard from "./PreviewGameCard";
-import { Game } from "../../../../Teams/teamsTypes";
+import { Game } from "../../../../../Teams/teamsTypes";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import EmptyGamesList from "../../../../reusable-ui/EmptyGamesList/EmptyGamesList";
-import { uncapitalize } from "../../../../../helpers/games";
+import EmptyGamesList from "../../../../../reusable-ui/EmptyGamesList/EmptyGamesList";
+import { uncapitalize } from "../../../../../../helpers/games";
 
 type GamesListProps = {
   gamesToDisplay: Game[];
