@@ -3,10 +3,10 @@ import { PlayersContext } from "../../../../../contexts/playersContext";
 import TableRow from "./TableRow";
 
 export default function TableBody() {
-  const { dataPlayers, rangeValue } = useContext(PlayersContext);
-  const playersLength = dataPlayers.length;
+  const { players, rangeValue } = useContext(PlayersContext);
+  const playersLength = players.length;
   const proportion = (playersLength * parseInt(rangeValue)) / 100;
-  const sliceDataPlayers = dataPlayers.slice(0, proportion);
+  const sliceDataPlayers = players.slice(0, proportion);
 
   return (
     <tbody>

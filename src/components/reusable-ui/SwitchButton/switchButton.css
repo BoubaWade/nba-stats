@@ -8,12 +8,7 @@
     display: flex;
     align-items: center;
     border: 3px solid #4fc4e7;
-    /* background: #fbfcfc0c; */
-    /* border-image: linear-gradient(45deg, #4fc4e7 0%, #175da8 45%, #00c3ff 100%);
-    border-image-slice: 1; */
     border-radius: 30px;
-    /* border-image- */
-    /* border: 3px solid linear-gradient(45deg, #4fc4e7 0%, #175da8 45%, #00c3ff 100%); */
     cursor: pointer;
 }
 
@@ -24,8 +19,6 @@
 .button-container .slide-button {
     width: 45px;
     height: 45px;
-    /* background-color: #b659b6; */
-    /* background: linear-gradient(45deg, #4fc4e7 0%, #175da8 45%, #00c3ff 100%); */
     background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #ff2200 100%);
 
     position: absolute;

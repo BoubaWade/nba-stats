@@ -1,9 +1,10 @@
 .home-container {
-    /* position: relative; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+    position: relative;
+    z-index: 1;
+}
 
+.home-container.switch-behind {
+    z-index: -1;
 }
 
 .home-container h1 {
@@ -23,18 +24,29 @@
     z-index: 1;
 }
 
+.home-container .disappears {
+    animation: anim 0.5s ease forwards;
+}
+
+@keyframes anim {
+    0% {}
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 .background-home {
-    /* background-color: #c5d5e6; */
-    /* background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #ff2200 100%); */
-    background: linear-gradient(45deg, #175da8 0%, #a85117 45%, #175da8 100%);
+    background: transparent;
     position: absolute;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
-    /* top: 50%; */
-    /* left: 50%; */
-
 }
 
 .background-home .left-side {

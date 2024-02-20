@@ -1,10 +1,12 @@
 #loader {
     width: 120px;
     height: 120px;
-    border: 10px solid rgba(0, 0, 0, 0.1);
-    border-top: 10px solid rgb(25, 30, 45);
+    border: 10px solid #a85117;
+    border-top: 10px solid #c3ac81;
     border-radius: 50%;
     animation: animLoader 1s linear infinite;
+    margin: auto;
+    margin-left: 35vw;
 }
 
 @keyframes animLoader {

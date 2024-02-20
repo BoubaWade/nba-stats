@@ -1,41 +1,20 @@
 import "./players.css";
+import Home from "./HomePage/Home";
 import NavBar from "../reusable-ui/NavBar/NavBar";
 import SideBar from "../reusable-ui/Sidebar/SideBar";
 import MainPlayers from "./MainPlayers/MainPlayers";
 import { PlayersContext } from "../../contexts/playersContext";
-import { useEffect, useState } from "react";
-import { PlayerStats, Player } from "./playersTypes";
-import { getAllPlayers } from "../../service/apiCall";
 import Cursor from "../reusable-ui/Cursor/Cursor";
+import usePlayers from "../../hooks/usePlayers";
 
 export default function Players() {
-  const [dataPlayers, setDataPlayers] = useState<Player[]>([]);
-  const [inputSearch, setSearchValue] = useState("");
-  const [rangeValue, setRangeValue] = useState("100");
-  const [playerStatsBySeason, setPlayerStatsBySeason] = useState<PlayerStats[]>(
-    []
-  );
-
-  useEffect(() => {
-    getAllPlayers(inputSearch, setDataPlayers);
-  }, [inputSearch]);
-
-  const handleChange = (value: string) => {
-    setSearchValue(value);
-  };
-
-  const playersContextValue = {
-    dataPlayers,
-    setDataPlayers,
-    rangeValue,
-    setRangeValue,
-    playerStatsBySeason,
-    setPlayerStatsBySeason,
-  };
+  const { isHomeDisplayed, inputSearch, playersContextValue, handleChange } =
+    usePlayers();
 
   return (
     <PlayersContext.Provider value={playersContextValue}>
       <div className="players-container">
+        {isHomeDisplayed && <Home />}
         <SideBar />
         <NavBar
           placeholder="Rechercher un joueur"

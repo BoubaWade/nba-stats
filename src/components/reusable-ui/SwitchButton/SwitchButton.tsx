@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import "./switchButton.css";
 import { useState } from "react";
 type SwitchButtonProps = {
@@ -7,13 +6,10 @@ type SwitchButtonProps = {
 
 export default function SwitchButton({ onTranslateX }: SwitchButtonProps) {
   const [isActived, setIsActived] = useState(false);
-  const navigate = useNavigate();
+
   const handleClickOnSwitchButton = () => {
     setIsActived(true);
     onTranslateX(true);
-    setTimeout(() => {
-      navigate("/players");
-    }, 1000);
   };
 
   return (
