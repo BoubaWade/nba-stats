@@ -53,8 +53,7 @@
     overflow: hidden;
     background-image: linear-gradient(180deg,
             #175da8 0%,
-            #a85117 45%,
-            #175da8 100%);
+            #a85117 100%);
     color: white;
     box-shadow: 2px 2px 9px 1px #33373b;
     border-radius: 5px;

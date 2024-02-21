@@ -7,6 +7,7 @@ import Stats from "./components/Stats/Stats";
 import Season from "./components/Season/Season";
 import { GlobalContext } from "./contexts/globalContext";
 import useApp from "./hooks/useApp";
+import Home from "./components/HomePage/Home";
 
 function App() {
   const { globalContextValue } = useApp();
@@ -15,8 +16,9 @@ function App() {
     <GlobalContext.Provider value={globalContextValue}>
       <Router>
         <Routes>
-          <Route path="/" Component={Players} />
+          <Route path="/" Component={Home} />
           <Route path="/teams" Component={Teams} />
+          <Route path="/players" Component={Players} />
           <Route path="/games" Component={Games} />
           <Route path="/stats" Component={Stats} />
           <Route path="/season" Component={Season} />

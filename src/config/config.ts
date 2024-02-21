@@ -16,7 +16,7 @@ export const getStatslabelsAndValues = (stats: PlayerStats) => {
 export const sidebarItems = [
   {
     text: "Joueurs",
-    link: "/",
+    link: "/players",
   },
   {
     text: "Équipes",

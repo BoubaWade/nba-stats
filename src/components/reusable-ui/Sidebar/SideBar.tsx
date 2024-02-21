@@ -1,14 +1,12 @@
 import "./sideBar.css";
 import logo from "../../../images/nba_logo.svg";
 import SideBarListItems from "./SideBarListItems";
-import { useContext } from "react";
-import { PlayersContext } from "../../../contexts/playersContext";
+import { useNavigate } from "react-router-dom";
 
 export default function SideBar() {
-  const { setIsHomeDisplayed } = useContext(PlayersContext);
-
+  const navigate = useNavigate();
   const handleReturnHomePage = () => {
-    setIsHomeDisplayed(true);
+    navigate("/");
   };
 
   return (

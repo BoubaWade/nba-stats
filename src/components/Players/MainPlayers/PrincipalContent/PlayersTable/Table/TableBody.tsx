@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PlayersContext } from "../../../../../contexts/playersContext";
+import { PlayersContext } from "../../../../../../contexts/playersContext";
 import TableRow from "./TableRow";
 
 export default function TableBody() {

@@ -2,10 +2,10 @@ import { createContext } from "react";
 import { PlayerStats, Player } from "../components/Players/playersTypes";
 
 type PlayersContextType = {
-  isHomeDisplayed: boolean;
-  setIsHomeDisplayed: React.Dispatch<React.SetStateAction<boolean>>;
   players: Player[];
   setPlayers: React.Dispatch<React.SetStateAction<Player[]>>;
+  inputSearch: string | undefined;
+  setInputSearch: React.Dispatch<React.SetStateAction<string | undefined>>;
   isLoading: boolean | null;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean | null>>;
   rangeValue: string;
@@ -15,10 +15,10 @@ type PlayersContextType = {
 };
 
 export const PlayersContext = createContext<PlayersContextType>({
-  isHomeDisplayed: false,
-  setIsHomeDisplayed: () => {},
   players: [],
   setPlayers: () => {},
+  inputSearch: "",
+  setInputSearch: () => {},
   isLoading: false,
   setIsLoading: () => {},
   rangeValue: "",

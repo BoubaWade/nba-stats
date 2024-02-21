@@ -3,9 +3,8 @@ import { Player, PlayerStats } from "../components/Players/playersTypes";
 import { API_KEY, baseURL } from "../service/apiCall";
 
 export default function usePlayers() {
-  const [isHomeDisplayed, setIsHomeDisplayed] = useState(false);
   const [players, setPlayers] = useState<Player[]>([]);
-  const [inputSearch, setSearchValue] = useState("");
+  const [inputSearch, setInputSearch] = useState<string | undefined>(undefined);
   const [rangeValue, setRangeValue] = useState("100");
   const [isLoading, setIsLoading] = useState<boolean | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -17,33 +16,35 @@ export default function usePlayers() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${baseURL}/players?search=${inputSearch}`, {
-        method: "GET",
-        headers: {
-          Authorization: API_KEY,
-        },
-      });
+      const response = await fetch(
+        `${baseURL}/players?search=${inputSearch}&per_page=100`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: API_KEY,
+          },
+        }
+      );
       const data = await response.json();
-      setPlayers(data.data);
+      setPlayers(
+        data.data.filter((player: Player) => player.draft_year > 2002)
+      );
     } catch {
       setError("une erreur est survenue");
     } finally {
       setIsLoading(false);
     }
   };
+
   useEffect(() => {
     handleFetchPlayers();
-  }, []);
-
-  const handleChange = (value: string) => {
-    setSearchValue(value);
-  };
+  }, [inputSearch]);
 
   const playersContextValue = {
-    isHomeDisplayed,
-    setIsHomeDisplayed,
     players,
     setPlayers,
+    inputSearch,
+    setInputSearch,
     rangeValue,
     setRangeValue,
     playerStatsBySeason,
@@ -51,10 +52,5 @@ export default function usePlayers() {
     isLoading,
     setIsLoading,
   };
-  return {
-    isHomeDisplayed,
-    inputSearch,
-    handleChange,
-    playersContextValue,
-  };
+  return { playersContextValue };
 }

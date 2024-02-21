@@ -1,4 +1,4 @@
-import { Player } from "../../../playersTypes";
+import { Player } from "../../../../playersTypes";
 import TeamInfos from "./TeamInfos";
 import PlayerInfos from "./PlayerInfos";
 type TableRowProps = {

@@ -1,23 +1,27 @@
+import { useContext, useRef } from "react";
 import "./navBar.css";
+import { PlayersContext } from "../../../contexts/playersContext";
 
-type NavBarProps = {
-  placeholder: string;
-  value: string;
-  onChange: (value: string) => void;
-};
-export default function NavBar({ placeholder, value, onChange }: NavBarProps) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(e.target.value as string);
+export default function NavBar() {
+  const { setInputSearch } = useContext(PlayersContext);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setInputSearch(inputRef.current?.value);
   };
+
   return (
     <div className="navBar-container">
-      <input
-        className="input-search"
-        type="text"
-        placeholder={placeholder}
-        value={value}
-        onChange={handleChange}
-      />
+      <form onSubmit={handleSubmit}>
+        <input
+          className="input-search"
+          type="text"
+          placeholder="Rechercher un joueur"
+          ref={inputRef}
+        />
+        <button type="submit">Valider</button>
+      </form>
     </div>
   );
 }

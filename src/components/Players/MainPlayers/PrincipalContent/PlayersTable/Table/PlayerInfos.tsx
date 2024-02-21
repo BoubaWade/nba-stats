@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { GlobalContext } from "../../../../../contexts/globalContext";
-import { getPlayerStats } from "../../../../../service/apiCall";
-import { Player } from "../../../playersTypes";
+import { GlobalContext } from "../../../../../../contexts/globalContext";
+import { getPlayerStats } from "../../../../../../service/apiCall";
+import { Player } from "../../../../playersTypes";
 type PlayerInfosProps = {
   player: Player;
 };

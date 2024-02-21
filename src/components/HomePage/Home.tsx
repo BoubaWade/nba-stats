@@ -1,6 +1,6 @@
 import "./home.css";
 import { useState } from "react";
-import SwitchButton from "../../reusable-ui/SwitchButton/SwitchButton";
+import SwitchButton from "../reusable-ui/SwitchButton/SwitchButton";
 
 export default function Home() {
   const [isSwitchButtonActived, setIsSwitchButtonActived] = useState(false);

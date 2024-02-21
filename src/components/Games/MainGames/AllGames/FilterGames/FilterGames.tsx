@@ -47,7 +47,6 @@ export default function FilterGames({
 
   return (
     <div className="filter-container">
-      <p className="filter-label">Filtres</p>
       <ul className="filter-games-buttons-list">
         {buttonsConfig.map(({ key, label, active }) => (
           <PrimaryButton

@@ -1,4 +1,4 @@
-import { Team } from "../../../playersTypes";
+import { Team } from "../../../../playersTypes";
 type TeamInfosProps = {
   team: Team;
 };
