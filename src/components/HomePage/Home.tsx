@@ -1,6 +1,7 @@
 import "./home.css";
 import { useState } from "react";
 import SwitchButton from "../reusable-ui/SwitchButton/SwitchButton";
+import Meteors from "./Meteors/Meteors";
 
 export default function Home() {
   const [isSwitchButtonActived, setIsSwitchButtonActived] = useState(false);
@@ -23,6 +24,7 @@ export default function Home() {
         !isDisplayed ? "home-container switch-behind" : "home-container"
       }
     >
+      <Meteors />
       <div className="background-home">
         <div
           className={
