@@ -6,7 +6,8 @@ export type Player = {
   last_name: string;
   position: string;
   team: Team;
-  weight_pounds: number;
+  weight_pounds?: number;
+  draft_year: number;
 };
 export type Team = {
   id: number;

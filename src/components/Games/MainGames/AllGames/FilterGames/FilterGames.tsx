@@ -1,9 +1,13 @@
 import "./filterGames.css";
 import React, { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../../../../../contexts/globalContext";
-import { filterGamesByStatus } from "../../../../../helpers/games";
+import {
+  filterGamesByStatus,
+  handleActiveButtonClicked,
+} from "../../../../../helpers/games";
 import { Game } from "../../../../Teams/teamsTypes";
 import PrimaryButton from "../../../../reusable-ui/PrimaryButton/PrimaryButton";
+import { getButtonsConfig } from "../../../../../config/config";
 
 type FilterGamesProps = {
   onFilterGames: (games: Game[]) => void;
@@ -30,23 +34,8 @@ export default function FilterGames({
     if (gamesFiltered) onFilterGames(gamesFiltered);
     // Pour récuperer le label du bouton cliqué
     getButtonLabel(textContent);
-
-    const handleActiveButtonClicked = (name: string) => {
-      setIsActive((prevState) => {
-        const updatedState: typeof initialStateActive = { ...prevState };
-        console.log(Object.keys(updatedState));
-        Object.keys(updatedState).forEach((key) => {
-          if (key !== name) {
-            updatedState[key as keyof typeof initialStateActive] = false;
-          }
-        });
-
-        updatedState[name as keyof typeof initialStateActive] = true;
-
-        return updatedState;
-      });
-    };
-    handleActiveButtonClicked(e.currentTarget.name);
+    // Activation de la couleur de fond du bouton cliqué
+    handleActiveButtonClicked(setIsActive, e.currentTarget.name);
   };
 
   // Réactivation du bouton "AllGames" avec la classe "active-button" quand on séléction à nouveau une date
@@ -54,34 +43,20 @@ export default function FilterGames({
     setIsActive(initialStateActive);
   }, [dateRangeForAllGames]);
 
+  const buttonsConfig = getButtonsConfig(isActive);
+
   return (
     <div className="filter-container">
-      <p className="filter-label">Filtres</p>
       <ul className="filter-games-buttons-list">
-        <PrimaryButton
-          className={isActive.isAllGames ? "active-button" : ""}
-          name="isAllGames"
-          onClick={handleClick}
-          label="Tous les matchs"
-        />
-        <PrimaryButton
-          className={isActive.isBeforeGames ? "active-button" : ""}
-          name="isBeforeGames"
-          onClick={handleClick}
-          label="À venir"
-        />
-        <PrimaryButton
-          className={isActive.isCurrentGames ? "active-button" : ""}
-          name="isCurrentGames"
-          onClick={handleClick}
-          label="En cours..."
-        />
-        <PrimaryButton
-          className={isActive.isAfterGames ? "active-button" : ""}
-          name="isAfterGames"
-          onClick={handleClick}
-          label="Terminés"
-        />
+        {buttonsConfig.map(({ key, label, active }) => (
+          <PrimaryButton
+            key={key}
+            className={active}
+            name={key}
+            onClick={handleClick}
+            label={label}
+          />
+        ))}
       </ul>
     </div>
   );

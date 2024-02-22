@@ -1,14 +1,14 @@
-import { Game } from "../../../../Teams/teamsTypes";
-import AfterGameCard from "../../../../reusable-ui/AfterGameCard/AfterGameCard";
-import BeforeGameCard from "../../../../reusable-ui/BeforeGameCard/BeforeGameCard";
-import CurrentGameCard from "../../../../reusable-ui/CurrentGameCard/CurrentGameCard";
-import { GlobalContext } from "../../../../../contexts/globalContext";
-import { getGameStats } from "../../../../../service/apiCall";
+import { Game } from "../../../../../Teams/teamsTypes";
+import AfterGameCard from "../../../../../reusable-ui/AfterGameCard/AfterGameCard";
+import BeforeGameCard from "../../../../../reusable-ui/BeforeGameCard/BeforeGameCard";
+import CurrentGameCard from "../../../../../reusable-ui/CurrentGameCard/CurrentGameCard";
+import { GlobalContext } from "../../../../../../contexts/globalContext";
+import { getGameStats } from "../../../../../../service/apiCall";
 import { useContext } from "react";
 import {
   PERIOD_CURRENT_GAME,
   STATUS_AFTER_GAME,
-} from "../../../../../config/constants";
+} from "../../../../../../config/constants";
 import { useNavigate } from "react-router-dom";
 
 type GameListItemProps = {

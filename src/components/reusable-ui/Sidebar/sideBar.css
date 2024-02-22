@@ -11,6 +11,7 @@
 
 .sidebar .logo {
     width: 100px;
+    cursor: pointer;
 }
 
 .sideBar-list {

@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../../../../../contexts/globalContext";
 import { getGameStats } from "../../../../../../service/apiCall";
-import PreviewGameCard from "../../../../../Games/MainGames/AllGames/GamesList/PreviewGameCard";
+import PreviewGameCard from "../../../../../Games/MainGames/AllGames/GamesContent/GamesList/PreviewGameCard";
 import { STATUS_AFTER_GAME } from "../../../../../../config/constants";
 import AfterGameCard from "../../../../../reusable-ui/AfterGameCard/AfterGameCard";
 

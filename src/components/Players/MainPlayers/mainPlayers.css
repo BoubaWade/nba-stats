@@ -1,24 +1,27 @@
 .main-players {
+    background: #c5d5e6;
     position: absolute;
-    top: 65px;
+    top: 0;
     left: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh - 65px);
+    width: calc(100vw - 200px);
+    height: 100vh;
     overflow: scroll;
+}
+
+.main-players .empty-players-message {
+    font-size: 18px;
+    margin-top: 50px;
 }
 
 .main-players .input-range-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 30%;
+    width: 20%;
     margin-top: 30px;
-}
-
-.main-players .input-range-container .label {
-    font-size: 15px;
 }
 
 .main-players .input-range-container .input-range {
@@ -31,9 +34,17 @@
 }
 
 .table-container table {
+    background-image: linear-gradient(90deg,
+            #175da8 0%,
+            #a85117 45%,
+            #175da8 100%);
+
     width: calc(100vw - 300px);
     border-collapse: collapse;
     margin: 20px auto;
+    box-shadow: 0px 0px 15px rgb(25, 30, 45);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .table-container table thead tr th {
@@ -45,20 +56,28 @@
     padding-left: 5px;
 }
 
+.table-container table thead tr th:first-child {
+    border-bottom-left-radius: 0;
+}
+
+.table-container table thead tr th:last-child {
+    border-bottom-right-radius: 0;
+}
+
 .table-container table tbody tr td {
     height: 30px;
     font-size: 14px;
     font-weight: 300;
     padding-left: 5px;
     text-align: center;
+    border-radius: 10px;
 }
 
 .table-container table tbody tr:nth-child(even) {
     color: white;
-    /* background-color: #4173a8; */
     background-image: linear-gradient(45deg,
             #175da8 0%,
-            #38a8ca 45%,
+            #a85117 45%,
             #175da8 100%);
 }
 
@@ -69,4 +88,12 @@
 .table-container table tbody tr td:nth-child(1),
 td:nth-child(2) {
     cursor: pointer;
+}
+
+.table-container table tbody tr td:first-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.table-container table tbody tr td:last-child {
+    border-radius: 10px 0 0 10px;
 }

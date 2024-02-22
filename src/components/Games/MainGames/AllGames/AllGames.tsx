@@ -1,7 +1,7 @@
 import DatePicker from "./DateRangePicker/DatePicker";
-import GamesList from "./GamesList/GamesList";
 import FilterGames from "./FilterGames/FilterGames";
 import useAllGames from "../../../../hooks/useAllGames";
+import GamesContent from "./GamesContent/GamesContent";
 
 export default function AllGames() {
   const { gamesToDisplay, buttonLabel, onFilterGames, getButtonLabel } =
@@ -14,7 +14,7 @@ export default function AllGames() {
         onFilterGames={onFilterGames}
         getButtonLabel={getButtonLabel}
       />
-      <GamesList gamesToDisplay={gamesToDisplay} buttonLabel={buttonLabel} />
+      <GamesContent gamesToDisplay={gamesToDisplay} buttonLabel={buttonLabel} />
     </div>
   );
 }

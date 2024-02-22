@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import DivisionTeam from "./DivisionTeam";
-import { getAllDivisionsWithTeams } from "../../../helpers/players";
+import { getAllDivisionsWithTeams } from "../../../helpers/teams";
 import { GlobalContext } from "../../../contexts/globalContext";
 import { getAllTeams } from "../../../service/apiCall";
 

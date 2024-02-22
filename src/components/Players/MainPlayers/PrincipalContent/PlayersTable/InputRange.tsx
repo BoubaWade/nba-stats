@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { PlayersContext } from "../../../../contexts/playersContext";
+import { PlayersContext } from "../../../../../contexts/playersContext";
 
 export default function InputRange() {
   const { rangeValue, setRangeValue } = useContext(PlayersContext);
@@ -7,10 +7,8 @@ export default function InputRange() {
   const handleChangeRangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRangeValue(e.target.value);
   };
-
   return (
     <div className="input-range-container">
-      <span className="label">Filtrer</span>
       <input
         className="input-range"
         type="range"

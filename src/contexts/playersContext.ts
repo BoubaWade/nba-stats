@@ -2,8 +2,12 @@ import { createContext } from "react";
 import { PlayerStats, Player } from "../components/Players/playersTypes";
 
 type PlayersContextType = {
-  dataPlayers: Player[];
-  setDataPlayers: React.Dispatch<React.SetStateAction<Player[]>>;
+  players: Player[];
+  setPlayers: React.Dispatch<React.SetStateAction<Player[]>>;
+  inputSearch: string | undefined;
+  setInputSearch: React.Dispatch<React.SetStateAction<string | undefined>>;
+  isLoading: boolean | null;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean | null>>;
   rangeValue: string;
   setRangeValue: React.Dispatch<React.SetStateAction<string>>;
   playerStatsBySeason: PlayerStats[];
@@ -11,8 +15,12 @@ type PlayersContextType = {
 };
 
 export const PlayersContext = createContext<PlayersContextType>({
-  dataPlayers: [],
-  setDataPlayers: () => {},
+  players: [],
+  setPlayers: () => {},
+  inputSearch: "",
+  setInputSearch: () => {},
+  isLoading: false,
+  setIsLoading: () => {},
   rangeValue: "",
   setRangeValue: () => {},
   playerStatsBySeason: [],
