@@ -1,4 +1,4 @@
-button {
+button[name] {
     color: white;
     background: #175da8;
     border: none;
@@ -12,5 +12,4 @@ button {
 button:hover {
     background: transparent;
     background: rgb(25, 30, 45);
-    color: white;
 }

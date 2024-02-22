@@ -8,7 +8,11 @@ import { GlobalContext } from "../../../../../contexts/globalContext";
 import { Value } from "../../../../Teams/teamsTypes";
 import { getStartAndEndDateRange } from "../../../../../helpers/games";
 
-export default function DatePicker() {
+type DatePickerProps = {
+  setIsOverlayDisplayed: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function DatePicker({ setIsOverlayDisplayed }: DatePickerProps) {
   const { dateRangeForAllGames, setDateRangeForAllGames, setGames } =
     useContext(GlobalContext);
   const [value, onChange] = useState<Value>(dateRangeForAllGames);
@@ -31,6 +35,8 @@ export default function DatePicker() {
         rangeDivider="à"
         onChange={onChange}
         value={value}
+        onCalendarOpen={() => setIsOverlayDisplayed(true)}
+        onCalendarClose={() => setIsOverlayDisplayed(false)}
       />
     </div>
   );
