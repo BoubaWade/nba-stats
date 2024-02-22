@@ -3,7 +3,6 @@ import { PlayerStats, Team } from "../components/Players/playersTypes";
 import { Game, GameSearchParams } from "../components/Teams/teamsTypes";
 import { sortGamesByStatus } from "../helpers/games";
 
-// const baseURL = "https://www.balldontlie.io/api/v1";
 export const baseURL = "https://api.balldontlie.io/v1";
 export const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
 
@@ -52,12 +51,15 @@ export const getPlayerStats = (
   setPlayerStats: (value: React.SetStateAction<PlayerStats[]>) => void
 ) => {
   try {
-    fetch(`${baseURL}/stats?player_ids[]=${playerId}&postseason=false`, {
-      method: "GET",
-      headers: {
-        Authorization: API_KEY,
-      },
-    })
+    fetch(
+      `${baseURL}/stats?seasons[]=2023&player_ids[]=${playerId}&postseason=false`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: API_KEY,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((result) => setPlayerStats(result.data));
   } catch (error) {

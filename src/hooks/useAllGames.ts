@@ -8,8 +8,8 @@ export default function useAllGames() {
   const { games, dateRangeForAllGames } = useContext(GlobalContext);
   const [gamesToDisplay, setGamesToDisplay] = useState(games);
   const [buttonLabel, setButtonLabel] = useState("");
-  const [isLoading, setIsLoading] = useState<boolean | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [isLoadingGames, setIsLoadingGames] = useState<boolean | null>(null);
+  const [errorGames, setErrorGames] = useState<string | null>(null);
 
   const onFilterGames = (array: Game[]) => {
     setGamesToDisplay(array);
@@ -24,8 +24,8 @@ export default function useAllGames() {
   };
 
   const handleFetchGames = async (startDate: string, endDate: string) => {
-    setIsLoading(true);
-    setError(null);
+    setIsLoadingGames(true);
+    setErrorGames(null);
     try {
       const response = await fetch(
         `${baseURL}/games?start_date=${startDate}&end_date=${endDate}`,
@@ -39,9 +39,9 @@ export default function useAllGames() {
       const data = await response.json();
       setGamesToDisplay(data.data);
     } catch {
-      setError("une erreur est survenue");
+      setErrorGames("une erreur est survenue");
     } finally {
-      setIsLoading(false);
+      setIsLoadingGames(false);
     }
   };
 
@@ -55,7 +55,7 @@ export default function useAllGames() {
 
   return {
     handleFetchGames,
-    isLoading,
+    isLoadingGames,
     gamesToDisplay,
     buttonLabel,
     onFilterGames,
