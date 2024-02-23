@@ -1,6 +1,6 @@
 import { PlayerStats } from "../../../Players/playersTypes";
 const getPATH = (name: string) => {
-  return `../../../../../public/images/${name}.svg`;
+  return `/public/images/${name}.svg`;
 };
 
 type TitleImageProps = {

@@ -1,6 +1,6 @@
 import { Team } from "../../../../../Players/playersTypes";
 const getLogoPATH = (name: string) => {
-  return `../../../../../../public/images/${name}.svg`;
+  return `/public/images/${name}.svg`;
 };
 type InfosTeamCardProps = {
   team: Team;

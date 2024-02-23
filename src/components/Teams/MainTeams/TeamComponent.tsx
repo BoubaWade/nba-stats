@@ -3,14 +3,15 @@ import { Team } from "../../Players/playersTypes";
 import { GlobalContext } from "../../../contexts/globalContext";
 import PrimaryButton from "../../reusable-ui/PrimaryButton/PrimaryButton";
 const getLogoPATH = (name: string) => {
-  return `../../../../public/images/${name}.svg`;
+  return `/public/images/${name}.svg`;
 };
 const getFaceImagePATH = (name: string) => {
-  return `../../../../public/bannersImages/${name}.png`;
+  return `/public/bannersImages/${name}.png`;
 };
 type TeamComponentProps = {
   team: Team;
 };
+
 export default function TeamComponent({ team }: TeamComponentProps) {
   const { id, name, full_name, city } = team;
   const { setSpecificTeamID, setShowSpecificTeam, setTeamFullName } =
