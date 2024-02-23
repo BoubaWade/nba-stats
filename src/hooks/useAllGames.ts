@@ -60,5 +60,6 @@ export default function useAllGames() {
     buttonLabel,
     onFilterGames,
     getButtonLabel,
+    errorGames,
   };
 }

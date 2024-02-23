@@ -52,6 +52,7 @@ export default function usePlayers() {
     setRangeValue,
     isLoadingPlayers,
     setIsLoadingPlayers,
+    errorPlayers,
     isLoadingPlayerStats,
     setIsLoadingPlayerStats,
     errorPlayerStats,

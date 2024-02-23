@@ -25,6 +25,8 @@ export default function Home() {
       }
     >
       <Meteors />
+      <img src="../../../public/LebronJAMES.avif" />
+      <img src="../../../public/StephenCURRY.avif" />
       <div className="background-home">
         <div
           className={
