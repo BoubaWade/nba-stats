@@ -3,7 +3,7 @@
 }
 
 .player-container .banner {
-    background: linear-gradient(135deg, #d3e2f2 0%, #4173a8 100%);
+    background: linear-gradient(45deg, #175da8 0%, #a85117 45%, #175da8 100%);
     width: 100%;
     height: 250px;
     display: grid;
@@ -38,7 +38,6 @@
     justify-content: center;
     align-items: center;
     column-gap: 10px;
-
 }
 
 .player-container .grid-stats .stat {

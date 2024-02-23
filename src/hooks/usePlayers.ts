@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
-import { Player, PlayerStats } from "../components/Players/playersTypes";
+import { Player } from "../components/Players/playersTypes";
 import { API_KEY, baseURL } from "../service/apiCall";
 
 export default function usePlayers() {
   const [players, setPlayers] = useState<Player[]>([]);
   const [inputSearch, setInputSearch] = useState<string | undefined>(undefined);
   const [rangeValue, setRangeValue] = useState("100");
-  const [isLoading, setIsLoading] = useState<boolean | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [playerStatsBySeason, setPlayerStatsBySeason] = useState<PlayerStats[]>(
-    []
+  const [isLoadingPlayers, setIsLoadingPlayers] = useState<boolean | null>(
+    null
   );
+  const [errorPlayers, setErrorPlayers] = useState<string | null>(null);
+  const [isLoadingPlayerStats, setIsLoadingPlayerStats] = useState<
+    boolean | null
+  >(null);
+  const [errorPlayerStats, setErrorPlayerStats] = useState<string | null>(null);
 
   const handleFetchPlayers = async () => {
-    setIsLoading(true);
-    setError(null);
+    setIsLoadingPlayers(true);
+    setErrorPlayers(null);
     try {
       const response = await fetch(
         `${baseURL}/players?search=${inputSearch}&per_page=100`,
@@ -30,9 +33,9 @@ export default function usePlayers() {
         data.data.filter((player: Player) => player.draft_year > 2002)
       );
     } catch {
-      setError("une erreur est survenue");
+      setErrorPlayers("une erreur est survenue");
     } finally {
-      setIsLoading(false);
+      setIsLoadingPlayers(false);
     }
   };
 
@@ -47,10 +50,13 @@ export default function usePlayers() {
     setInputSearch,
     rangeValue,
     setRangeValue,
-    playerStatsBySeason,
-    setPlayerStatsBySeason,
-    isLoading,
-    setIsLoading,
+    isLoadingPlayers,
+    setIsLoadingPlayers,
+    errorPlayers,
+    isLoadingPlayerStats,
+    setIsLoadingPlayerStats,
+    errorPlayerStats,
+    setErrorPlayerStats,
   };
   return { playersContextValue };
 }

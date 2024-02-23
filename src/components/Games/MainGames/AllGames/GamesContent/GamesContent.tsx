@@ -11,11 +11,11 @@ export default function GamesContent({
   gamesToDisplay,
   buttonLabel,
 }: GamesContentProps) {
-  const { isLoading } = useAllGames();
+  const { isLoadingGames } = useAllGames();
 
   return (
     <>
-      {isLoading ? (
+      {isLoadingGames ? (
         <Loader className="loader-games-cards" />
       ) : (
         <GamesList gamesToDisplay={gamesToDisplay} buttonLabel={buttonLabel} />

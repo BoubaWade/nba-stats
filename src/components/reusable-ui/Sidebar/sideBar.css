@@ -38,9 +38,10 @@
 }
 
 .sideBar-list li:hover {
-    background-color: #d3e2f2;
-    color: rgb(21, 20, 20);
-    transform: scale(1.1);
+    background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #c3ac81 100%);
+    /* background-color: #d3e2f2; */
+    /* color: rgb(21, 20, 20); */
+    transform: scale(1.05);
 }
 
 .sideBar-list li .icon {

@@ -1,17 +1,19 @@
 import { createContext } from "react";
-import { PlayerStats, Player } from "../components/Players/playersTypes";
+import { Player } from "../components/Players/playersTypes";
 
 type PlayersContextType = {
   players: Player[];
   setPlayers: React.Dispatch<React.SetStateAction<Player[]>>;
   inputSearch: string | undefined;
   setInputSearch: React.Dispatch<React.SetStateAction<string | undefined>>;
-  isLoading: boolean | null;
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean | null>>;
+  isLoadingPlayers: boolean | null;
+  setIsLoadingPlayers: React.Dispatch<React.SetStateAction<boolean | null>>;
   rangeValue: string;
   setRangeValue: React.Dispatch<React.SetStateAction<string>>;
-  playerStatsBySeason: PlayerStats[];
-  setPlayerStatsBySeason: React.Dispatch<React.SetStateAction<PlayerStats[]>>;
+  isLoadingPlayerStats: boolean | null;
+  setIsLoadingPlayerStats: React.Dispatch<React.SetStateAction<boolean | null>>;
+  errorPlayerStats: string | null;
+  setErrorPlayerStats: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
 export const PlayersContext = createContext<PlayersContextType>({
@@ -19,12 +21,14 @@ export const PlayersContext = createContext<PlayersContextType>({
   setPlayers: () => {},
   inputSearch: "",
   setInputSearch: () => {},
-  isLoading: false,
-  setIsLoading: () => {},
+  isLoadingPlayers: false,
+  setIsLoadingPlayers: () => {},
   rangeValue: "",
   setRangeValue: () => {},
-  playerStatsBySeason: [],
-  setPlayerStatsBySeason: () => {},
+  isLoadingPlayerStats: false,
+  setIsLoadingPlayerStats: () => {},
+  errorPlayerStats: "",
+  setErrorPlayerStats: () => {},
 });
 
 // export function usePlayersContext() {

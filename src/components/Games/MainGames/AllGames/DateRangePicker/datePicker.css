@@ -28,12 +28,13 @@
 }
 
 .games-container .main-games .calendar-date-picker {
-    margin-top: 3px;
+    margin-top: 100px;
     border: 2px solid rgb(25, 30, 45);
     border-radius: 5px;
+    background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #c3ac81 100%);
+    z-index: 2;
 }
 
 .games-container .main-games .calendar-date-picker .react-calendar__tile--active {
     background-color: rgb(25, 30, 45);
-
 }
