@@ -1,6 +1,6 @@
 import "./logoAndName.css";
 const getLogoPATH = (name: string) => {
-  return ` ../../../../public/images/${name}.svg`;
+  return `/public/images/${name}.svg`;
 };
 type LogoAndNameProps = {
   className: string;

@@ -1,12 +1,12 @@
 export const imagesFieldsLeft = [
-  { src: "../../../../../../public/NikolaJOKIC.avif" },
-  { src: "../../../../../../public/KevinDURANT.avif" },
-  { src: "../../../../../../public/LebronJAMES.avif" },
+  { src: "/public/NikolaJOKIC.avif" },
+  { src: "/public/KevinDURANT.avif" },
+  { src: "/public/LebronJAMES.avif" },
 ];
 export const imagesFieldsRight = [
-  { src: "../../../../../../public/StephenCURRY.avif" },
-  { src: "../../../../../../public/JoelEMBIID.avif" },
-  { src: "../../../../../../public/ANTETOKOUNMPO.avif" },
+  { src: "/public/StephenCURRY.avif" },
+  { src: "/public/JoelEMBIID.avif" },
+  { src: "/public/ANTETOKOUNMPO.avif" },
 ];
 
 export const statOptions = ["", "Points", "Passes", "Rebonds", "Contres"];

@@ -2,6 +2,8 @@ import "./home.css";
 import { useState } from "react";
 import SwitchButton from "../reusable-ui/SwitchButton/SwitchButton";
 import Meteors from "./Meteors/Meteors";
+import lebron from "/public/LebronJAMES.avif";
+import curry from "/public/StephenCURRY.avif";
 
 export default function Home() {
   const [isSwitchButtonActived, setIsSwitchButtonActived] = useState(false);
@@ -25,8 +27,8 @@ export default function Home() {
       }
     >
       <Meteors />
-      <img src="../../../public/LebronJAMES.avif" />
-      <img src="../../../public/StephenCURRY.avif" />
+      <img src={lebron} />
+      <img src={curry} />
       <div className="background-home">
         <div
           className={
