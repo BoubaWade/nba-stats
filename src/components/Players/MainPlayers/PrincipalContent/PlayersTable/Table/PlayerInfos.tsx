@@ -9,8 +9,8 @@ export default function PlayerInfos({ player }: PlayerInfosProps) {
 
   return (
     <>
-      {infosFields.map(({ id, onclick, label }) => (
-        <td key={id} id={id} onClick={onclick}>
+      {infosFields.map(({ id, onclick, label }, index) => (
+        <td key={index} id={id} onClick={onclick}>
           {label}
         </td>
       ))}
