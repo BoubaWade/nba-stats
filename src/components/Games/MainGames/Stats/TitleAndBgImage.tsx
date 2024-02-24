@@ -1,7 +1,7 @@
 import { PlayerStats } from "../../../Players/playersTypes";
-const getPATH = (name: string) => {
-  return `/public/images/${name}.svg`;
-};
+// const getPATH = (name: string) => {
+//   return `/public/images/teamsLogos/${name}.svg`;
+// };
 
 type TitleImageProps = {
   stats: PlayerStats;
@@ -14,7 +14,7 @@ export default function TitleAndBgImage({ stats, onClick }: TitleImageProps) {
 
   return (
     <>
-      <img src={getPATH(name)} onClick={onClick} />
+      <img src={`/public/images/teamsLogos/${name}.svg`} onClick={onClick} />
       <h3>
         {first_name} {last_name}
       </h3>

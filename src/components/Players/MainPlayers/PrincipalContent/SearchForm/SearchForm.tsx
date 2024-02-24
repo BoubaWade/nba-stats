@@ -18,7 +18,7 @@ export default function SearchForm() {
       {players1.map(({ name }) => (
         <img
           key={name}
-          src={`/public/${name}.avif`}
+          src={`/images/starsImages/${name}.avif`}
           style={{ width: "100px" }}
         />
       ))}
@@ -26,7 +26,7 @@ export default function SearchForm() {
       {players2.map(({ name }) => (
         <img
           key={name}
-          src={`/public/${name}.avif`}
+          src={`/images/starsImages/${name}.avif`}
           style={{ width: "100px" }}
         />
       ))}

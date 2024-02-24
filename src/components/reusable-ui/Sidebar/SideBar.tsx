@@ -1,5 +1,5 @@
 import "./sideBar.css";
-import logo from "../../../images/nba_logo.svg";
+import logo from "/images/nba_logo.svg";
 import SideBarListItems from "./SideBarListItems";
 import { useNavigate } from "react-router-dom";
 
