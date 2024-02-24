@@ -14,7 +14,7 @@ export default function TitleAndBgImage({ stats, onClick }: TitleImageProps) {
 
   return (
     <>
-      <img src={`/public/images/teamsLogos/${name}.svg`} onClick={onClick} />
+      <img src={`/images/teamsLogos/${name}.svg`} onClick={onClick} />
       <h3>
         {first_name} {last_name}
       </h3>
