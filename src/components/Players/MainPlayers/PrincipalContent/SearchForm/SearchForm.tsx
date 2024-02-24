@@ -1,17 +1,35 @@
 import "./searchForm.css";
-import Images from "./Images";
 import Form from "./Form";
-import {
-  imagesFieldsLeft,
-  imagesFieldsRight,
-} from "../../../../../config/constants";
+
+const players1 = [
+  { name: "NikolaJOKIC" },
+  { name: "KevinDURANT" },
+  { name: "LebronJAMES" },
+];
+const players2 = [
+  { name: "StephenCURRY" },
+  { name: "JoelEMBIID" },
+  { name: "ANTETOKOUNMPO" },
+];
 
 export default function SearchForm() {
   return (
     <div className="search-form-container">
-      <Images imagesFields={imagesFieldsLeft} />
+      {players1.map(({ name }) => (
+        <img
+          key={name}
+          src={`/public/${name}.avif`}
+          style={{ width: "100px" }}
+        />
+      ))}
       <Form />
-      <Images imagesFields={imagesFieldsRight} />
+      {players2.map(({ name }) => (
+        <img
+          key={name}
+          src={`/public/${name}.avif`}
+          style={{ width: "100px" }}
+        />
+      ))}
     </div>
   );
 }

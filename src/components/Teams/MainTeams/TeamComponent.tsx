@@ -5,9 +5,9 @@ import PrimaryButton from "../../reusable-ui/PrimaryButton/PrimaryButton";
 const getLogoPATH = (name: string) => {
   return `/public/images/${name}.svg`;
 };
-const getFaceImagePATH = (name: string) => {
-  return `/public/bannersImages/${name}.png`;
-};
+// const getFaceImagePATH = (name: string) => {
+//   return `/public/bannersImages/${name}.png`;
+// };
 type TeamComponentProps = {
   team: Team;
 };
@@ -25,7 +25,8 @@ export default function TeamComponent({ team }: TeamComponentProps) {
 
   return (
     <div className="team" id={city}>
-      <img src={getFaceImagePATH(full_name)} className="face" />
+      {/* <img src={getFaceImagePATH(full_name)} className="face" /> */}
+      <img src={`/public/bannersImages/${full_name}.png`} className="face" />
       <div className="description-container">
         <img src={getLogoPATH(name)} />
         <span className="name">{full_name}</span>
