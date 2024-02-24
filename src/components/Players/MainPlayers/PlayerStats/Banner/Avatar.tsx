@@ -1,4 +1,4 @@
-import avatarPlayer from "../../../../../images/avatar-player.png";
+import avatarPlayer from "/images/avatar-player.png";
 
 export default function Avatar() {
   return (

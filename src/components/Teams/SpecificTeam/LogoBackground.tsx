@@ -12,7 +12,7 @@ export default function LogoBackground() {
   if (!specificTeamData) return;
   return (
     <img
-      src={`/public/images/${specificTeamData.name}.svg`}
+      src={`/public/images/teamsLogos/${specificTeamData.name}.svg`}
       className="logo-background"
     />
   );

@@ -1,7 +1,7 @@
 import { Team } from "../../../../../Players/playersTypes";
-const getLogoPATH = (name: string) => {
-  return `/public/images/${name}.svg`;
-};
+// const getLogoPATH = (name: string) => {
+//   return `/public/images/teamsLogos/${name}.svg`;
+// };
 type InfosTeamCardProps = {
   team: Team;
 };
@@ -11,7 +11,7 @@ export default function InfosVisitorTeam({ team }: InfosTeamCardProps) {
   return (
     <div className="team-infos">
       <h3 className="abbreviation-name">{abbreviation}</h3>
-      <img className="logo" src={getLogoPATH(name)} />
+      <img className="logo" src={`/public/images/teamsLogos/${name}.svg`} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import "./logoAndName.css";
-const getLogoPATH = (name: string) => {
-  return `/public/images/${name}.svg`;
-};
+// const getLogoPATH = (name: string) => {
+//   return `/public/images/teamsLogos/${name}.svg`;
+// };
 type LogoAndNameProps = {
   className: string;
   name: string;
@@ -17,7 +17,10 @@ export default function LogoAndName({
 }: LogoAndNameProps) {
   return (
     <div className={className}>
-      <img className={classNameImage} src={getLogoPATH(name)} />
+      <img
+        className={classNameImage}
+        src={`/public/images/teamsLogos/${name}.svg`}
+      />
       <span className={classNameName}>{name}</span>
     </div>
   );

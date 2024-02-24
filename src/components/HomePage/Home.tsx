@@ -2,8 +2,8 @@ import "./home.css";
 import { useState } from "react";
 import SwitchButton from "../reusable-ui/SwitchButton/SwitchButton";
 import Meteors from "./Meteors/Meteors";
-import lebron from "/public/LebronJAMES.avif";
-import curry from "/public/StephenCURRY.avif";
+import lebron from "/images/starsImages/LebronJAMES.avif";
+import curry from "/images/starsImages/StephenCURRY.avif";
 
 export default function Home() {
   const [isSwitchButtonActived, setIsSwitchButtonActived] = useState(false);
