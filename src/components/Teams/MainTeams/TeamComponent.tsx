@@ -28,7 +28,7 @@ export default function TeamComponent({ team }: TeamComponentProps) {
       {/* <img src={getFaceImagePATH(full_name)} className="face" /> */}
       <img src={`/images/teamsBanners/${full_name}.png`} className="face" />
       <div className="description-container">
-        <img src={`public/images/teamsLogos/${name}.svg`} />
+        <img src={`/images/teamsLogos/${name}.svg`} />
         <span className="name">{full_name}</span>
         <PrimaryButton
           id={id.toString()}
