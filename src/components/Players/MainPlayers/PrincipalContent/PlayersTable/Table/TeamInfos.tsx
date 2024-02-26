@@ -8,9 +8,9 @@ export default function TeamInfos({ team }: TeamInfosProps) {
 
   return (
     <>
-      <td>{full_name}</td>
-      <td>{conference}</td>
-      <td>{division}</td>
+      <td className="Équipe">{full_name}</td>
+      <td className="Conférence">{conference}</td>
+      <td className="Division">{division}</td>
     </>
   );
 }

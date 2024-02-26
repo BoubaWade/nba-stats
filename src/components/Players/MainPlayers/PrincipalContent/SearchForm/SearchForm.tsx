@@ -15,21 +15,25 @@ const players2 = [
 export default function SearchForm() {
   return (
     <div className="search-form-container">
-      {players1.map(({ name }) => (
-        <img
-          key={name}
-          src={`/images/starsImages/${name}.avif`}
-          style={{ width: "100px" }}
-        />
-      ))}
+      <div className="stars-left">
+        {players1.map(({ name }) => (
+          <img
+            key={name}
+            src={`/images/starsImages/${name}.avif`}
+            className="star-logo"
+          />
+        ))}
+      </div>
       <Form />
-      {players2.map(({ name }) => (
-        <img
-          key={name}
-          src={`/images/starsImages/${name}.avif`}
-          style={{ width: "100px" }}
-        />
-      ))}
+      <div className="stars-right">
+        {players2.map(({ name }) => (
+          <img
+            key={name}
+            src={`/images/starsImages/${name}.avif`}
+            className="star-logo"
+          />
+        ))}
+      </div>
     </div>
   );
 }

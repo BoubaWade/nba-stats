@@ -11,7 +11,9 @@ export default function TableHeader() {
     <thead>
       <tr>
         {headerItems.map((item, index) => (
-          <th key={index}>{item}</th>
+          <th className={item} key={index}>
+            {item}
+          </th>
         ))}
       </tr>
     </thead>

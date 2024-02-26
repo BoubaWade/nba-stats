@@ -18,3 +18,21 @@
         transform: rotate(360deg)
     }
 }
+
+@media screen and (max-width: 720px) {
+    #loader {
+        margin-left: 40vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #loader {
+        margin-left: 35vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #loader {
+        margin-left: 31vw;
+    }
+}
