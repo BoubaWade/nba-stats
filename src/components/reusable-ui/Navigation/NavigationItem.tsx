@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { GlobalContext } from "../../../contexts/globalContext";
 import { useNavigate } from "react-router-dom";
 
-type SideBarItemProps = {
+type NavigationItemProps = {
   item: { text: string; link: string };
 };
 
-export default function SideBarItem({ item }: SideBarItemProps) {
+export default function NavigationItem({ item }: NavigationItemProps) {
   const { link, text } = item;
   const { setShowAllGames, setShowSpecificPlayer, setShowSpecificTeam } =
     useContext(GlobalContext);

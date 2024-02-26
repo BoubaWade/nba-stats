@@ -1,5 +1,5 @@
 import "./teams.css";
-import SideBar from "../reusable-ui/Sidebar/SideBar";
+import Navigation from "../reusable-ui/Navigation/Navigation";
 import MainTeams from "./MainTeams/MainTeams";
 import SpecificTeam from "./SpecificTeam/SpecificTeam";
 import { useContext } from "react";
@@ -11,7 +11,7 @@ export default function Teams() {
 
   return (
     <div className="teams-container">
-      <SideBar />
+      <Navigation />
       <Cursor className="teams-button-cursor" />
       {!showSpecificTeam ? <MainTeams /> : <SpecificTeam />}
     </div>
