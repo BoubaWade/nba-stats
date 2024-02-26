@@ -1,5 +1,6 @@
 import "./searchForm.css";
 import Form from "./Form";
+import PlayersStars from "./PlayersStars";
 
 const players1 = [
   { name: "NikolaJOKIC" },
@@ -15,25 +16,9 @@ const players2 = [
 export default function SearchForm() {
   return (
     <div className="search-form-container">
-      <div className="stars-left">
-        {players1.map(({ name }) => (
-          <img
-            key={name}
-            src={`/images/starsImages/${name}.avif`}
-            className="star-logo"
-          />
-        ))}
-      </div>
+      <PlayersStars className="stars-left" stars={players1} />
       <Form />
-      <div className="stars-right">
-        {players2.map(({ name }) => (
-          <img
-            key={name}
-            src={`/images/starsImages/${name}.avif`}
-            className="star-logo"
-          />
-        ))}
-      </div>
+      <PlayersStars className="stars-right" stars={players2} />
     </div>
   );
 }
