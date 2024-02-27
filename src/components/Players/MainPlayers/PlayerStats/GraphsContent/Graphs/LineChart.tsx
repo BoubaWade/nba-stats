@@ -5,8 +5,6 @@ type LineProps = {
   data: number[];
   statName: string;
   className: string;
-  width: number;
-  height: number;
   marginTop: number;
   marginRight: number;
   marginBottom: number;
@@ -17,86 +15,111 @@ export default function LineChart({
   data,
   statName,
   className,
-  width,
-  height,
   marginTop,
   marginRight,
   marginBottom,
   marginLeft,
 }: LineProps) {
-  const gx = useRef<SVGGElement | null>(null);
-  const gy = useRef<SVGGElement | null>(null);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
+  const svgRef = useRef<SVGSVGElement | null>(null);
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (svgRef.current) {
+        const containerWidth = svgRef.current.parentElement?.clientWidth || 0;
+        const width = containerWidth - marginLeft - marginRight;
+        const height = 300;
+
+        setDimensions({ width, height });
+      }
+    };
+
+    updateDimensions();
+
+    window.addEventListener("resize", updateDimensions);
+
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, [marginLeft, marginRight]);
 
   const x = d3
     .scaleLinear()
     .domain([1, data.length])
-    .range([marginLeft, width - marginRight]);
+    .range([0, dimensions.width]);
 
   const y = d3
     .scaleLinear()
     .domain(d3.extent(data) as [number, number])
-    .range([height - marginBottom, marginTop]);
+    .range([dimensions.height - marginBottom, marginTop]);
 
   const line = d3.line((_, i) => x(i + 1), y);
 
   useEffect(() => {
-    if (gx.current) {
-      d3.select(gx.current).call(d3.axisBottom(x));
+    if (svgRef.current) {
+      d3.select(svgRef.current).select(".x-axis").call(d3.axisBottom(x));
     }
-  }, [gx, x]);
+  }, [x]);
 
   useEffect(() => {
-    if (gy.current) {
-      d3.select(gy.current).call(d3.axisLeft(y));
+    if (svgRef.current) {
+      d3.select(svgRef.current).select(".y-axis").call(d3.axisLeft(y));
     }
-  }, [gy, y]);
+  }, [y]);
 
   return (
     <div className={className}>
-      <svg width={width} height={height}>
-        <g ref={gx} transform={`translate(0,${height - marginBottom})`} />
-        <g ref={gy} transform={`translate(${marginLeft},0)`} />
-        <path
-          fill="none"
-          stroke="black"
-          strokeWidth="1.5"
-          d={line(data) || undefined}
-        />
-        <g fill="white" stroke="currentColor" strokeWidth="1.5">
-          {data.map((d, i) => (
-            <circle
-              key={i}
-              cx={x(i + 1)}
-              cy={y(d)}
-              r="2.5"
-              onMouseOver={() => setHoveredPoint(i)}
-              onMouseOut={() => setHoveredPoint(null)}
-              cursor={"pointer"}
-            />
-          ))}
-        </g>
-        {hoveredPoint !== null && (
-          <g>
-            <rect
-              x={x(hoveredPoint) - 100}
-              y={y(data[hoveredPoint]) - 37.5}
-              width={200}
-              height={35}
-              fill="white"
-              stroke="black"
-              strokeWidth="1"
-            />
-            <text
-              x={x(hoveredPoint)}
-              y={y(data[hoveredPoint]) - 15}
-              textAnchor="middle"
-              fill="black"
-            >
-              {`Match ${hoveredPoint + 1} ; ${data[hoveredPoint]} ${statName}`}
-            </text>
+      <svg width="100%" height={dimensions.height} ref={svgRef}>
+        <g transform={`translate(${marginLeft},${marginTop})`}>
+          <g
+            className="x-axis"
+            transform={`translate(0,${dimensions.height - marginBottom})`}
+          />
+          <g className="y-axis" />
+          <path
+            fill="none"
+            stroke="black"
+            strokeWidth="1.5"
+            d={line(data) || undefined}
+          />
+          <g fill="white" stroke="currentColor" strokeWidth="1.5">
+            {data.map((d, i) => (
+              <circle
+                key={i}
+                cx={x(i + 1)}
+                cy={y(d)}
+                r="2.5"
+                onMouseOver={() => setHoveredPoint(i)}
+                onMouseOut={() => setHoveredPoint(null)}
+                cursor={"pointer"}
+              />
+            ))}
           </g>
-        )}
+          {hoveredPoint !== null && (
+            <g>
+              <rect
+                x={x(hoveredPoint) - 100}
+                y={y(data[hoveredPoint]) - 37.5}
+                width={200}
+                height={35}
+                fill="white"
+                stroke="black"
+                strokeWidth="1"
+              />
+              <text
+                x={x(hoveredPoint)}
+                y={y(data[hoveredPoint]) - 15}
+                textAnchor="middle"
+                fill="black"
+              >
+                {`Match ${hoveredPoint + 1} ; ${
+                  data[hoveredPoint]
+                } ${statName}`}
+              </text>
+            </g>
+          )}
+        </g>
       </svg>
     </div>
   );

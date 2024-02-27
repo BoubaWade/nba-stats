@@ -21,24 +21,20 @@ export default function Graphs({
           data={specificStat}
           statName={statName}
           className="line-graph"
-          width={700}
-          height={350}
-          marginTop={40}
-          marginRight={100}
+          marginTop={20}
+          marginRight={10}
           marginBottom={40}
-          marginLeft={100}
+          marginLeft={30}
         />
       )}
       {showBarChart && (
         <BarChart
           data={specificStat}
           className="bar-graph"
-          width={600}
-          height={350}
-          marginTop={40}
-          marginRight={40}
+          marginTop={20}
+          marginRight={10}
           marginBottom={40}
-          marginLeft={40}
+          marginLeft={30}
         />
       )}
     </div>
