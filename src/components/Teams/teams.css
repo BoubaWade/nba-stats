@@ -4,10 +4,6 @@
     overflow: hidden;
 }
 
-.teams-container .teams-button-cursor {
-    top: 240px;
-}
-
 .main-teams,
 .specificTeam-container {
     background: #c5d5e6;
@@ -46,7 +42,7 @@
 .divisions-container .division {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    width: 65%;
+    width: 750px;
     height: 450px;
     margin: 0 auto;
     overflow: hidden;
@@ -82,8 +78,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 150px;
     height: 450px;
-
 }
 
 .divisions-container .division .team .face {
@@ -191,4 +187,164 @@
     gap: 10px;
     justify-content: center;
     z-index: 1;
+}
+
+@media screen and (max-width: 1029px) {
+    .main-teams .divisions-container {
+        width: 700px;
+    }
+
+    .divisions-container .division {
+        width: 100%;
+    }
+
+    .divisions-container .division .team {
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .main-teams h2 {
+        font-size: 15px;
+        padding: 7px 20px;
+    }
+
+    .main-teams .divisions-container {
+        width: 95%;
+    }
+
+    .divisions-container .division {
+        background-image: none;
+        box-shadow: none;
+        height: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .divisions-container .division .team {
+        background: rgb(25, 30, 45);
+        height: 190px;
+        width: 175px;
+        border-radius: 5px;
+    }
+
+    .division .team .face {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .divisions-container .division {
+        height: 410px;
+    }
+
+    .divisions-container .division .team {
+        height: 200px;
+        width: 160px;
+    }
+
+    .divisions-container .division .team .description-container img {
+        width: 60px;
+    }
+
+    .divisions-container .division .team .description-container .name {
+        font-size: 14px;
+        margin-bottom: 13px;
+    }
+
+    .division .team .description-container .display-games-button {
+        width: 95px;
+        height: 35px;
+        font-size: 13px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-teams {
+        width: calc(100vw - 150px);
+        left: 150px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .main-teams {
+        width: 100vw;
+        left: 0;
+        top: 50px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .divisions-container .division .team {
+        width: 160px;
+    }
+}
+
+@media screen and (max-width: 522px) {
+    .divisions-container .division .team {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .main-teams h2 {
+        font-size: 14px;
+        padding: 7px 20px;
+    }
+
+    .divisions-container .division .team {
+        width: 140px;
+    }
+
+    .divisions-container .division .team .description-container img {
+        width: 55px;
+    }
+
+    .divisions-container .division .team .description-container .name {
+        font-size: 13px;
+
+        margin-bottom: 10px;
+    }
+
+    .division .team .description-container .display-games-button {
+        width: 85px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 458px) {
+    .main-teams h2 {
+        font-size: 13px;
+        margin-top: 30px;
+        padding: 7px 20px;
+        box-shadow: 0px 0px 5px rgb(25, 30, 45);
+    }
+
+    .main-teams .divisions-container {
+        width: 98%;
+    }
+
+    .divisions-container .division .team {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .main-teams h2 {
+        padding: 6px 10px;
+    }
+}
+
+@media screen and (max-width: 408px) {
+    .main-teams h2 {
+        padding: 5px 5px;
+    }
+
+    .divisions-container .division {
+        height: 610px;
+    }
 }

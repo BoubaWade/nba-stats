@@ -2,12 +2,9 @@ import { useContext } from "react";
 import { Team } from "../../Players/playersTypes";
 import { GlobalContext } from "../../../contexts/globalContext";
 import PrimaryButton from "../../reusable-ui/PrimaryButton/PrimaryButton";
-// const getLogoPATH = (name: string) => {
-//   return `/images/teamsLogos/${name}.svg`;
-// };
-// const getFaceImagePATH = (name: string) => {
-//   return `/images/teamsBanners/${name}.png`;
-// };
+import TeamBanner from "./TeamBanner";
+import LogoName from "./LogoName";
+
 type TeamComponentProps = {
   team: Team;
 };
@@ -25,11 +22,9 @@ export default function TeamComponent({ team }: TeamComponentProps) {
 
   return (
     <div className="team" id={city}>
-      {/* <img src={getFaceImagePATH(full_name)} className="face" /> */}
-      <img src={`/images/teamsBanners/${full_name}.png`} className="face" />
+      <TeamBanner name={full_name} />
       <div className="description-container">
-        <img src={`/images/teamsLogos/${name}.svg`} />
-        <span className="name">{full_name}</span>
+        <LogoName name={name} full_name={full_name} />
         <PrimaryButton
           id={id.toString()}
           className="display-games-button"

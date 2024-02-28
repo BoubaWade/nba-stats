@@ -9,7 +9,7 @@ export default function PlayersStars({ className, stars }: PlayersStarsProps) {
       {stars.map(({ name }) => (
         <img
           key={name}
-          src={`/images/starsImages/${name}.avif`}
+          src={`/public/images/starsImages/${name}.avif`}
           className="star-logo"
         />
       ))}
