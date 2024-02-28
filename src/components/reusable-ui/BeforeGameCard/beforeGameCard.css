@@ -43,3 +43,21 @@
  .preview-game-card:hover .date-and-time {
      transform: translateX(5px);
  }
+
+ @media screen and (max-width: 425px) {
+     .preview-game-card {
+         height: 150px;
+     }
+
+     .preview-game-card .logo-name span {
+         font-size: 12px;
+     }
+
+     .preview-game-card .logo-name .image {
+         width: 55px;
+     }
+
+     .preview-game-card .date-and-time {
+         font-size: 14px;
+     }
+ }

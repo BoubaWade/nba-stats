@@ -1,3 +1,4 @@
+import "./specificTeam.css";
 import MainSpecificTeam from "./MainSpecificTeam/MainSpecificTeam";
 import LogoBackground from "./LogoBackground";
 

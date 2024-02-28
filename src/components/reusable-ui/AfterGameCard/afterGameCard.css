@@ -57,3 +57,26 @@
     font-size: 22px;
     font-weight: 700;
 }
+
+@media screen and (max-width: 425px) {
+    .after-game-card {
+        height: 150px;
+    }
+
+    .after-game-card .date {
+        font-size: 13px;
+    }
+
+    .after-game-card .teams-infos-container .team-infos .logo {
+        width: 55px;
+    }
+
+    .after-game-card .teams-infos-container .team-infos .abbreviation-name {
+        font-size: 17px;
+    }
+
+    .after-game-card .scores {
+
+        font-size: 19px;
+    }
+}

@@ -23,12 +23,16 @@ export default function Header() {
 
   return (
     <div className="header">
-      <PrimaryButton label="Retour" onClick={handleClick} />
+      <PrimaryButton
+        id="return-main-teams"
+        label="Retour"
+        onClick={handleClick}
+      />
       <span className="label-date-range">Choisir une période</span>
       <DateRangePicker
         className="date-range-picker"
         calendarClassName="calendar-date-picker"
-        rangeDivider="à"
+        rangeDivider="-"
         onChange={onChange}
         value={value}
       />
