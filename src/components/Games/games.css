@@ -6,10 +6,6 @@
     overflow: hidden;
 }
 
-.games-container .games-button-cursor {
-    top: 303px;
-}
-
 .games-container .main-games {
     position: absolute;
     left: 200px;
@@ -33,7 +29,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 .games-container .main-games .all-games-container .loader-games-cards {
@@ -104,4 +100,67 @@
     font-size: 18px;
     font-weight: 500;
     margin-right: 5px;
+}
+
+@media screen and (max-width: 1230px) {
+    .games-container .main-games .all-games-container .list-games-container {
+        width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    .games-container .main-games .all-games-container .list-games-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .games-container .main-games .all-games-container .list-games-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .games-container .main-games {
+        width: calc(100vw - 150px);
+        left: 150px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .games-container .main-games {
+        width: 100vw;
+        left: 0;
+        top: 50px;
+    }
+
+    .games-container .main-games .all-games-container .calendar-date-picker {
+        margin-top: 50px;
+    }
+
+    .games-container .main-games .all-games-container .list-games-container {
+        width: 95%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .games-container .main-games .all-games-container .list-games-container {
+        grid-template-columns: 1fr;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .games-container .main-games .all-games-container .list-games-container {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .games-container .main-games .all-games-container .list-games-container {
+        width: 95%;
+    }
 }

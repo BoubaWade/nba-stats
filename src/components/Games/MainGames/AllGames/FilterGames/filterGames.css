@@ -8,3 +8,58 @@
 .filter-games-buttons-list button.active-button {
     background: rgb(25, 30, 45);
 }
+
+@media screen and (max-width: 890px) {
+    .filter-container {
+        justify-content: center;
+    }
+
+    .filter-games-buttons-list button {
+        font-size: 13px;
+        padding: 8px 20px;
+        margin: 0 5px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .filter-games-buttons-list button {
+        font-size: 12px;
+        padding: 8px 15px;
+        margin: 0 5px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .filter-games-buttons-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .filter-games-buttons-list button {
+        font-size: 12px;
+        padding: 8px 15px;
+        margin: 0 5px;
+    }
+}
+
+@media screen and (max-width: 456px) {
+    .filter-container {
+        width: 95%;
+    }
+
+    .filter-games-buttons-list button {
+        font-size: 12px;
+        padding: 7px 13px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .filter-games-buttons-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 10px;
+    }
+}

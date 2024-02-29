@@ -30,7 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 300;
     color: white;
     padding: 10px 0;
@@ -51,21 +51,19 @@
 @media screen and (max-width: 768px) {
     .navigation {
         width: 150px;
+    }
 
-        .logo {
-            width: 90px;
-        }
+    .navigation .logo {
+        width: 90px;
+    }
 
-        .navigation-list li {
-            font-size: 16px;
-        }
-
+    .navigation .navigation-list li {
+        font-size: 16px;
     }
 }
 
 @media screen and (max-width: 720px) {
     .navigation {
-        /* transform: translateX(-150px); */
         display: none;
     }
 

@@ -74,14 +74,18 @@
         justify-content: center;
         position: absolute;
         top: 50px;
-        width: 150px;
+        width: 100vw;
         height: 100vh;
         border-bottom-right-radius: 5px;
-        transform: translateX(-150px);
+        transform: translateX(-100vw);
     }
 
     .navigation-mobile .navigation-list.actived {
         transform: translateX(0);
+    }
+
+    .navigation-list li {
+        font-size: 16px;
     }
 
     .navigation-mobile .logo {
@@ -95,12 +99,7 @@
         width: 27px;
     }
 
-    .navigation-mobile .navigation-list {
-        width: 120px;
-        transform: translateX(-120px);
-    }
-
-    .navigation-mobile .navigation-list.actived {
-        transform: translateX(0);
+    .navigation-list li {
+        font-size: 15px;
     }
 }

@@ -52,20 +52,12 @@
 }
 
 .specificTeam-container .main-specificTeam .header .react-daterange-picker__wrapper {
-    border: 2px solid rgb(25, 30, 45);
-    border-radius: 5px;
     background: white;
     color: black;
 }
 
-.header .react-daterange-picker__wrapper .react-daterange-picker__inputGroup input {
-    font-size: 15px;
-}
-
 .specificTeam-container .main-specificTeam .calendar-date-picker {
     margin-top: 3px;
-    border: 2px solid rgb(25, 30, 45);
-    border-radius: 5px;
 }
 
 .specificTeam-container .main-specificTeam .header .team-name {
@@ -104,8 +96,8 @@
 
 @media screen and (max-width: 890px) {
     .main-specificTeam .list-games-cards {
-        width: 60%;
         grid-template-columns: 1fr;
+        justify-items: center;
     }
 }
 
@@ -141,21 +133,15 @@
 }
 
 @media screen and (max-width: 577px) {
-    .header .date-range-picker {
-        width: 300px;
-        height: 40px;
-    }
-
-    .main-specificTeam .calendar-date-picker {
-        width: 300px;
-    }
-
     .specificTeam-container .main-specificTeam .header .team-name {
         font-size: 18px;
     }
 }
 
 @media screen and (max-width: 530px) {
+    .specificTeam-container .main-specificTeam .header .label-date-range {
+        font-size: 14px;
+    }
 
     .main-specificTeam .list-games-cards {
         width: 70%;
@@ -172,42 +158,12 @@
         padding: 6px 25px;
     }
 
-    .header .date-range-picker {
-        width: 260px;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    .header .react-daterange-picker__wrapper {
-        width: 100%;
-        padding-left: 1px;
-    }
-
-    .react-daterange-picker__wrapper .react-daterange-picker__clear-button {
-        padding: 0;
-    }
-
-    .react-daterange-picker__calendar-button {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .react-daterange-picker__calendar-button svg {
-        width: 15px;
-        height: 15px;
-    }
-
-    .main-specificTeam .calendar-date-picker {
-        width: 260px;
-    }
-
     .specificTeam-container .main-specificTeam .header .team-name {
         font-size: 18px;
         margin: 25px 0 0;
     }
 
     .specificTeam-container .main-specificTeam .header .label-date-range {
-        font-size: 14px;
         margin-top: 20px;
         margin-bottom: 5px;
     }
@@ -218,6 +174,10 @@
 }
 
 @media screen and (max-width: 375px) {
+    .specificTeam-container .main-specificTeam .header .label-date-range {
+        font-size: 12px;
+        margin-top: 35px;
+    }
 
     .main-specificTeam .list-games-cards {
         width: 80%;
