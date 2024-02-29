@@ -11,6 +11,11 @@
     overflow: scroll;
 }
 
+.main-players .player-stats-loader {
+    position: absolute;
+    top: 300px;
+}
+
 .main-players .empty-players-message {
     font-size: 18px;
     margin-top: 50px;

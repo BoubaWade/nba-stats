@@ -58,13 +58,17 @@ export default function LineChart({
 
   useEffect(() => {
     if (svgRef.current) {
-      d3.select(svgRef.current).select(".x-axis").call(d3.axisBottom(x));
+      d3.select(svgRef.current)
+        .select<SVGGElement>(".x-axis")
+        .call(d3.axisBottom(x));
     }
   }, [x]);
 
   useEffect(() => {
     if (svgRef.current) {
-      d3.select(svgRef.current).select(".y-axis").call(d3.axisLeft(y));
+      d3.select(svgRef.current)
+        .select<SVGGElement>(".y-axis")
+        .call(d3.axisLeft(y));
     }
   }, [y]);
 
