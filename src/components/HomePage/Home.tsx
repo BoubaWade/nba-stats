@@ -27,8 +27,8 @@ export default function Home() {
       }
     >
       <Meteors />
-      <img src={lebron} />
-      <img src={curry} />
+      <img src={lebron} className="player-star" />
+      <img src={curry} className="player-star" />
       <div className="background-home">
         <div
           className={

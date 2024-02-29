@@ -1,5 +1,5 @@
 import "./players.css";
-import SideBar from "../reusable-ui/Sidebar/SideBar";
+import Navigation from "../reusable-ui/Navigation/Navigation";
 import MainPlayers from "./MainPlayers/MainPlayers";
 import { PlayersContext } from "../../contexts/playersContext";
 import Cursor from "../reusable-ui/Cursor/Cursor";
@@ -11,7 +11,7 @@ export default function Players() {
   return (
     <PlayersContext.Provider value={playersContextValue}>
       <div className="players-container">
-        <SideBar />
+        <Navigation />
         <Cursor className="players-button-cursor" />
         <MainPlayers />
       </div>

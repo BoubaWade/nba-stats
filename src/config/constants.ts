@@ -1,13 +1,3 @@
-// export const imagesFieldsLeft = [
-//   { src: "/public/NikolaJOKIC.avif" },
-//   { src: "/public/KevinDURANT.avif" },
-//   { src: "/public/LebronJAMES.avif" },
-// ];
-// export const imagesFieldsRight = [
-//   { src: "/public/StephenCURRY.avif" },
-//   { src: "/public/JoelEMBIID.avif" },
-//   { src: "/public/ANTETOKOUNMPO.avif" },
-// ];
 export const BANNERS = [
   { name: "Atlanta Hawks" },
   { name: "Boston Celtics" },
@@ -41,9 +31,9 @@ export const BANNERS = [
   { name: "Atlanta Hawks" },
 ];
 
-export const statOptions = ["", "Points", "Passes", "Rebonds", "Contres"];
+export const statOptions = ["Points", "Passes", "Rebonds", "Contres"];
 
-export const graphs = ["", "Barre", "Ligne"];
+export const graphs = ["Barre", "Ligne"];
 
 export const divisionsName = [
   "Atlantic",

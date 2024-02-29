@@ -8,6 +8,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
+    overflow: hidden;
+}
+
+.home-container .player-star {
+    max-width: 800px;
+    width: 50vw;
 }
 
 .home-container.switch-behind {
@@ -59,8 +66,8 @@
 .background-home .left-side {
     position: absolute;
     left: 0;
-    width: 50vw;
-    height: 100vh;
+    width: 50%;
+    height: 100%;
     background-color: rgb(25, 30, 45);
     transition: 1s ease-in-out;
 }
@@ -72,12 +79,30 @@
 .background-home .right-side {
     position: absolute;
     right: 0;
-    width: 50vw;
-    height: 100vh;
+    width: 50%;
+    height: 100%;
     background-color: rgb(25, 30, 45);
     transition: 1s ease-in-out;
 }
 
 .background-home .right-side.right-translate {
     transform: translateX(100%);
+}
+
+@media screen and (max-width: 900px) {
+    .home-container h1 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .home-container h1 {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .home-container h1 {
+        font-size: 30px;
+    }
 }

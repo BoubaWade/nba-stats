@@ -2,11 +2,10 @@ import "./graphsContent.css";
 import Graphs from "./Graphs/Graphs";
 import MenusSelect from "./MenusSelect/MenusSelect";
 import useGraphs from "../../../../../hooks/useGraphs";
+import { useEffect } from "react";
 
 export default function GraphsContent() {
   const {
-    showLabelStat,
-    showLabelGraph,
     handleSelectStatName,
     handleSelectAGraph,
     statName,
@@ -15,11 +14,14 @@ export default function GraphsContent() {
     specificStat,
   } = useGraphs();
 
+  useEffect(() => {
+    handleSelectStatName("Points");
+    handleSelectAGraph("Barre");
+  }, []);
+
   return (
     <div className="graphs-content">
       <MenusSelect
-        showLabelStat={showLabelStat}
-        showLabelGraph={showLabelGraph}
         handleSelectStatName={handleSelectStatName}
         handleSelectAGraph={handleSelectAGraph}
       />

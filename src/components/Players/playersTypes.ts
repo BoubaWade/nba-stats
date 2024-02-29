@@ -50,6 +50,7 @@ export type PlayerStats = {
     height_inches?: number;
     last_name: string;
     position?: string;
+    jersey_number?: number;
   };
   pts: number;
   reb: number;

@@ -20,7 +20,6 @@
     width: 45px;
     height: 45px;
     background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #ff2200 100%);
-
     position: absolute;
     right: 2px;
     border-radius: 50%;
@@ -29,4 +28,57 @@
 
 .button-container .slide-button.actived {
     transform: translateX(-181px);
+}
+
+@media screen and (max-width: 900px) {
+    .button-container {
+        width: 200px;
+        height: 45px;
+
+        .slide-button {
+            width: 40px;
+            height: 40px;
+        }
+
+        .slide-button.actived {
+            transform: translateX(-156px);
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .button-container {
+        top: 390px;
+        width: 180px;
+        height: 40px;
+
+        .slide-button {
+            width: 35px;
+            height: 35px;
+        }
+
+        .slide-button.actived {
+            transform: translateX(-141px);
+        }
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .button-container {
+        top: 380px;
+        width: 160px;
+        height: 35px;
+        border: 2.5px solid #4fc4e7;
+
+
+        .slide-button {
+            width: 32px;
+            height: 32px;
+            right: 1.5px;
+        }
+
+        .slide-button.actived {
+            transform: translateX(-125px);
+        }
+    }
 }

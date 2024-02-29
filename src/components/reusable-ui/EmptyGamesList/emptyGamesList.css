@@ -6,3 +6,15 @@
 .instruction {
     font-size: 14px;
 }
+
+@media screen and (max-width: 500px) {
+    .text-label {
+        font-size: 17px;
+        margin-top: 120px;
+    }
+
+    .instruction {
+        font-size: 12px;
+    }
+
+}

@@ -1,10 +1,10 @@
 import "./season.css";
-import SideBar from "../reusable-ui/Sidebar/SideBar";
+import Navigation from "../reusable-ui/Navigation/Navigation";
 
 export default function Season() {
   return (
     <div className="season-container">
-      <SideBar />
+      <Navigation />
       Season
     </div>
   );

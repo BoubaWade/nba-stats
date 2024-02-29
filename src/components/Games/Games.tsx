@@ -1,13 +1,13 @@
 import "./games.css";
-import SideBar from "../reusable-ui/Sidebar/SideBar";
+import Navigation from "../reusable-ui/Navigation/Navigation";
 import MainGames from "./MainGames/MainGames";
-import Cursor from "../reusable-ui/Cursor/Cursor";
+import NavigationMobile from "../reusable-ui/NavigationMobile.tsx/NavigationMobile";
 
 export default function Games() {
   return (
     <div className="games-container">
-      <SideBar />
-      <Cursor className="games-button-cursor" />
+      <NavigationMobile />
+      <Navigation />
       <MainGames />
     </div>
   );

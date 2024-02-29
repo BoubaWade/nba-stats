@@ -7,3 +7,15 @@
     left: 190px;
     z-index: 1;
 }
+
+@media screen and (max-width: 768px) {
+    #cursor {
+        left: 130px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #cursor {
+        display: none;
+    }
+}

@@ -1,18 +1,18 @@
-import "./sideBar.css";
+import "./navigation.css";
 import logo from "/images/nba_logo.svg";
-import SideBarListItems from "./SideBarListItems";
+import NavigationListItems from "./NavigationListItems";
 import { useNavigate } from "react-router-dom";
 
-export default function SideBar() {
+export default function Navigation() {
   const navigate = useNavigate();
   const handleReturnHomePage = () => {
     navigate("/");
   };
 
   return (
-    <div className="sidebar">
+    <nav className="navigation">
       <img src={logo} className="logo" onClick={handleReturnHomePage} />
-      <SideBarListItems />
-    </div>
+      <NavigationListItems />
+    </nav>
   );
 }

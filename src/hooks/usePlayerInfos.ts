@@ -37,9 +37,19 @@ export default function usePlayerInfos(player: Player) {
     setShowSpecificPlayer(true);
   };
   const infosFields = [
-    { id: id.toString(), onclick: handleClick, label: last_name },
-    { id: id.toString(), onclick: handleClick, label: first_name },
-    { id: "", onclick: () => {}, label: position },
+    {
+      id: id.toString(),
+      onclick: handleClick,
+      label: last_name,
+      className: "",
+    },
+    {
+      id: id.toString(),
+      onclick: handleClick,
+      label: first_name,
+      className: "",
+    },
+    { id: "", onclick: () => {}, label: position, className: "Position" },
   ];
   return { infosFields };
 }

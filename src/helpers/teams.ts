@@ -8,8 +8,8 @@ export const getAllDivisionsWithTeams = (teams: Team[]) => {
       (team) => team.division === divisionsName[i]
     );
 
-    const array = [divisionWithTeams, divisionsName[i]];
-    arrayTeams.push(array);
+    // const array = [divisionWithTeams, divisionsName[i]];
+    arrayTeams.push(divisionWithTeams);
   }
   return arrayTeams;
 };

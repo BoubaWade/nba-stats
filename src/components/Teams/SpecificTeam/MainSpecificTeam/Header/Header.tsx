@@ -1,10 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../../../../../contexts/globalContext";
-import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import { Value } from "../../../teamsTypes";
 import PrimaryButton from "../../../../reusable-ui/PrimaryButton/PrimaryButton";
+import PrimaryDatePicker from "../../../../reusable-ui/PrimaryDatePicker/PrimaryDatePicker";
 
-export default function Header() {
+type HeaderProps = {
+  setDisplayCards: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function Header({ setDisplayCards }: HeaderProps) {
   const {
     dateRangeForSpecificTeamGames,
     setDateRangeForSpecificTeamGames,
@@ -23,14 +27,17 @@ export default function Header() {
 
   return (
     <div className="header">
-      <PrimaryButton label="Retour" onClick={handleClick} />
+      <PrimaryButton
+        id="return-main-teams"
+        label="Retour"
+        onClick={handleClick}
+      />
       <span className="label-date-range">Choisir une période</span>
-      <DateRangePicker
-        className="date-range-picker"
-        calendarClassName="calendar-date-picker"
-        rangeDivider="à"
+      <PrimaryDatePicker
         onChange={onChange}
         value={value}
+        onCalendarOpen={() => setDisplayCards(false)}
+        onCalendarClose={() => setDisplayCards(true)}
       />
       <h3 className="team-name">{teamFullName?.toUpperCase()}</h3>
     </div>

@@ -1,5 +1,6 @@
 .player-container {
     width: calc(100vw - 200px);
+    height: 100vh;
 }
 
 .player-container .banner {
@@ -20,8 +21,7 @@
 .player-container .banner .image-container img {
     width: 100%;
     max-width: 300px;
-    min-width: 150px;
-    height: 250px;
+    height: 100%;
 }
 
 .player-container .banner .infos {
@@ -56,5 +56,169 @@
 .player-container .grid-stats .stat span {
     font-size: 28px;
     font-weight: 500;
+}
 
+@media screen and (max-width: 900px) {
+    .player-container .banner {
+        height: 220px;
+    }
+
+    .player-container .banner .image-container {
+        height: 170px;
+        margin-top: 30px;
+    }
+
+    .player-container .banner .infos h1 {
+        font-size: 30px;
+    }
+
+    .player-container .grid-stats {
+        height: 90px;
+    }
+
+    .player-container .grid-stats .stat {
+        width: 110px;
+        font-size: 15px;
+    }
+
+    .player-container .grid-stats .stat span {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .player-container {
+        width: calc(100vw - 150px);
+    }
+
+    .player-container .banner {
+        height: 200px;
+    }
+
+    .player-container .banner .image-container {
+        height: 150px;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    .player-container {
+        width: 100vw;
+    }
+
+    .player-container .banner {
+        height: 150px;
+        margin-top: 50px;
+
+    }
+
+    .player-container .banner .image-container {
+        height: 130px;
+        width: 180px;
+        margin-top: 30px;
+    }
+
+    .player-container .banner .infos p {
+        font-size: 15px;
+        margin-bottom: 0;
+    }
+
+    .player-container .banner .infos h1 {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+
+    .player-container .banner {
+        height: 130px;
+    }
+
+    .player-container .banner .image-container {
+        height: 100px;
+        width: 140px;
+    }
+
+    .player-container .banner .infos p {
+        font-size: 13px;
+    }
+
+    .player-container .banner .infos h1 {
+        font-size: 23px;
+    }
+
+    .player-container .grid-stats {
+        height: 80px;
+    }
+
+    .player-container .grid-stats .stat {
+        width: 90px;
+        font-size: 13px;
+    }
+
+    .player-container .grid-stats .stat span {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .player-container {
+        height: 100vh;
+    }
+
+    .player-container .banner {
+        height: 150px;
+    }
+
+    .player-container .banner .image-container {
+        height: 100px;
+        width: 120px;
+    }
+
+    .player-container .banner .infos p {
+        font-size: 12px;
+    }
+
+    .player-container .banner .infos h1 {
+        font-size: 20px;
+    }
+
+    .player-container .grid-stats {
+        height: 70px;
+    }
+
+    .player-container .grid-stats .stat {
+        width: 80px;
+        font-size: 12px;
+    }
+
+    .player-container .grid-stats .stat span {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .player-container .banner .image-container {
+        height: 80px;
+        width: 100px;
+        margin-top: 45px;
+    }
+
+    .player-container .banner .infos h1 {
+        text-align: center;
+    }
+
+    .player-container .grid-stats {
+        height: 60px;
+    }
+
+    .player-container .grid-stats .stat {
+        width: 70px;
+        font-size: 12px;
+    }
+
+    .player-container .grid-stats .stat span {
+        font-size: 18px;
+    }
 }
