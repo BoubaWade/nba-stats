@@ -26,6 +26,7 @@ export default function useApp() {
   const [gameStats, setGameStats] = useState<PlayerStats[]>([]);
   const [showAllGames, setShowAllGames] = useState(true);
   const [games, setGames] = useState<Game[]>([]);
+  const [teamStatsDisplayed, setTeamStatsDisplayed] = useState(false);
 
   const globalContextValue = {
     playerStats,
@@ -54,6 +55,8 @@ export default function useApp() {
     setShowAllGames,
     games,
     setGames,
+    teamStatsDisplayed,
+    setTeamStatsDisplayed,
   };
 
   return { globalContextValue };

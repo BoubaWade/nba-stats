@@ -29,6 +29,8 @@ type GlobalContextType = {
   setShowAllGames: React.Dispatch<React.SetStateAction<boolean>>;
   games: Game[];
   setGames: React.Dispatch<React.SetStateAction<Game[]>>;
+  teamStatsDisplayed: boolean;
+  setTeamStatsDisplayed: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const GlobalContext = createContext<GlobalContextType>({
@@ -58,4 +60,6 @@ export const GlobalContext = createContext<GlobalContextType>({
   setShowAllGames: () => {},
   games: [],
   setGames: () => {},
+  teamStatsDisplayed: false,
+  setTeamStatsDisplayed: () => {},
 });

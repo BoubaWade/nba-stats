@@ -2,27 +2,12 @@ import React from "react";
 import { PlayerStats, Team } from "../components/Players/playersTypes";
 import { Game, GameSearchParams } from "../components/Teams/teamsTypes";
 import { sortGamesByStatus } from "../helpers/games";
+import { STATUS_AFTER_GAME } from "../config/constants";
 
 export const baseURL = "https://api.balldontlie.io/v1";
 export const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
-
-// export const getAllPlayers = (
-//   query: string,
-//   setPlayers: (value: React.SetStateAction<Player[]>) => void
-// ) => {
-//   try {
-//     fetch(`${baseURL}/players?search=${query}`, {
-//       method: "GET",
-//       headers: {
-//         Authorization: API_KEY,
-//       },
-//     })
-//       .then((res) => res.json())
-//       .then((result) => setPlayers(result.data));
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
+export const startSeasonDate = "2023-10-24";
+export const endSeasonDate = "2024-04-14";
 
 export const getPlayerStatsBySeason = (
   playerId: number,
@@ -98,6 +83,27 @@ export const getAllGames = (
     })
       .then((res) => res.json())
       .then((result) => setGames(sortGamesByStatus(result.data)));
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const getAllGamesFinishedByTeam = (teamId: number) => {
+  try {
+    fetch(
+      `${baseURL}/games?start_date=${startSeasonDate}&end_date=${endSeasonDate}&team_ids[]=${teamId}&per_page=82`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: API_KEY,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        return result.data.filter(
+          (game: Game) => game.status === STATUS_AFTER_GAME
+        );
+      });
   } catch (error) {
     console.error(error);
   }

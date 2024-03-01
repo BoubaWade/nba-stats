@@ -38,6 +38,13 @@ export const headerPlayerTableItems = [
   "Conférence",
   "Division",
 ];
+export const headerTeamsTableItems = [
+  "Equipe",
+  "Conférence",
+  "Divison",
+  "Ville",
+  "Abréviation",
+];
 
 export const statOptions = ["Points", "Passes", "Rebonds", "Contres"];
 

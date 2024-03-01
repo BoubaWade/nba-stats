@@ -1,4 +1,31 @@
 .main-stats {
     width: calc(100vw -200px);
     height: 100vh;
+    overflow-y: scroll;
+}
+
+.main-stats h2 {
+    font-size: 20px;
+    text-align: center;
+    margin: 30px 0 50px;
+}
+
+.main-stats .table-container table {
+    width: 80%;
+}
+
+.main-stats .table-container table tbody tr td:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+.main-stats .table-container table tbody tr td:nth-child(2) {
+    cursor: default;
+}
+
+.main-stats .table-container table tbody tr td img {
+    width: 30px;
+    margin-right: 10px;
 }
