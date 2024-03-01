@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { PlayersContext } from "../../../../../../contexts/playersContext";
-import TableRow from "./TableRow";
+import { PlayersContext } from "../../../../../contexts/playersContext";
+import TableRowPlayer from "./TableRowPlayer/TableRowPlayer";
 
 export default function TableBody() {
   const { players, rangeValue } = useContext(PlayersContext);
@@ -10,8 +10,8 @@ export default function TableBody() {
 
   return (
     <tbody>
-      {sliceDataPlayers.map((player) => (
-        <TableRow key={player.id} player={player} />
+      {sliceDataPlayers.map((data) => (
+        <TableRowPlayer key={data.id} player={data} />
       ))}
     </tbody>
   );

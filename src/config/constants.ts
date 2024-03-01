@@ -30,6 +30,14 @@ export const BANNERS = [
   { name: "Atlanta Hawks" },
   { name: "Atlanta Hawks" },
 ];
+export const headerPlayerTableItems = [
+  "Nom",
+  "Prénom",
+  "Position",
+  "Équipe",
+  "Conférence",
+  "Division",
+];
 
 export const statOptions = ["Points", "Passes", "Rebonds", "Contres"];
 

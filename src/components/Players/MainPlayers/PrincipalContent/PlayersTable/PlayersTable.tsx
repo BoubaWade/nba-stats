@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import InputRange from "./InputRange";
-import Table from "./Table/Table";
 import Loader from "../../../../reusable-ui/Loader/Loader";
 import { PlayersContext } from "../../../../../contexts/playersContext";
+import TableContainer from "./TableContainer/TableContainer";
 
 export default function PlayersTable() {
   const { inputSearch, isLoadingPlayers, players } = useContext(PlayersContext);
@@ -15,7 +15,7 @@ export default function PlayersTable() {
   return (
     <>
       <InputRange />
-      <Table />
+      <TableContainer />
     </>
   );
 }

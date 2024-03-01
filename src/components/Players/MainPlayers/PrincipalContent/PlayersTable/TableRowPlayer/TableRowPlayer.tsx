@@ -1,11 +1,11 @@
 import { Player } from "../../../../playersTypes";
 import TeamInfos from "./TeamInfos";
 import PlayerInfos from "./PlayerInfos";
-type TableRowProps = {
+type TableRowPlayerProps = {
   player: Player;
 };
 
-export default function TableRow({ player }: TableRowProps) {
+export default function TableRowPlayer({ player }: TableRowPlayerProps) {
   return (
     <tr>
       <PlayerInfos player={player} />
