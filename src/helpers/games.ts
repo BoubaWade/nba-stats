@@ -156,3 +156,39 @@ export const handleActiveButtonClicked = (
     return updatedState;
   });
 };
+
+export const getAllWinnedGames = (
+  gamesFinished: Game[],
+  teamName: string | null
+) => {
+  let winnedGames = [];
+  for (let i = 0; i < gamesFinished.length; i++) {
+    gamesFinished;
+    const difference =
+      gamesFinished[i].home_team_score - gamesFinished[i].visitor_team_score;
+    if (
+      (difference > 0 && gamesFinished[i].home_team.full_name === teamName) ||
+      (difference < 0 && gamesFinished[i].visitor_team.full_name === teamName)
+    ) {
+      winnedGames.push(gamesFinished[i]);
+    }
+  }
+  return winnedGames;
+};
+
+export const getAllGamesPoints = (
+  gamesFinished: Game[],
+  teamName: string | null
+) => {
+  let allGamesPoints = [];
+  for (let i = 0; i < gamesFinished.length; i++) {
+    if (gamesFinished[i].home_team.full_name === teamName) {
+      allGamesPoints.push(gamesFinished[i].home_team_score);
+    }
+
+    if (gamesFinished[i].visitor_team.full_name === teamName) {
+      allGamesPoints.push(gamesFinished[i].visitor_team_score);
+    }
+  }
+  return allGamesPoints;
+};
