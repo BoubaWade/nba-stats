@@ -66,3 +66,14 @@ export const getButtonsConfig = (isActive: Active) => {
     },
   ];
 };
+
+export const starsPlayers1 = [
+  { name: "NikolaJOKIC" },
+  { name: "KevinDURANT" },
+  { name: "LebronJAMES" },
+];
+export const starsPlayers2 = [
+  { name: "StephenCURRY" },
+  { name: "JoelEMBIID" },
+  { name: "ANTETOKOUNMPO" },
+];
