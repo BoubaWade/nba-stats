@@ -38,15 +38,8 @@
 }
 
 .games-container .main-games .return-button {
-    background-color: rgb(25, 30, 45);
-    color: white;
-    position: absolute;
     right: 20px;
     top: 20px;
-    padding: 10px 30px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
 }
 
 .games-container .main-games .list-stats-card {

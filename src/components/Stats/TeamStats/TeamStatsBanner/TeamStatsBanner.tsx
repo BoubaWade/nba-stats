@@ -1,5 +1,4 @@
 import "./teamStatsBanner.css";
-import PrimaryButton from "../../../reusable-ui/PrimaryButton/PrimaryButton";
 import {
   getAllGamesPoints,
   getAllWinnedGames,
@@ -8,9 +7,11 @@ import {
 import { STATUS_AFTER_GAME } from "../../../../config/constants";
 import { useContext } from "react";
 import { GlobalContext } from "../../../../contexts/globalContext";
+import SecondaryButton from "../../../reusable-ui/SecondaryButton/SecondaryButton";
 
 export default function TeamStatsBanner() {
-  const { teamFullName, allGamesByTeam, teams } = useContext(GlobalContext);
+  const { teamFullName, allGamesByTeam, teams, setTeamStatsDisplayed } =
+    useContext(GlobalContext);
   const allGamesFinished = allGamesByTeam.filter(
     (game) => game.status === STATUS_AFTER_GAME
   );
@@ -28,35 +29,24 @@ export default function TeamStatsBanner() {
           src={`public/images/teamsLogos/${team?.name}.svg`}
           className="logo"
         />
-        <div className="name-win-lose">
+        <div className="balance-sheet">
           <h2>{teamFullName}</h2>
           <p>
-            {gamesWinned.length}V - {numberOfgamesLosed}D | classement
+            {gamesWinned.length}
+            <span>V</span> - {""}
+            {numberOfgamesLosed}
+            <span>D</span>
           </p>
         </div>
       </div>
-      <PrimaryButton label="Retour" />
+      <SecondaryButton
+        label="Retour"
+        className="return-button"
+        onClick={() => setTeamStatsDisplayed(false)}
+      />
       <div className="right-side-team-stats-banner">
-        <div className="ranking-average">
-          <h3>PPG</h3>
-          <span>Rank</span>
-          <span>{averagePoints.toString()}</span>
-        </div>
-        <div className="ranking-average">
-          <h3>RPG</h3>
-          <span>Rank</span>
-          <span>Average</span>
-        </div>
-        <div className="ranking-average">
-          <h3>APG</h3>
-          <span>Rank</span>
-          <span>Average</span>
-        </div>
-        <div className="ranking-average">
-          <h3>OPPG</h3>
-          <span>Rank</span>
-          <span>Average</span>
-        </div>
+        <h3>Points par match</h3>
+        <span>{averagePoints.toString()}</span>
       </div>
     </div>
   );

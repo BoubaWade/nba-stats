@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import PrimaryButton from "../../../reusable-ui/PrimaryButton/PrimaryButton";
 import StatsCardsList from "./StatsCardsList";
 import { useContext } from "react";
 import { GlobalContext } from "../../../../contexts/globalContext";
+import SecondaryButton from "../../../reusable-ui/SecondaryButton/SecondaryButton";
 
 export default function Stats() {
   const { setShowSpecificTeam } = useContext(GlobalContext);
@@ -15,7 +15,7 @@ export default function Stats() {
 
   return (
     <>
-      <PrimaryButton
+      <SecondaryButton
         className="return-button"
         label="Retour"
         onClick={handleClick}
