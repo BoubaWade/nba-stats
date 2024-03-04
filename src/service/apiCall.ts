@@ -1,14 +1,16 @@
 import React from "react";
-import { Player, PlayerStats, Team } from "../components/Players/playersTypes";
+import { PlayerStats, Team } from "../components/Players/playersTypes";
 import { Game, GameSearchParams } from "../components/Teams/teamsTypes";
 import { sortGamesByStatus } from "../helpers/games";
-import { STATUS_AFTER_GAME } from "../config/constants";
+import {
+  endSeasonDate,
+  idLimitOfListTeamsNBA,
+  numberOfRegularSeasonGames,
+  startSeasonDate,
+} from "../config/constants";
 
 export const baseURL = "https://api.balldontlie.io/v1";
 export const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
-export const startSeasonDate = "2023-10-24";
-export const endSeasonDate = "2024-04-14";
-export const numberOfRegularSeasonGames = 82;
 
 export const getPlayerStatsBySeason = (
   playerId: number,
@@ -64,7 +66,11 @@ export const getAllTeams = (
       },
     })
       .then((res) => res.json())
-      .then((result) => setTeams(result.data));
+      .then((result) =>
+        setTeams(
+          result.data.filter((team: Team) => team.id <= idLimitOfListTeamsNBA)
+        )
+      );
   } catch (error) {
     console.error(error);
   }

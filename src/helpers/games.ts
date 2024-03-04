@@ -192,3 +192,10 @@ export const getAllGamesPoints = (
   }
   return allGamesPoints;
 };
+
+export const getGamesPointsAverageForTeam = (arrayOfPoints: number[]) => {
+  const result =
+    arrayOfPoints.reduce((acc, curr) => acc + curr, 0) / arrayOfPoints.length;
+
+  return Math.ceil(result * 10) / 10;
+};

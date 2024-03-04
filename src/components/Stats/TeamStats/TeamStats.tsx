@@ -4,7 +4,7 @@ import MainTeamStats from "./MainTeamStats/MainTeamStats";
 
 export default function TeamStats() {
   return (
-    <div>
+    <div className="team-stats">
       <TeamStatsBanner />
       <MainTeamStats />
     </div>

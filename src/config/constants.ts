@@ -73,3 +73,7 @@ export const oneWeekAfter = new Date(
 export const STATUS_AFTER_GAME = "Final";
 export const PERIOD_CURRENT_GAME = [1, 2, 3, 4];
 export const PERIOD_BEFORE_GAME = 0;
+export const startSeasonDate = "2023-10-24";
+export const endSeasonDate = "2024-04-14";
+export const numberOfRegularSeasonGames = 82;
+export const idLimitOfListTeamsNBA = 30;

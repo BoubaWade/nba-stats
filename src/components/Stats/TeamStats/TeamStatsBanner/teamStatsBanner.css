@@ -1,0 +1,28 @@
+.team-stats-banner {
+    background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #c3ac81 100%);
+    width: calc(100vw - 200px);
+    height: 170px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.team-stats-banner .left-side-team-stats-banner {
+    display: flex;
+}
+
+.team-stats-banner .left-side-team-stats-banner .logo {
+    width: 100px;
+}
+
+.team-stats-banner .right-side-team-stats-banner {
+    display: flex;
+}
+
+.right-side-team-stats-banner .ranking-average {
+    margin-left: 10px;
+}
+
+.right-side-team-stats-banner .ranking-average span {
+    display: block;
+}
