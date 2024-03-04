@@ -7,7 +7,8 @@ import {
 } from "../../../../../helpers/games";
 import { Game } from "../../../../Teams/teamsTypes";
 import PrimaryButton from "../../../../reusable-ui/PrimaryButton/PrimaryButton";
-import { getButtonsConfig } from "../../../../../config/config";
+import { getButtonsSelectGamesConfig } from "../../../../../config/config";
+import { ActiveButton } from "../../../../../config/globalTypes";
 
 type FilterGamesProps = {
   onFilterGames: (games: Game[]) => void;
@@ -26,7 +27,7 @@ export default function FilterGames({
   getButtonLabel,
 }: FilterGamesProps) {
   const { games, dateRangeForAllGames } = useContext(GlobalContext);
-  const [isActive, setIsActive] = useState(initialStateActive);
+  const [isActive, setIsActive] = useState<ActiveButton>(initialStateActive);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const textContent = e.currentTarget.textContent;
@@ -43,7 +44,7 @@ export default function FilterGames({
     setIsActive(initialStateActive);
   }, [dateRangeForAllGames]);
 
-  const buttonsConfig = getButtonsConfig(isActive);
+  const buttonsConfig = getButtonsSelectGamesConfig(isActive);
 
   return (
     <div className="filter-container">

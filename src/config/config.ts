@@ -1,4 +1,5 @@
 import { PlayerStats } from "../components/Players/playersTypes";
+import { ActiveButton } from "./globalTypes";
 
 export const getStatslabelsAndValues = (stats: PlayerStats) => {
   return [
@@ -36,13 +37,7 @@ export const navigationItems = [
   },
 ];
 
-type Active = {
-  isAllGames: boolean;
-  isBeforeGames: boolean;
-  isCurrentGames: boolean;
-  isAfterGames: boolean;
-};
-export const getButtonsConfig = (isActive: Active) => {
+export const getButtonsSelectGamesConfig = (isActive: ActiveButton) => {
   return [
     {
       key: "isAllGames",
@@ -63,6 +58,26 @@ export const getButtonsConfig = (isActive: Active) => {
       key: "isAfterGames",
       label: "Terminés",
       active: isActive.isAfterGames ? "active-button" : "",
+    },
+  ];
+};
+
+export const getButtonsSelectStatsConfig = (isActive: ActiveButton) => {
+  return [
+    {
+      key: "isRosterActive",
+      label: "Effectifs",
+      active: isActive.isRosterActive ? "active" : "",
+    },
+    {
+      key: "isScheduleActive",
+      label: "Calendrier",
+      active: isActive.isScheduleActive ? "active" : "",
+    },
+    {
+      key: "isStatsActive",
+      label: "Statistiques",
+      active: isActive.isStatsActive ? "active" : "",
     },
   ];
 };

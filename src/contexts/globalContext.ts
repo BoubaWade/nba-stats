@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import { PlayerStats, Team } from "../components/Players/playersTypes";
 import { Game, Value } from "../components/Teams/teamsTypes";
+import { ActiveButton } from "../config/globalTypes";
 
 type GlobalContextType = {
   playerStats: PlayerStats[];
@@ -33,6 +34,8 @@ type GlobalContextType = {
   setTeamStatsDisplayed: React.Dispatch<React.SetStateAction<boolean>>;
   allGamesByTeam: Game[];
   setAllGamesByTeam: React.Dispatch<React.SetStateAction<Game[]>>;
+  innerStatsNavButtons: ActiveButton;
+  setInnerStatsNavButtons: React.Dispatch<React.SetStateAction<ActiveButton>>;
 };
 
 export const GlobalContext = createContext<GlobalContextType>({
@@ -66,4 +69,6 @@ export const GlobalContext = createContext<GlobalContextType>({
   setTeamStatsDisplayed: () => {},
   allGamesByTeam: [],
   setAllGamesByTeam: () => {},
+  innerStatsNavButtons: {},
+  setInnerStatsNavButtons: () => {},
 });
