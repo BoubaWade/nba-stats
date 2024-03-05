@@ -17,12 +17,12 @@
 }
 
 .team-stats-banner .left-side-team-stats-banner .logo {
-    width: 150px;
+    width: 110px;
     margin: 0 20px;
 }
 
 .team-stats-banner .left-side-team-stats-banner .balance-sheet h2 {
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .team-stats-banner .left-side-team-stats-banner .balance-sheet p {
@@ -44,11 +44,12 @@
 }
 
 .team-stats-banner .right-side-team-stats-banner h3 {
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 400;
     margin-bottom: 10px;
 }
 
 .team-stats-banner .right-side-team-stats-banner span {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 500;
 }

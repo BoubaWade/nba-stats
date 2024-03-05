@@ -1,3 +1,4 @@
+import "./mainTeamStats.css";
 import { useContext } from "react";
 import InnerNav from "../InnerNav/InnerNav";
 import Schedule from "../Schedule/Schedule";
@@ -10,7 +11,7 @@ export default function MainTeamStats() {
     innerStatsNavButtons;
 
   return (
-    <div>
+    <div className="main-team-stats">
       <InnerNav />
       {isRosterActive && <div>Roster</div>}
       {isScheduleActive && <Schedule />}

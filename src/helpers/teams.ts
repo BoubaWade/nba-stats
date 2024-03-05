@@ -13,3 +13,24 @@ export const getAllDivisionsWithTeams = (teams: Team[]) => {
   }
   return arrayTeams;
 };
+
+export const setTeamsWithArenas = (teams: Team[], arenas: any[]) => {
+  const teamsWithArena = teams.map((team) => {
+    const matchingArena = arenas.find((arena) => arena.teamName === team.name);
+
+    if (matchingArena) {
+      return { ...team, arena: matchingArena.arena };
+    } else {
+      return team;
+    }
+  });
+  return teamsWithArena;
+};
+
+export const getSpecificTeamArena = (
+  teams: Team[],
+  specificTeamName: string
+) => {
+  const team = teams.find((team) => team.name === specificTeamName);
+  return team;
+};
