@@ -7,8 +7,8 @@ export default function SocialMedias() {
 
   return (
     <div className="social-medias">
-      {socialMediasList.map((media) => (
-        <img src={media} alt={media} />
+      {socialMediasList.map((media, index) => (
+        <img key={index} src={media} alt={media} />
       ))}
     </div>
   );
