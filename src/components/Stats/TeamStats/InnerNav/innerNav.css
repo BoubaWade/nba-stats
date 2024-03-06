@@ -5,6 +5,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    position: sticky;
+    top: 170px;
+    z-index: 2;
 }
 
 .inner-nav-container .inner-nav-list {

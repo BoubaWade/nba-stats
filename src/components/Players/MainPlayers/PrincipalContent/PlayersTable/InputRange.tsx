@@ -5,7 +5,7 @@ export default function InputRange() {
   const { rangeValue, setRangeValue } = useContext(PlayersContext);
 
   const handleChangeRangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setRangeValue(e.target.value);
+    setRangeValue(parseInt(e.target.value));
   };
   return (
     <div className="input-range-container">

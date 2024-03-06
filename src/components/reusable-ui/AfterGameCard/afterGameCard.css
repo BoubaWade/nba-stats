@@ -3,13 +3,12 @@
     max-width: 400px;
     height: 170px;
     border: 1px solid #2667ac;
-    transition: 0.3s;
+    transition: 0.2s ease;
     cursor: pointer;
     border-radius: 7px 20px;
 }
 
 .after-game-card:hover {
-    transform: scale(1.02);
     border: none;
     box-shadow: 0 3px 5px 2px rgb(90, 95, 111);
 }

@@ -7,7 +7,6 @@ import RightSide from "./RightSide/RightSide";
 
 export default function TeamStatsBanner() {
   const { setTeamStatsDisplayed } = useContext(GlobalContext);
-
   return (
     <div className="team-stats-banner">
       <LeftSide />

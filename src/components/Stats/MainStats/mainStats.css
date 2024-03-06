@@ -12,7 +12,7 @@
 }
 
 .main-stats .table-container table {
-    width: 95%;
+    width: 90%;
 }
 
 .main-stats .table-container table tbody tr td {
@@ -22,8 +22,8 @@
 .main-stats .table-container table tbody tr td:first-child {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 50px;
+    padding-left: 30px;
+    text-align: center;
 }
 
 .main-stats .table-container table tbody tr td:nth-child(2) {

@@ -22,7 +22,7 @@ export default function NameAndLogo({ team }: NameAndLogoProps) {
   return (
     <td id={id.toString()} onClick={handleClick}>
       <img src={`/public/images/teamsLogos/${name}.svg`} />
-      {full_name}
+      <span>{full_name}</span>
     </td>
   );
 }

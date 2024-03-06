@@ -40,6 +40,7 @@ export const headerPlayerTableItems = [
 ];
 export const headerTeamsTableItems = [
   "Equipe",
+  "Stade",
   "Conférence",
   "Divison",
   "Ville",

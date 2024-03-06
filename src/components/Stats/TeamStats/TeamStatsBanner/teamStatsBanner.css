@@ -1,11 +1,13 @@
 .team-stats-banner {
-    position: relative;
     background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #c3ac81 100%);
-    width: calc(100vw - 200px);
+    width: 100%;
     height: 170px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .team-stats-banner .return-button {

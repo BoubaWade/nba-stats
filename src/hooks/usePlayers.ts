@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Player } from "../components/Players/playersTypes";
 import { API_KEY, baseURL } from "../service/apiCall";
+const MaxPlayersToFETCH = 100;
+const MaxRangeValue = 100;
 
 export default function usePlayers() {
   const [players, setPlayers] = useState<Player[]>([]);
   const [inputSearch, setInputSearch] = useState<string | undefined>(undefined);
-  const [rangeValue, setRangeValue] = useState("100");
+  const [rangeValue, setRangeValue] = useState(MaxRangeValue);
   const [isLoadingPlayers, setIsLoadingPlayers] = useState<boolean | null>(
     null
   );
@@ -20,7 +22,7 @@ export default function usePlayers() {
     setErrorPlayers(null);
     try {
       const response = await fetch(
-        `${baseURL}/players?search=${inputSearch}&per_page=100`,
+        `${baseURL}/players?search=${inputSearch}&per_page=${MaxPlayersToFETCH}`,
         {
           method: "GET",
           headers: {

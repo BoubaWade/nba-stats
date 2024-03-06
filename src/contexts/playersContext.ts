@@ -8,8 +8,8 @@ type PlayersContextType = {
   setInputSearch: React.Dispatch<React.SetStateAction<string | undefined>>;
   isLoadingPlayers: boolean | null;
   setIsLoadingPlayers: React.Dispatch<React.SetStateAction<boolean | null>>;
-  rangeValue: string;
-  setRangeValue: React.Dispatch<React.SetStateAction<string>>;
+  rangeValue: number;
+  setRangeValue: React.Dispatch<React.SetStateAction<number>>;
   isLoadingPlayerStats: boolean | null;
   setIsLoadingPlayerStats: React.Dispatch<React.SetStateAction<boolean | null>>;
   errorPlayerStats: string | null;
@@ -23,7 +23,7 @@ export const PlayersContext = createContext<PlayersContextType>({
   setInputSearch: () => {},
   isLoadingPlayers: false,
   setIsLoadingPlayers: () => {},
-  rangeValue: "",
+  rangeValue: 0,
   setRangeValue: () => {},
   isLoadingPlayerStats: false,
   setIsLoadingPlayerStats: () => {},

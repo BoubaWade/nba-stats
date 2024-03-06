@@ -6,8 +6,8 @@ type TableTeamsRowProps = {
 };
 
 export default function TableTeamsRow({ team }: TableTeamsRowProps) {
-  const { id, conference, division, city, abbreviation } = team;
-  const teamInfos = [conference, division, city, abbreviation];
+  const { id, arena, conference, division, city, abbreviation } = team;
+  const teamInfos = [arena, conference, division, city, abbreviation];
 
   return (
     <tr key={id}>
