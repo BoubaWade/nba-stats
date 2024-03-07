@@ -4,6 +4,8 @@ import { Game, Value } from "../components/Teams/teamsTypes";
 import { ActiveButton } from "../config/globalTypes";
 
 type GlobalContextType = {
+  isActiveNavButton: ActiveButton;
+  setIsActiveNavButton: React.Dispatch<React.SetStateAction<ActiveButton>>;
   playerStats: PlayerStats[];
   setPlayerStats: React.Dispatch<React.SetStateAction<PlayerStats[]>>;
   showSpecificPlayer: boolean;
@@ -39,6 +41,8 @@ type GlobalContextType = {
 };
 
 export const GlobalContext = createContext<GlobalContextType>({
+  isActiveNavButton: {},
+  setIsActiveNavButton: () => {},
   playerStats: [],
   setPlayerStats: () => {},
   showSpecificPlayer: false,

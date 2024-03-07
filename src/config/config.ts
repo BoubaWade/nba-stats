@@ -14,28 +14,40 @@ export const getStatslabelsAndValues = (stats: PlayerStats) => {
   ];
 };
 
-export const navigationItems = [
-  {
-    text: "Joueurs",
-    link: "/players",
-  },
-  {
-    text: "Équipes",
-    link: "/teams",
-  },
-  {
-    text: "Matchs",
-    link: "/games",
-  },
-  {
-    text: "Statistiques",
-    link: "/stats",
-  },
-  {
-    text: "Saison",
-    link: "/season",
-  },
-];
+export const getNavigationItems = (isActive: ActiveButton) => {
+  return [
+    {
+      id: "isPlayersNavButton",
+      label: "Joueurs",
+      link: "/players",
+      active: isActive.isPlayersNavButton ? "active" : "",
+    },
+    {
+      id: "isTeamsNavButton",
+      label: "Équipes",
+      link: "/teams",
+      active: isActive.isTeamsNavButton ? "active" : "",
+    },
+    {
+      id: "isGamesNavButton",
+      label: "Matchs",
+      link: "/games",
+      active: isActive.isGamesNavButton ? "active" : "",
+    },
+    {
+      id: "isStatsNavButton",
+      label: "Statistiques",
+      link: "/stats",
+      active: isActive.isStatsNavButton ? "active" : "",
+    },
+    {
+      id: "isSeasonNavButton",
+      label: "Saison",
+      link: "/season",
+      active: isActive.isSeasonNavButton ? "active" : "",
+    },
+  ];
+};
 
 export const getButtonsSelectGamesConfig = (isActive: ActiveButton) => {
   return [

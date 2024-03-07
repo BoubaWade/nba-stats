@@ -28,6 +28,7 @@ export default function FilterGames({
 }: FilterGamesProps) {
   const { games, dateRangeForAllGames } = useContext(GlobalContext);
   const [isActive, setIsActive] = useState<ActiveButton>(initialStateActive);
+  const buttonsConfig = getButtonsSelectGamesConfig(isActive);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const textContent = e.currentTarget.textContent;
@@ -35,7 +36,6 @@ export default function FilterGames({
     if (gamesFiltered) onFilterGames(gamesFiltered);
     // Pour récuperer le label du bouton cliqué
     getButtonLabel(textContent);
-    // Activation de la couleur de fond du bouton cliqué
     handleActiveButtonClicked(setIsActive, e.currentTarget.name);
   };
 
@@ -43,8 +43,6 @@ export default function FilterGames({
   useEffect(() => {
     setIsActive(initialStateActive);
   }, [dateRangeForAllGames]);
-
-  const buttonsConfig = getButtonsSelectGamesConfig(isActive);
 
   return (
     <div className="filter-container">

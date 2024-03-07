@@ -7,8 +7,16 @@ import {
   today,
   yesterday,
 } from "../config/constants";
+import { ActiveButton } from "../config/globalTypes";
 
 export default function useApp() {
+  const [isActiveNavButton, setIsActiveNavButton] = useState<ActiveButton>({
+    isPlayersNavButton: false,
+    isTeamsNavButton: true,
+    isGamesNavButton: false,
+    isStatsNavButton: false,
+    isSeasonNavButton: false,
+  });
   const [playerStats, setPlayerStats] = useState<PlayerStats[]>([]);
   const [showSpecificPlayer, setShowSpecificPlayer] = useState(false);
   const [teams, setTeams] = useState<Team[]>([]);
@@ -28,13 +36,16 @@ export default function useApp() {
   const [games, setGames] = useState<Game[]>([]);
   const [teamStatsDisplayed, setTeamStatsDisplayed] = useState(false);
   const [allGamesByTeam, setAllGamesByTeam] = useState<Game[]>([]);
-  const [innerStatsNavButtons, setInnerStatsNavButtons] = useState({
-    isRosterButton: true,
-    isStatisticsButton: false,
-    isScheduleButton: false,
-  });
+  const [innerStatsNavButtons, setInnerStatsNavButtons] =
+    useState<ActiveButton>({
+      isRosterActive: true,
+      isStatsActive: false,
+      isScheduleActive: false,
+    });
 
   const globalContextValue = {
+    isActiveNavButton,
+    setIsActiveNavButton,
     playerStats,
     setPlayerStats,
     showSpecificPlayer,

@@ -1,23 +1,44 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../../contexts/globalContext";
 import { useNavigate } from "react-router-dom";
+import { handleActiveButtonClicked } from "../../../helpers/games";
 
 type NavigationItemProps = {
-  item: { text: string; link: string };
+  item: { id: string; label: string; link: string; active: string };
 };
 
 export default function NavigationItem({ item }: NavigationItemProps) {
-  const { link, text } = item;
-  const { setShowAllGames, setShowSpecificPlayer, setShowSpecificTeam } =
-    useContext(GlobalContext);
+  const { id, link, label, active } = item;
+  const {
+    setIsActiveNavButton,
+    setShowAllGames,
+    setShowSpecificPlayer,
+    setShowSpecificTeam,
+  } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const handleClickButton = (link: string) => {
     setShowSpecificPlayer(false);
     setShowSpecificTeam(false);
-    navigate(link);
     setShowAllGames(true);
+    navigate(link);
   };
 
-  return <li onClick={() => handleClickButton(link)}>{text}</li>;
+  const handleActiveButton = (e: React.MouseEvent<HTMLLIElement>) => {
+    handleActiveButtonClicked(setIsActiveNavButton, e.currentTarget.id);
+  };
+
+  return (
+    <li
+      key={id}
+      id={id}
+      className={active}
+      onClick={(e) => {
+        handleClickButton(link);
+        handleActiveButton(e);
+      }}
+    >
+      {label}
+    </li>
+  );
 }
