@@ -24,6 +24,10 @@ type GlobalContextType = {
   setDateRangeForSpecificTeamGames: React.Dispatch<React.SetStateAction<Value>>;
   dateRangeForAllGames: Value;
   setDateRangeForAllGames: React.Dispatch<React.SetStateAction<Value>>;
+  showSpecificTeamStats: boolean;
+  setShowSpecificTeamStats: React.Dispatch<React.SetStateAction<boolean>>;
+  showspecificTeamGames: boolean;
+  setShowSpecificTeamGames: React.Dispatch<React.SetStateAction<boolean>>;
   teamFullName: string | null;
   setTeamFullName: React.Dispatch<React.SetStateAction<string | null>>;
   gameStats: PlayerStats[];
@@ -36,8 +40,8 @@ type GlobalContextType = {
   setTeamStatsDisplayed: React.Dispatch<React.SetStateAction<boolean>>;
   allGamesByTeam: Game[];
   setAllGamesByTeam: React.Dispatch<React.SetStateAction<Game[]>>;
-  innerStatsNavButtons: ActiveButton;
-  setInnerStatsNavButtons: React.Dispatch<React.SetStateAction<ActiveButton>>;
+  innerStatsTabsButtons: ActiveButton;
+  setInnerStatsTabsButtons: React.Dispatch<React.SetStateAction<ActiveButton>>;
 };
 
 export const GlobalContext = createContext<GlobalContextType>({
@@ -61,6 +65,10 @@ export const GlobalContext = createContext<GlobalContextType>({
   setDateRangeForSpecificTeamGames: () => {},
   dateRangeForAllGames: null,
   setDateRangeForAllGames: () => {},
+  showSpecificTeamStats: false,
+  setShowSpecificTeamStats: () => {},
+  showspecificTeamGames: false,
+  setShowSpecificTeamGames: () => {},
   teamFullName: "",
   setTeamFullName: () => {},
   gameStats: [],
@@ -73,6 +81,6 @@ export const GlobalContext = createContext<GlobalContextType>({
   setTeamStatsDisplayed: () => {},
   allGamesByTeam: [],
   setAllGamesByTeam: () => {},
-  innerStatsNavButtons: {},
-  setInnerStatsNavButtons: () => {},
+  innerStatsTabsButtons: {},
+  setInnerStatsTabsButtons: () => {},
 });

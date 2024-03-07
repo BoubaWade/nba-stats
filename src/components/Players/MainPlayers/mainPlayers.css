@@ -52,8 +52,11 @@
     overflow: hidden;
 }
 
+.table-container table thead {
+    background-color: rgb(25, 30, 45)
+}
+
 .table-container table thead tr th {
-    /* background-color: rgb(25, 30, 45); */
     height: 30px;
     color: whitesmoke;
     text-align: center;
@@ -80,11 +83,10 @@
 
 .table-container table tbody tr:nth-child(even) {
     color: white;
-    background: rgb(25, 30, 45);
-    /* background-image: linear-gradient(45deg,
+    background-image: linear-gradient(45deg,
             #175da8 0%,
             #a85117 45%,
-            #175da8 100%); */
+            #175da8 100%);
 }
 
 .table-container table tbody tr:nth-child(odd) {

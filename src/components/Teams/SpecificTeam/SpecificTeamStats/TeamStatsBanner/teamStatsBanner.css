@@ -1,0 +1,57 @@
+.team-stats-banner {
+    background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #c3ac81 100%);
+    width: 100%;
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.team-stats-banner .return-button {
+    left: 50%;
+}
+
+.team-stats-banner .left-side-team-stats-banner {
+    display: flex;
+}
+
+.team-stats-banner .left-side-team-stats-banner .logo {
+    width: 110px;
+    margin: 0 20px;
+}
+
+.team-stats-banner .left-side-team-stats-banner .balance-sheet h2 {
+    font-size: 28px;
+}
+
+.team-stats-banner .left-side-team-stats-banner .balance-sheet p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.team-stats-banner .left-side-team-stats-banner .balance-sheet p span:first-child {
+    color: rgb(14, 113, 14);
+}
+
+.team-stats-banner .left-side-team-stats-banner .balance-sheet p span:nth-child(2) {
+    color: rgb(131, 4, 4);
+}
+
+.team-stats-banner .right-side-team-stats-banner {
+    margin-right: 10vw;
+    text-align: center;
+}
+
+.team-stats-banner .right-side-team-stats-banner h3 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.team-stats-banner .right-side-team-stats-banner span {
+    font-size: 22px;
+    font-weight: 500;
+}
