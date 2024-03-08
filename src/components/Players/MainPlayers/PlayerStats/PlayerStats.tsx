@@ -10,7 +10,7 @@ import NavigationMobile from "../../../reusable-ui/NavigationMobile.tsx/Navigati
 export default function PlayerStats() {
   const { isLoadingPlayerStats } = useContext(PlayersContext);
 
-  if (isLoadingPlayerStats) return <Loader />;
+  if (isLoadingPlayerStats) return <Loader className="player-stats-loader" />;
   return (
     <div className="player-container">
       <NavigationMobile />

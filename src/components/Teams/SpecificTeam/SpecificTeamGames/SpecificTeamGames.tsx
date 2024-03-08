@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "./Header/Header";
 import ListGameCard from "./ListGameCard/ListGameCard";
 
-export default function MainSpecificTeam() {
+export default function SpecificTeamGames() {
   const [displayCard, setDisplayCards] = useState(true);
   return (
     <div className="main-specificTeam">

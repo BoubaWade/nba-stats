@@ -35,17 +35,16 @@
     color: white;
     padding: 10px 0;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.2s;
+}
+
+.navigation-list li.active {
+    background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #c3ac81 100%);
 }
 
 .navigation-list li:hover {
     background: linear-gradient(45deg, #c3ac81 0%, #a85117 45%, #c3ac81 100%);
     transform: scale(1.05);
-}
-
-.navigation-list li .icon {
-    font-size: 26px;
-    margin-right: 10px;
 }
 
 @media screen and (max-width: 768px) {

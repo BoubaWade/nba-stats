@@ -7,8 +7,16 @@ import {
   today,
   yesterday,
 } from "../config/constants";
+import { ActiveButton } from "../config/globalTypes";
 
 export default function useApp() {
+  const [isActiveNavButton, setIsActiveNavButton] = useState<ActiveButton>({
+    isPlayersNavButton: false,
+    isTeamsNavButton: true,
+    isGamesNavButton: false,
+    isStatsNavButton: false,
+    isSeasonNavButton: false,
+  });
   const [playerStats, setPlayerStats] = useState<PlayerStats[]>([]);
   const [showSpecificPlayer, setShowSpecificPlayer] = useState(false);
   const [teams, setTeams] = useState<Team[]>([]);
@@ -17,6 +25,8 @@ export default function useApp() {
   const [showSpecificTeam, setShowSpecificTeam] = useState(false);
   const [teamFullName, setTeamFullName] = useState<string | null>(null);
   const [specificTeamGames, setSpecificTeamGames] = useState<Game[]>([]);
+  const [showSpecificTeamStats, setShowSpecificTeamStats] = useState(false);
+  const [showspecificTeamGames, setShowSpecificTeamGames] = useState(false);
   const [dateRangeForSpecificTeamGames, setDateRangeForSpecificTeamGames] =
     useState<Value>([oneWeekBefore, oneWeekAfter]);
   const [dateRangeForAllGames, setDateRangeForAllGames] = useState<Value>([
@@ -26,8 +36,18 @@ export default function useApp() {
   const [gameStats, setGameStats] = useState<PlayerStats[]>([]);
   const [showAllGames, setShowAllGames] = useState(true);
   const [games, setGames] = useState<Game[]>([]);
+  const [teamStatsDisplayed, setTeamStatsDisplayed] = useState(false);
+  const [allGamesByTeam, setAllGamesByTeam] = useState<Game[]>([]);
+  const [innerStatsTabsButtons, setInnerStatsTabsButtons] =
+    useState<ActiveButton>({
+      isRosterActive: true,
+      isStatsActive: false,
+      isScheduleActive: false,
+    });
 
   const globalContextValue = {
+    isActiveNavButton,
+    setIsActiveNavButton,
     playerStats,
     setPlayerStats,
     showSpecificPlayer,
@@ -44,6 +64,10 @@ export default function useApp() {
     setTeamFullName,
     specificTeamGames,
     setSpecificTeamGames,
+    showSpecificTeamStats,
+    setShowSpecificTeamStats,
+    showspecificTeamGames,
+    setShowSpecificTeamGames,
     dateRangeForSpecificTeamGames,
     setDateRangeForSpecificTeamGames,
     dateRangeForAllGames,
@@ -54,6 +78,12 @@ export default function useApp() {
     setShowAllGames,
     games,
     setGames,
+    teamStatsDisplayed,
+    setTeamStatsDisplayed,
+    allGamesByTeam,
+    setAllGamesByTeam,
+    innerStatsTabsButtons,
+    setInnerStatsTabsButtons,
   };
 
   return { globalContextValue };

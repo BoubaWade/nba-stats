@@ -1,6 +1,12 @@
-.stats-container{
-    background-color: #f6d5da;
+.stats-container {
     width: 100vw;
     height: 100vh;
     display: flex;
+}
+
+.stats-container .table-teams-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
 }

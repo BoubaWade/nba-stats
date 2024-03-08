@@ -1,0 +1,31 @@
+.main-team-stats .table-container {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.main-team-stats .main-team-stats-container .table-container {
+    height: calc(100vh - 250px);
+    overflow-y: auto;
+    background: transparent;
+}
+
+.main-team-stats .main-team-stats-container .table-container table tbody tr td:first-child {
+    cursor: default;
+}
+
+.main-team-stats .main-team-stats-container .table-container table tbody tr td span {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.main-team-stats .main-team-stats-container .table-container table tbody tr img {
+    height: 40px;
+    margin-right: 5px;
+}
+
+.main-team-stats .main-team-stats-container .table-container table tbody tr td:nth-child(2) .team-home,
+.team-visitor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

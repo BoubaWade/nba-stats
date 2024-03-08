@@ -2,27 +2,15 @@ import React from "react";
 import { PlayerStats, Team } from "../components/Players/playersTypes";
 import { Game, GameSearchParams } from "../components/Teams/teamsTypes";
 import { sortGamesByStatus } from "../helpers/games";
+import {
+  endSeasonDate,
+  idLimitOfListTeamsNBA,
+  numberOfRegularSeasonGames,
+  startSeasonDate,
+} from "../config/constants";
 
 export const baseURL = "https://api.balldontlie.io/v1";
 export const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
-
-// export const getAllPlayers = (
-//   query: string,
-//   setPlayers: (value: React.SetStateAction<Player[]>) => void
-// ) => {
-//   try {
-//     fetch(`${baseURL}/players?search=${query}`, {
-//       method: "GET",
-//       headers: {
-//         Authorization: API_KEY,
-//       },
-//     })
-//       .then((res) => res.json())
-//       .then((result) => setPlayers(result.data));
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
 
 export const getPlayerStatsBySeason = (
   playerId: number,
@@ -78,7 +66,11 @@ export const getAllTeams = (
       },
     })
       .then((res) => res.json())
-      .then((result) => setTeams(result.data));
+      .then((result) =>
+        setTeams(
+          result.data.filter((team: Team) => team.id <= idLimitOfListTeamsNBA)
+        )
+      );
   } catch (error) {
     console.error(error);
   }
@@ -98,6 +90,26 @@ export const getAllGames = (
     })
       .then((res) => res.json())
       .then((result) => setGames(sortGamesByStatus(result.data)));
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const getAllGamesByTeam = (
+  teamId: number,
+  setGames: (value: React.SetStateAction<Game[]>) => void
+) => {
+  try {
+    fetch(
+      `${baseURL}/games?start_date=${startSeasonDate}&end_date=${endSeasonDate}&team_ids[]=${teamId}&per_page=${numberOfRegularSeasonGames}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: API_KEY,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((result) => setGames(result.data));
   } catch (error) {
     console.error(error);
   }

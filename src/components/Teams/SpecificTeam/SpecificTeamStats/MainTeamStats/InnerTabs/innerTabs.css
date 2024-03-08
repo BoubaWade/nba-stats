@@ -1,0 +1,64 @@
+.inner-tabs-container {
+    height: 50px;
+    box-shadow: 0px 1px 10px rgba(25, 30, 45, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: sticky;
+    top: 170px;
+    z-index: 2;
+}
+
+.inner-tabs-container .inner-tabs-list {
+    width: 350px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.inner-tabs-container .social-medias {
+    display: flex;
+}
+
+.inner-tabs-container .social-medias img {
+    width: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.inner-tabs-container .inner-tabs-list button {
+    height: 35px;
+    display: block;
+    position: relative;
+    background-color: transparent;
+    color: black;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.inner-tabs-container .inner-tabs-list button::after {
+    background: #a85117 45%;
+    position: absolute;
+    top: 38px;
+    left: -15%;
+    content: "";
+    width: 130%;
+    height: 5px;
+    border-radius: 20px;
+    transition: 0.4s ease;
+    transform: scale(0);
+    transform-origin: left;
+}
+
+.inner-tabs-container .inner-tabs-list button.active::after {
+    transform: scale(1);
+}
+
+.inner-tabs-container .inner-tabs-list button.active {
+    font-size: 15px;
+    font-weight: 500;
+}

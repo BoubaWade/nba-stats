@@ -17,6 +17,7 @@ export type Team = {
   city: string;
   conference: string;
   division: string;
+  arena?: string;
 };
 
 export type PlayerStats = {

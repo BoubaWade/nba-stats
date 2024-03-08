@@ -1,4 +1,5 @@
 import { PlayerStats } from "../components/Players/playersTypes";
+import { ActiveButton } from "./globalTypes";
 
 export const getStatslabelsAndValues = (stats: PlayerStats) => {
   return [
@@ -13,36 +14,42 @@ export const getStatslabelsAndValues = (stats: PlayerStats) => {
   ];
 };
 
-export const navigationItems = [
-  {
-    text: "Joueurs",
-    link: "/players",
-  },
-  {
-    text: "Équipes",
-    link: "/teams",
-  },
-  {
-    text: "Matchs",
-    link: "/games",
-  },
-  {
-    text: "Statistiques",
-    link: "/stats",
-  },
-  {
-    text: "Saison",
-    link: "/season",
-  },
-];
-
-type Active = {
-  isAllGames: boolean;
-  isBeforeGames: boolean;
-  isCurrentGames: boolean;
-  isAfterGames: boolean;
+export const getNavigationItems = (isActive: ActiveButton) => {
+  return [
+    {
+      id: "isPlayersNavButton",
+      label: "Joueurs",
+      link: "/players",
+      active: isActive.isPlayersNavButton ? "active" : "",
+    },
+    {
+      id: "isTeamsNavButton",
+      label: "Équipes",
+      link: "/teams",
+      active: isActive.isTeamsNavButton ? "active" : "",
+    },
+    {
+      id: "isGamesNavButton",
+      label: "Matchs",
+      link: "/games",
+      active: isActive.isGamesNavButton ? "active" : "",
+    },
+    {
+      id: "isStatsNavButton",
+      label: "Statistiques",
+      link: "/stats",
+      active: isActive.isStatsNavButton ? "active" : "",
+    },
+    {
+      id: "isSeasonNavButton",
+      label: "Saison",
+      link: "/season",
+      active: isActive.isSeasonNavButton ? "active" : "",
+    },
+  ];
 };
-export const getButtonsConfig = (isActive: Active) => {
+
+export const getButtonsSelectGamesConfig = (isActive: ActiveButton) => {
   return [
     {
       key: "isAllGames",
@@ -66,3 +73,34 @@ export const getButtonsConfig = (isActive: Active) => {
     },
   ];
 };
+
+export const getButtonsSelectStatsConfig = (isActive: ActiveButton) => {
+  return [
+    {
+      key: "isRosterActive",
+      label: "Effectifs",
+      active: isActive.isRosterActive ? "active" : "",
+    },
+    {
+      key: "isScheduleActive",
+      label: "Calendrier",
+      active: isActive.isScheduleActive ? "active" : "",
+    },
+    {
+      key: "isStatsActive",
+      label: "Statistiques",
+      active: isActive.isStatsActive ? "active" : "",
+    },
+  ];
+};
+
+export const starsPlayers1 = [
+  { name: "NikolaJOKIC" },
+  { name: "KevinDURANT" },
+  { name: "LebronJAMES" },
+];
+export const starsPlayers2 = [
+  { name: "StephenCURRY" },
+  { name: "JoelEMBIID" },
+  { name: "ANTETOKOUNMPO" },
+];

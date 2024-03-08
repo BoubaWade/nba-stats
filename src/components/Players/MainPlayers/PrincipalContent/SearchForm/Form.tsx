@@ -8,7 +8,8 @@ export default function Form() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setInputSearch(inputRef.current?.value);
+    const searchValue = inputRef.current?.value.trim();
+    setInputSearch(searchValue);
   };
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { Game } from "../../Teams/teamsTypes";
-import InfosHomeTeam from "../../Teams/SpecificTeam/MainSpecificTeam/ListGameCard/GameCard/InfosHomeTeam";
-import InfosVisitorTeam from "../../Teams/SpecificTeam/MainSpecificTeam/ListGameCard/GameCard/InfosVisitorTeam";
+import InfosHomeTeam from "../../Teams/SpecificTeam/SpecificTeamGames/ListGameCard/GameCard/InfosHomeTeam";
+import InfosVisitorTeam from "../../Teams/SpecificTeam/SpecificTeamGames/ListGameCard/GameCard/InfosVisitorTeam";
 type TeamsInfosProps = {
   game: Game;
 };

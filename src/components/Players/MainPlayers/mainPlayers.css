@@ -11,6 +11,11 @@
     overflow: scroll;
 }
 
+.main-players .player-stats-loader {
+    position: absolute;
+    top: 300px;
+}
+
 .main-players .empty-players-message {
     font-size: 18px;
     margin-top: 50px;
@@ -26,6 +31,7 @@
 
 .main-players .input-range-container .input-range {
     width: 80%;
+    accent-color: #a85117;
     margin-left: 10px;
 }
 
@@ -38,7 +44,6 @@
             #175da8 0%,
             #a85117 45%,
             #175da8 100%);
-
     width: calc(100vw - 250px);
     border-collapse: collapse;
     margin: 20px auto;
@@ -47,8 +52,11 @@
     overflow: hidden;
 }
 
+.table-container table thead {
+    background-color: rgb(25, 30, 45)
+}
+
 .table-container table thead tr th {
-    background-color: rgb(25, 30, 45);
     height: 30px;
     color: whitesmoke;
     text-align: center;

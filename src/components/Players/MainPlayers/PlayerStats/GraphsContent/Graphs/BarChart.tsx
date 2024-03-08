@@ -26,7 +26,7 @@ export default function BarChart({
       if (svgRef.current) {
         const containerWidth = svgRef.current.parentElement?.clientWidth || 0;
         const width = containerWidth - marginRight - marginLeft;
-        const height = 280;
+        const height = 300;
 
         setDimensions({ width, height });
       }
@@ -55,13 +55,17 @@ export default function BarChart({
 
   useEffect(() => {
     if (svgRef.current) {
-      d3.select(svgRef.current).select(".x-axis").call(d3.axisBottom(x));
+      d3.select(svgRef.current)
+        .select<SVGGElement>(".x-axis")
+        .call(d3.axisBottom(x));
     }
   }, [x]);
 
   useEffect(() => {
     if (svgRef.current) {
-      d3.select(svgRef.current).select(".y-axis").call(d3.axisLeft(y));
+      d3.select(svgRef.current)
+        .select<SVGGElement>(".y-axis")
+        .call(d3.axisLeft(y));
     }
   }, [y]);
 

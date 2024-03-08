@@ -1,4 +1,5 @@
 import { Game, Value } from "../components/Teams/teamsTypes";
+import { ActiveButton } from "../config/globalTypes";
 import {
   PERIOD_BEFORE_GAME,
   PERIOD_CURRENT_GAME,
@@ -131,15 +132,8 @@ export const uncapitalize = (str: string) => {
   return str.charAt(0).toLocaleLowerCase() + str.slice(1);
 };
 
-type Active = {
-  isAllGames: boolean;
-  isBeforeGames: boolean;
-  isCurrentGames: boolean;
-  isAfterGames: boolean;
-};
-
 export const handleActiveButtonClicked = (
-  setIsActive: (value: React.SetStateAction<Active>) => void,
+  setIsActive: (value: React.SetStateAction<ActiveButton>) => void,
   name: string
 ) => {
   setIsActive((prevState) => {
@@ -147,12 +141,55 @@ export const handleActiveButtonClicked = (
 
     Object.keys(updatedState).forEach((key) => {
       if (key !== name) {
-        updatedState[key as keyof Active] = false;
+        updatedState[key as keyof ActiveButton] = false;
       }
     });
 
-    updatedState[name as keyof Active] = true;
+    updatedState[name as keyof ActiveButton] = true;
 
     return updatedState;
   });
+};
+
+export const getAllWinnedGames = (
+  gamesFinished: Game[],
+  teamName: string | null
+) => {
+  let winnedGames = [];
+  for (let i = 0; i < gamesFinished.length; i++) {
+    gamesFinished;
+    const difference =
+      gamesFinished[i].home_team_score - gamesFinished[i].visitor_team_score;
+    if (
+      (difference > 0 && gamesFinished[i].home_team.full_name === teamName) ||
+      (difference < 0 && gamesFinished[i].visitor_team.full_name === teamName)
+    ) {
+      winnedGames.push(gamesFinished[i]);
+    }
+  }
+  return winnedGames;
+};
+
+export const getAllGamesPoints = (
+  gamesFinished: Game[],
+  teamName: string | null
+) => {
+  let allGamesPoints = [];
+  for (let i = 0; i < gamesFinished.length; i++) {
+    if (gamesFinished[i].home_team.full_name === teamName) {
+      allGamesPoints.push(gamesFinished[i].home_team_score);
+    }
+
+    if (gamesFinished[i].visitor_team.full_name === teamName) {
+      allGamesPoints.push(gamesFinished[i].visitor_team_score);
+    }
+  }
+  return allGamesPoints;
+};
+
+export const getGamesPointsAverageForTeam = (arrayOfPoints: number[]) => {
+  const result =
+    arrayOfPoints.reduce((acc, curr) => acc + curr, 0) / arrayOfPoints.length;
+
+  return Math.ceil(result * 10) / 10;
 };
