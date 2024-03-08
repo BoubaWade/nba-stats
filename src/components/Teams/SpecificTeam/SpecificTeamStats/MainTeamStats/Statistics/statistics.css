@@ -1,0 +1,27 @@
+.statistics-container {
+    height: calc(100vh - 250px);
+    margin-top: 20px;
+    overflow: scroll;
+}
+
+.statistics-container .graphs {
+    display: flex;
+    height: 400px;
+    background-color: pink;
+}
+
+.statistics-container .graphs .circle-graph-container {
+    width: 40%;
+    border: 1px solid black;
+}
+
+.statistics-container .graphs .line-graph-container {
+    width: 60%;
+    border: 1px solid black;
+}
+
+.statistics-container .statistics-table-container {
+    background-color: red;
+    height: 800px;
+
+}
