@@ -4,8 +4,10 @@ import "./statistics.css";
 import { GlobalContext } from "../../../../../../contexts/globalContext";
 import {
   getAllGamesFinishedByTeam,
+  getAllGamesPoints,
   getAllWinnedGames,
 } from "../../../../../../helpers/games";
+import LineChart from "../../../../../reusable-ui/Graphs/LineChart";
 
 export default function Statistics() {
   const { teamFullName, allGamesByTeam } = useContext(GlobalContext);
@@ -29,6 +31,7 @@ export default function Statistics() {
       title: "Victoire",
     },
   ];
+  const allGamesPoints = getAllGamesPoints(allGamesFinished, teamFullName);
 
   return (
     <div className="statistics-container">
@@ -40,7 +43,17 @@ export default function Statistics() {
           </p>
           <PieGraph data={data} />
         </div>
-        <div className="line-graph-container">LineGraph</div>
+        <div className="line-graph-container">
+          <LineChart
+            data={allGamesPoints}
+            statName="Points"
+            className="line-graph"
+            marginTop={20}
+            marginRight={10}
+            marginBottom={40}
+            marginLeft={30}
+          />
+        </div>
       </div>
       <div className="statistics-table-container">Table</div>
     </div>
