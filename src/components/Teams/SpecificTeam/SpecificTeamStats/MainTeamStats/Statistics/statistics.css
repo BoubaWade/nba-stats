@@ -6,22 +6,32 @@
 
 .statistics-container .graphs {
     display: flex;
-    height: 400px;
-    background-color: pink;
+    height: 350px;
 }
 
 .statistics-container .graphs .circle-graph-container {
-    width: 40%;
-    border: 1px solid black;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-graph-container p {
+    margin-bottom: 40px;
+}
+
+.circle-graph-container p .win {
+    color: #44a672;
+}
+
+.circle-graph-container p .lose {
+    color: #d26f64;
 }
 
 .statistics-container .graphs .line-graph-container {
-    width: 60%;
-    border: 1px solid black;
+    width: 70%;
 }
 
 .statistics-container .statistics-table-container {
-    background-color: red;
     height: 800px;
-
 }

@@ -151,6 +151,10 @@ export const handleActiveButtonClicked = (
   });
 };
 
+export const getAllGamesFinishedByTeam = (allGamesByTeam: Game[]) => {
+  return allGamesByTeam.filter((game) => game.status === STATUS_AFTER_GAME);
+};
+
 export const getAllWinnedGames = (
   gamesFinished: Game[],
   teamName: string | null
