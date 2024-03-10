@@ -46,3 +46,12 @@ export const getSpecificStat = (
   }
   return result;
 };
+
+export const getStatIfTheyPlay = (gameStats: PlayerStats[]) => {
+  const condition = (stat: PlayerStats) => {
+    return stat.min !== "00" && stat.min !== null && stat.min !== "0:00";
+  };
+
+  const stats = gameStats.filter((stat) => condition(stat));
+  return stats;
+};
