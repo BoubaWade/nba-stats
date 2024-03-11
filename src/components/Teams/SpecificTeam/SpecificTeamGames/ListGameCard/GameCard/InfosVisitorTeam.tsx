@@ -11,7 +11,7 @@ export default function InfosVisitorTeam({ team }: InfosTeamCardProps) {
   return (
     <div className="team-infos">
       <h3 className="abbreviation-name">{abbreviation}</h3>
-      <img className="logo" src={`/images/teamsLogos/${name}.svg`} />
+      <img className="logo" src={`public/images/teamsLogos/${name}.svg`} />
     </div>
   );
 }

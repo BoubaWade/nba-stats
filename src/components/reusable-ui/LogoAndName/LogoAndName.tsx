@@ -17,7 +17,10 @@ export default function LogoAndName({
 }: LogoAndNameProps) {
   return (
     <div className={className}>
-      <img className={classNameImage} src={`/images/teamsLogos/${name}.svg`} />
+      <img
+        className={classNameImage}
+        src={`/public/images/teamsLogos/${name}.svg`}
+      />
       <span className={classNameName}>{name}</span>
     </div>
   );
