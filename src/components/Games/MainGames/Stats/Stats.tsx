@@ -1,26 +1,10 @@
-import { useNavigate } from "react-router-dom";
-import StatsCardsList from "./StatsCardsList";
 import { useContext } from "react";
 import { GlobalContext } from "../../../../contexts/globalContext";
-import SecondaryButton from "../../../reusable-ui/SecondaryButton/SecondaryButton";
+import StatsGameCards from "./StatsGameCards/StatsGameCards";
+import StatsGameTable from "./StatsGameTable/StatsGameTable";
 
 export default function Stats() {
-  const { setShowSpecificTeam } = useContext(GlobalContext);
-  const navigate = useNavigate();
+  const { statGameCardDisplayed } = useContext(GlobalContext);
 
-  const handleClick = () => {
-    setShowSpecificTeam(true);
-    navigate("/teams");
-  };
-
-  return (
-    <>
-      <SecondaryButton
-        className="return-button"
-        label="Retour"
-        onClick={handleClick}
-      />
-      <StatsCardsList />
-    </>
-  );
+  return <>{statGameCardDisplayed ? <StatsGameCards /> : <StatsGameTable />}</>;
 }

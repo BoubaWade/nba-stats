@@ -1,24 +1,24 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../../../../../contexts/globalContext";
 import {
+  getAllGamesFinishedByTeam,
   getAllGamesPoints,
   getGamesPointsAverageForTeam,
 } from "../../../../../../helpers/games";
-import { STATUS_AFTER_GAME } from "../../../../../../config/constants";
+import Loader from "../../../../../reusable-ui/Loader/Loader";
 
 export default function RightSide() {
   const { teamFullName, allGamesByTeam } = useContext(GlobalContext);
 
-  const allGamesFinished = allGamesByTeam.filter(
-    (game) => game.status === STATUS_AFTER_GAME
-  );
+  const allGamesFinished = getAllGamesFinishedByTeam(allGamesByTeam);
   const allGamesPoints = getAllGamesPoints(allGamesFinished, teamFullName);
   const averagePoints = getGamesPointsAverageForTeam(allGamesPoints);
 
+  if (!averagePoints) return <Loader />;
   return (
     <div className="right-side-team-stats-banner">
       <h3>Points par match</h3>
-      <span>{averagePoints.toString()}</span>
+      <span>{averagePoints}</span>
     </div>
   );
 }

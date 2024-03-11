@@ -1,17 +1,19 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../../../../../contexts/globalContext";
-import { STATUS_AFTER_GAME } from "../../../../../../config/constants";
-import { getAllWinnedGames } from "../../../../../../helpers/games";
+import {
+  getAllGamesFinishedByTeam,
+  getAllWinnedGames,
+} from "../../../../../../helpers/games";
+import Loader from "../../../../../reusable-ui/Loader/Loader";
 
 export default function BalanceSheet() {
   const { teamFullName, allGamesByTeam } = useContext(GlobalContext);
 
-  const allGamesFinished = allGamesByTeam.filter(
-    (game) => game.status === STATUS_AFTER_GAME
-  );
+  const allGamesFinished = getAllGamesFinishedByTeam(allGamesByTeam);
   const gamesWinned = getAllWinnedGames(allGamesFinished, teamFullName);
   const numberOfgamesLosed = allGamesFinished.length - gamesWinned.length;
 
+  if (gamesWinned.length < 10) return <Loader />;
   return (
     <div className="balance-sheet">
       <h2>{teamFullName}</h2>

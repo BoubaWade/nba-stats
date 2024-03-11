@@ -13,6 +13,33 @@ export const getStatslabelsAndValues = (stats: PlayerStats) => {
     { label: "Dribbles", value: stats.dreb },
   ];
 };
+export const tableHeaderStatsFields = [
+  "Nom",
+  "Points",
+  "Rebonds",
+  "Passes",
+  "Contre",
+  "Interc.",
+  "Perte B.",
+  "Dribb.",
+  "Temps jeu",
+  "Équipe",
+];
+
+export const getStatsBodyField = (stats: PlayerStats) => {
+  return [
+    { value: ` ${stats.player.first_name} ${stats.player.last_name}` },
+    { value: stats.pts },
+    { value: stats.reb },
+    { value: stats.ast },
+    { value: stats.blk },
+    { value: stats.stl },
+    { value: stats.turnover },
+    { value: stats.dreb },
+    { value: stats.min },
+    { value: stats.team.name },
+  ];
+};
 
 export const getNavigationItems = (isActive: ActiveButton) => {
   return [

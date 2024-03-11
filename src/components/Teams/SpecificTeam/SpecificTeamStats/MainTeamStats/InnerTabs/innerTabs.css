@@ -1,6 +1,6 @@
 .inner-tabs-container {
     height: 50px;
-    box-shadow: 0px 1px 10px rgba(25, 30, 45, 0.6);
+    box-shadow: 0px 2px 5px 0px rgba(25, 30, 45, 0.6);
     display: flex;
     justify-content: space-between;
     align-items: center;

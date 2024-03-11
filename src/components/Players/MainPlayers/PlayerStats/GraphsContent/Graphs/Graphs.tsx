@@ -1,5 +1,6 @@
+import LineChart from "../../../../../reusable-ui/Graphs/LineChart";
 import BarChart from "./BarChart";
-import LineChart from "./LineChart";
+// import LineChart from "./LineChart";
 
 type GraphsProps = {
   specificStat: number[];

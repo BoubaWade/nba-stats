@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { PlayerStats } from "../../../Players/playersTypes";
+import { PlayerStats } from "../../../../Players/playersTypes";
 import { useContext } from "react";
-import { GlobalContext } from "../../../../contexts/globalContext";
-import { getPlayerStats } from "../../../../service/apiCall";
+import { GlobalContext } from "../../../../../contexts/globalContext";
+import { getPlayerStats } from "../../../../../service/apiCall";
 import StatsLabelAndValues from "./StatsLabelAndValues";
 import TitleAndBgImage from "./TitleAndBgImage";
 

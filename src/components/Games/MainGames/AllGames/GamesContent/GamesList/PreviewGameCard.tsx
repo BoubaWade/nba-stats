@@ -10,19 +10,30 @@ import {
   STATUS_AFTER_GAME,
 } from "../../../../../../config/constants";
 import { useNavigate } from "react-router-dom";
+import { handleActiveButtonClicked } from "../../../../../../helpers/games";
 
 type GameListItemProps = {
   game: Game;
 };
 
 export default function PreviewGameCard({ game }: GameListItemProps) {
-  const { setGameStats, setShowAllGames } = useContext(GlobalContext);
+  const {
+    setGameStats,
+    setShowAllGames,
+    setStatGameCardDisplayed,
+    setIsActiveNavButton,
+  } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const handleClickAfterGameCard = (e: React.MouseEvent<HTMLDivElement>) => {
     getGameStats(parseInt(e.currentTarget.id), setGameStats);
     setShowAllGames(false);
     navigate("/games");
+    setStatGameCardDisplayed(false);
+    // Pour activer la couleur du bouton Matchs sur la barre de navigation
+    handleActiveButtonClicked(setIsActiveNavButton, "isGamesNavButton");
+
+    ("isGamesNavButton");
   };
 
   if (

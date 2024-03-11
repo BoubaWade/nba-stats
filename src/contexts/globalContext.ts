@@ -28,6 +28,8 @@ type GlobalContextType = {
   setShowSpecificTeamStats: React.Dispatch<React.SetStateAction<boolean>>;
   showspecificTeamGames: boolean;
   setShowSpecificTeamGames: React.Dispatch<React.SetStateAction<boolean>>;
+  statGameCardDisplayed: boolean;
+  setStatGameCardDisplayed: React.Dispatch<React.SetStateAction<boolean>>;
   teamFullName: string | null;
   setTeamFullName: React.Dispatch<React.SetStateAction<string | null>>;
   gameStats: PlayerStats[];
@@ -69,6 +71,8 @@ export const GlobalContext = createContext<GlobalContextType>({
   setShowSpecificTeamStats: () => {},
   showspecificTeamGames: false,
   setShowSpecificTeamGames: () => {},
+  statGameCardDisplayed: false,
+  setStatGameCardDisplayed: () => {},
   teamFullName: "",
   setTeamFullName: () => {},
   gameStats: [],
