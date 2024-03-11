@@ -32,7 +32,8 @@ export default function useApp() {
   const [showSpecificTeamStats, setShowSpecificTeamStats] = useState(false);
   const [showspecificTeamGames, setShowSpecificTeamGames] = useState(false);
 
-  const [statGameCardDisplayed, setStatGameCardDisplayed] = useState<boolean>();
+  const [statGameCardDisplayed, setStatGameCardDisplayed] =
+    useState<boolean>(false);
   const [dateRangeForSpecificTeamGames, setDateRangeForSpecificTeamGames] =
     useState<Value>([oneWeekBefore, oneWeekAfter]);
   const [dateRangeForAllGames, setDateRangeForAllGames] = useState<Value>([
