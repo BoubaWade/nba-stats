@@ -83,7 +83,7 @@ export default function LineChart({
           <g className="y-axis" />
           <path
             fill="none"
-            stroke="black"
+            stroke="#191e2d"
             strokeWidth="1.5"
             d={line(data) || undefined}
           />
@@ -107,7 +107,7 @@ export default function LineChart({
                 y={y(data[hoveredPoint]) - 37.5}
                 width={200}
                 height={35}
-                fill="white"
+                fill="#c3ac81"
                 stroke="black"
                 strokeWidth="1"
               />

@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import PieGraph from "../../../../../reusable-ui/PieGraph/PieGraph";
+import PieGraph from "../../../../../reusable-ui/Graphs/PieGraph";
+import LineChart from "../../../../../reusable-ui/Graphs/LineChart";
 import "./statistics.css";
 import { GlobalContext } from "../../../../../../contexts/globalContext";
 import {
@@ -7,7 +8,6 @@ import {
   getAllGamesPoints,
   getAllWinnedGames,
 } from "../../../../../../helpers/games";
-import LineChart from "../../../../../reusable-ui/Graphs/LineChart";
 
 export default function Statistics() {
   const { teamFullName, allGamesByTeam } = useContext(GlobalContext);
@@ -37,21 +37,22 @@ export default function Statistics() {
     <div className="statistics-container">
       <div className="graphs">
         <div className="circle-graph-container">
+          <PieGraph data={data} />
           <p>
             <span className="win">Victoires</span> &{" "}
             <span className="lose">Défaites</span>
           </p>
-          <PieGraph data={data} />
         </div>
         <div className="line-graph-container">
+          <p>Points par match</p>
           <LineChart
             data={allGamesPoints}
             statName="Points"
-            className="line-graph"
+            className="line-graph-points"
             marginTop={20}
             marginRight={10}
-            marginBottom={40}
-            marginLeft={30}
+            marginBottom={70}
+            marginLeft={50}
           />
         </div>
       </div>
