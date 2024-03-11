@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { GlobalContext } from "../../../../contexts/globalContext";
+import { GlobalContext } from "../../../../../contexts/globalContext";
 import StatsCard from "./StatsCard";
-import { getStatIfTheyPlay } from "../../../../helpers/players";
+import { getStatIfTheyPlay } from "../../../../../helpers/players";
 
 export default function StatsCardsList() {
   const { gameStats } = useContext(GlobalContext);

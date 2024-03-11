@@ -55,3 +55,11 @@ export const getStatIfTheyPlay = (gameStats: PlayerStats[]) => {
   const stats = gameStats.filter((stat) => condition(stat));
   return stats;
 };
+
+export const getStatsSortedByPoints = (stats: PlayerStats[]) => {
+  return stats.sort((a, b) => b.pts - a.pts);
+};
+
+export const getStatsSortedByTeam = (stats: PlayerStats[]) => {
+  return stats.sort((a, b) => a.team.name.localeCompare(b.team.name));
+};

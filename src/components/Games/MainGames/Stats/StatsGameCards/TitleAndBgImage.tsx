@@ -1,4 +1,4 @@
-import { PlayerStats } from "../../../Players/playersTypes";
+import { PlayerStats } from "../../../../Players/playersTypes";
 // const getPATH = (name: string) => {
 //   return `/public/public/images/teamsLogos/${name}.svg`;
 // };

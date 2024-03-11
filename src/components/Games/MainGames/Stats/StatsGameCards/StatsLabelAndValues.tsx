@@ -1,5 +1,5 @@
-import { getStatslabelsAndValues } from "../../../../config/config";
-import { PlayerStats } from "../../../Players/playersTypes";
+import { getStatslabelsAndValues } from "../../../../../config/config";
+import { PlayerStats } from "../../../../Players/playersTypes";
 
 type LabelAndValuesProps = {
   stats: PlayerStats;

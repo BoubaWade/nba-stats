@@ -98,6 +98,11 @@
     margin-right: 5px;
 }
 
+.games-container .main-games .stats-game-table {
+    margin-top: 100px;
+}
+
+
 @media screen and (max-width: 1230px) {
     .games-container .main-games .all-games-container .list-games-container {
         width: 80%;

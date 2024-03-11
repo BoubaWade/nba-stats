@@ -18,15 +18,21 @@ export default function useApp() {
     isSeasonNavButton: false,
   });
   const [playerStats, setPlayerStats] = useState<PlayerStats[]>([]);
+
   const [showSpecificPlayer, setShowSpecificPlayer] = useState(false);
+
   const [teams, setTeams] = useState<Team[]>([]);
   const [specificTeamID, setSpecificTeamID] = useState(0);
+
   const [yearOfTheGames, setYearOfTheGames] = useState("2023");
   const [showSpecificTeam, setShowSpecificTeam] = useState(false);
   const [teamFullName, setTeamFullName] = useState<string | null>(null);
   const [specificTeamGames, setSpecificTeamGames] = useState<Game[]>([]);
+
   const [showSpecificTeamStats, setShowSpecificTeamStats] = useState(false);
   const [showspecificTeamGames, setShowSpecificTeamGames] = useState(false);
+
+  const [statGameCardDisplayed, setStatGameCardDisplayed] = useState<boolean>();
   const [dateRangeForSpecificTeamGames, setDateRangeForSpecificTeamGames] =
     useState<Value>([oneWeekBefore, oneWeekAfter]);
   const [dateRangeForAllGames, setDateRangeForAllGames] = useState<Value>([
@@ -36,8 +42,10 @@ export default function useApp() {
   const [gameStats, setGameStats] = useState<PlayerStats[]>([]);
   const [showAllGames, setShowAllGames] = useState(true);
   const [games, setGames] = useState<Game[]>([]);
+
   const [teamStatsDisplayed, setTeamStatsDisplayed] = useState(false);
   const [allGamesByTeam, setAllGamesByTeam] = useState<Game[]>([]);
+
   const [innerStatsTabsButtons, setInnerStatsTabsButtons] =
     useState<ActiveButton>({
       isRosterActive: true,
@@ -68,6 +76,8 @@ export default function useApp() {
     setShowSpecificTeamStats,
     showspecificTeamGames,
     setShowSpecificTeamGames,
+    statGameCardDisplayed,
+    setStatGameCardDisplayed,
     dateRangeForSpecificTeamGames,
     setDateRangeForSpecificTeamGames,
     dateRangeForAllGames,
