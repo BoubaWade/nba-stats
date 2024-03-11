@@ -8,7 +8,7 @@ export default function LogoImage() {
   return (
     <>
       <img
-        src={`public/images/teamsLogos/${team?.name}.svg`}
+        src={`/public/images/teamsLogos/${team?.name}.svg`}
         className="logo"
       />
     </>
