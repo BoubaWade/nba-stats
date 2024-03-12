@@ -30,7 +30,7 @@ export default function PreviewGameCard({ game }: GameListItemProps) {
     setShowAllGames(false);
     navigate("/games");
     setStatGameCardDisplayed(false);
-    // Pour activer la couleur du bouton Matchs sur la barre de navigation
+    // Pour activer la couleur du bouton "Games" sur la barre de navigation
     handleActiveButtonClicked(setIsActiveNavButton, "isGamesNavButton");
 
     ("isGamesNavButton");

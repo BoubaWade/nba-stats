@@ -197,3 +197,15 @@ export const getGamesPointsAverageForTeam = (arrayOfPoints: number[]) => {
 
   return Math.ceil(result * 10) / 10;
 };
+
+export const getStatusResult = (
+  game: Game,
+  name: string | null
+): string | undefined => {
+  const scoreDifference = game.home_team_score - game.visitor_team_score;
+  if (scoreDifference > 0 && game.home_team.full_name === name) return "V";
+  if (scoreDifference > 0 && game.home_team.full_name !== name) return "D";
+
+  if (scoreDifference < 0 && game.visitor_team.full_name === name) return "V";
+  if (scoreDifference < 0 && game.visitor_team.full_name !== name) return "D";
+};
