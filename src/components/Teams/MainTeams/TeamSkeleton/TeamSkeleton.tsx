@@ -15,8 +15,8 @@ export default function Skeleton() {
         </svg>
       </div>
       <p className="skeleton-text"></p>
-      <div className="skeleton-button"></div>
-      <div className="skeleton-button"></div>
+      <div className="skeleton-button top"></div>
+      <div className="skeleton-button bottom"></div>
     </div>
   );
 }
