@@ -36,7 +36,7 @@ export const getStatsBodyField = (stats: PlayerStats) => {
     { value: stats.stl },
     { value: stats.turnover },
     { value: stats.dreb },
-    { value: stats.min },
+    { value: `${stats.min} min` },
     { value: stats.team.name },
   ];
 };
@@ -130,4 +130,11 @@ export const starsPlayers2 = [
   { name: "StephenCURRY" },
   { name: "JoelEMBIID" },
   { name: "ANTETOKOUNMPO" },
+];
+
+export const scheduleTableHeaderFields = [
+  "Date",
+  "Adversaire",
+  "Résultat",
+  "Stade",
 ];
