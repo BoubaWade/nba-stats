@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #a85117;
+    border: 1px solid #a97f63;
     padding: 0.8rem;
     border-radius: 0.375rem;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -26,20 +26,20 @@
 
 .team-skeleton-container .svg-container .svg {
     width: 30%;
-    color: #a85117;
+    color: #a97f63;
 }
 
 .team-skeleton-container .skeleton-text {
     width: 100px;
     height: 8px;
-    background: #a85117;
+    background: #a97f63;
     border-radius: 20px;
     margin-bottom: 10px;
     animation: pulse 2s infinite;
 }
 
 .team-skeleton-container .skeleton-button {
-    background: #a85117;
+    background: #a97f63;
     height: 30px;
     margin-top: 10px;
     border-radius: 20px;
@@ -63,5 +63,12 @@
 
     50% {
         opacity: 0.3;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .team-skeleton-container {
+        height: 220px;
+        width: 175px;
     }
 }

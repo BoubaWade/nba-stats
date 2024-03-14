@@ -5,7 +5,6 @@ import {
   getAllGamesPoints,
   getGamesPointsAverageForTeam,
 } from "../../../../../../helpers/games";
-import Loader from "../../../../../reusable-ui/Loader/Loader";
 
 export default function RightSide() {
   const { teamFullName, allGamesByTeam } = useContext(GlobalContext);
@@ -14,7 +13,6 @@ export default function RightSide() {
   const allGamesPoints = getAllGamesPoints(allGamesFinished, teamFullName);
   const averagePoints = getGamesPointsAverageForTeam(allGamesPoints);
 
-  if (!averagePoints) return <Loader />;
   return (
     <div className="right-side-team-stats-banner">
       <h3>Points par match</h3>
