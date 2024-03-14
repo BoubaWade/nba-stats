@@ -1,5 +1,7 @@
 # NBA STATS
 
+### Nba-statistiques est une application de suivi en temps réel des résultats des matchs de Basket NBA.
+
 ## Page d'accueil
 
 ![Page d'accueil](/public/images/home-page.png)
@@ -12,7 +14,7 @@
 
 ![Page de recherche de joueurs](/public/images/players-table.png)
 
-## Page des statistiques des joueurs
+## Page de statistiques du joueur
 
 ![Page des statistiques du joueur](/public/images/player-stats.png)
 
