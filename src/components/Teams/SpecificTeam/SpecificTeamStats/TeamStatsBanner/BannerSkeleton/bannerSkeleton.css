@@ -1,0 +1,80 @@
+.banner-skeleton-container {
+    display: flex;
+    height: 170px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: #d1d5db;
+    animation: pulse 1.7s infinite;
+
+}
+
+.banner-skeleton-container .svg-container {
+    position: relative;
+    height: 5rem;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-skeleton-container .svg-container .svg {
+    width: 25%;
+    height: 100%;
+    color: #a97f63;
+}
+
+.banner-skeleton-container .svg-container .text-left-container p:first-child {
+    width: 200px;
+    height: 25px;
+    background: #a97f63;
+    border-radius: 2px;
+}
+
+.banner-skeleton-container .svg-container .text-left-container p:nth-child(2) {
+    width: 100px;
+    height: 20px;
+    background: #a97f63;
+    border-radius: 3px;
+}
+
+.banner-skeleton-container .skeleton-button {
+    background: #a97f63;
+    width: 7rem;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.banner-skeleton-container .text-right-container {
+    margin-right: 50px;
+
+}
+
+.banner-skeleton-container .text-right-container p:first-child {
+    background: #a97f63;
+    width: 120px;
+    height: 15px;
+    border-radius: 3px;
+
+}
+
+.banner-skeleton-container .text-right-container p:nth-child(2) {
+    background: #a97f63;
+    width: 70px;
+    height: 25px;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}

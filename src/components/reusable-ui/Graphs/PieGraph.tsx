@@ -51,7 +51,7 @@ export default function PieChart({ data }: PieChartProps) {
       })
       .on("mouseout", (event) => {
         const tooltip = d3.select(event.currentTarget);
-        tooltip.transition().duration(200).attr("opacity", 0);
+        tooltip.transition().duration(200).attr("opacity", 0.8);
       });
 
     svg
