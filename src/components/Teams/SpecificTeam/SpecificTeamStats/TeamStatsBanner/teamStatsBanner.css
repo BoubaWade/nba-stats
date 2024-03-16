@@ -55,3 +55,35 @@
     font-size: 22px;
     font-weight: 500;
 }
+
+@media screen and (max-width: 1130px) {
+    .team-stats-banner .return-button {
+        left: 80%;
+    }
+
+    .team-stats-banner .right-side-team-stats-banner {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 860px) {
+    .team-stats-banner .left-side-team-stats-banner .logo {
+        width: 90px;
+    }
+
+    .team-stats-banner .left-side-team-stats-banner .balance-sheet h2 {
+        font-size: 26px;
+    }
+
+    .team-stats-banner .left-side-team-stats-banner .balance-sheet p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .team-stats-banner .return-button {
+        left: 50%;
+        top: 60%;
+    }
+}
