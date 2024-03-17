@@ -98,12 +98,12 @@
     }
 
     .banner-skeleton-container .svg-container .text-left-container p:first-child {
-        width: 150px;
+        width: 120px;
         height: 20px;
     }
 
     .banner-skeleton-container .svg-container .text-left-container p:nth-child(2) {
-        width: 80px;
+        width: 70px;
         height: 15px;
     }
 
@@ -121,5 +121,23 @@
         width: 6rem;
         height: 35px;
         margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner-skeleton-container .svg-container {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .banner-skeleton-container .svg-container .text-left-container p:first-child {
+        width: 90px;
+        height: 15px;
+    }
+
+    .banner-skeleton-container .svg-container .text-left-container p:nth-child(2) {
+        width: 60px;
+        height: 10px;
     }
 }
