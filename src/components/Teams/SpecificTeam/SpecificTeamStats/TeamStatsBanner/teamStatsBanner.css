@@ -82,8 +82,40 @@
 }
 
 @media screen and (max-width: 600px) {
+    .team-stats-banner {
+        flex-direction: column;
+    }
+
+    .team-stats-banner .left-side-team-stats-banner {
+        align-items: center;
+    }
+
+    .team-stats-banner .left-side-team-stats-banner .balance-sheet h2 {
+        width: 200px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 20px;
+    }
+
+    .team-stats-banner .left-side-team-stats-banner .balance-sheet p {
+        margin: 0;
+    }
+
     .team-stats-banner .return-button {
+        top: 70%;
         left: 50%;
-        top: 60%;
+        transform: translate(-50%);
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .team-stats-banner .left-side-team-stats-banner .logo {
+        margin: 0;
+    }
+
+    .team-stats-banner .return-button {
+        font-size: 11px;
     }
 }
