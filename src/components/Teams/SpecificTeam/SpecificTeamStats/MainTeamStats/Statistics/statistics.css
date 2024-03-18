@@ -47,3 +47,35 @@
 .statistics-container .statistics-table-container {
     height: 800px;
 }
+
+@media screen and (max-width: 1130px) {
+    .statistics-container .graphs {
+        flex-direction: column;
+        height: 700px;
+        align-items: center;
+    }
+
+    .statistics-container .graphs .circle-graph-container {
+        flex-direction: column-reverse;
+        width: 80%;
+        margin: 0 0 60px;
+    }
+
+    .statistics-container .graphs .line-graph-container {
+        width: 100%;
+    }
+
+    .statistics-container .graphs .line-graph-container svg {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .statistics-container .graphs {
+        height: 350px;
+    }
+
+    .statistics-container .graphs .line-graph-container {
+        display: none;
+    }
+}

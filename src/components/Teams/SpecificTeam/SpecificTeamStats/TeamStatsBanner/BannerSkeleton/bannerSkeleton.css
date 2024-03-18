@@ -28,14 +28,14 @@
     width: 200px;
     height: 25px;
     background: #a97f63;
-    border-radius: 2px;
+    border-radius: 15px;
 }
 
 .banner-skeleton-container .svg-container .text-left-container p:nth-child(2) {
     width: 100px;
     height: 20px;
     background: #a97f63;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 .banner-skeleton-container .skeleton-button {
@@ -48,14 +48,13 @@
 
 .banner-skeleton-container .text-right-container {
     margin-right: 50px;
-
 }
 
 .banner-skeleton-container .text-right-container p:first-child {
     background: #a97f63;
     width: 120px;
     height: 15px;
-    border-radius: 3px;
+    border-radius: 15px;
 
 }
 
@@ -63,7 +62,7 @@
     background: #a97f63;
     width: 70px;
     height: 25px;
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 0 auto;
 }
 
@@ -76,5 +75,69 @@
 
     50% {
         opacity: 0.2;
+    }
+}
+
+@media screen and (max-width: 1130px) {
+    .banner-skeleton-container .svg-container {
+        width: 35%;
+    }
+
+    .banner-skeleton-container .text-right-container {
+        display: none;
+    }
+
+    .banner-skeleton-container .skeleton-button {
+        left: 80%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .banner-skeleton-container .svg-container {
+        width: 40%;
+    }
+
+    .banner-skeleton-container .svg-container .text-left-container p:first-child {
+        width: 120px;
+        height: 20px;
+    }
+
+    .banner-skeleton-container .svg-container .text-left-container p:nth-child(2) {
+        width: 70px;
+        height: 15px;
+    }
+
+    .banner-skeleton-container .skeleton-button {
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner-skeleton-container {
+        flex-direction: column;
+    }
+
+    .banner-skeleton-container .skeleton-button {
+        width: 6rem;
+        height: 35px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner-skeleton-container .svg-container {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .banner-skeleton-container .svg-container .text-left-container p:first-child {
+        width: 90px;
+        height: 15px;
+    }
+
+    .banner-skeleton-container .svg-container .text-left-container p:nth-child(2) {
+        width: 60px;
+        height: 10px;
     }
 }
