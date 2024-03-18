@@ -64,6 +64,14 @@
 }
 
 @media screen and (max-width: 500px) {
+    .inner-tabs-container .inner-tabs-list button {
+        font-size: 13px;
+    }
+
+    .inner-tabs-container .inner-tabs-list button.active {
+        font-size: 14px;
+    }
+
     .inner-tabs-container .social-medias {
         display: none;
     }
